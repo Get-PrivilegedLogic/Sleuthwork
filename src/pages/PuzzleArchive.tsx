@@ -7,6 +7,7 @@ export default function PuzzleArchive() {
       case 'easy': return 'bg-green-500/20 text-green-400 border-green-500/30';
       case 'medium': return 'bg-yellow-500/20 text-yellow-400 border-yellow-500/30';
       case 'hard': return 'bg-red-500/20 text-red-400 border-red-500/30';
+      case 'ludicrous': return 'bg-gradient-to-r from-purple-500/20 to-pink-500/20 text-purple-400 border-purple-500/50 animate-pulse';
       default: return 'bg-gray-500/20 text-gray-400 border-gray-500/30';
     }
   };
@@ -16,6 +17,7 @@ export default function PuzzleArchive() {
       case 'easy': return '⭐';
       case 'medium': return '⭐⭐';
       case 'hard': return '⭐⭐⭐';
+      case 'ludicrous': return '💀💀💀💀💀';
       default: return '⭐';
     }
   };
@@ -64,36 +66,40 @@ export default function PuzzleArchive() {
               <Link
                 key={puzzle.id}
                 to={`/puzzle/${puzzle.id}`}
-                className="card-hover group"
+                className={`card-hover group ${puzzle.difficulty === 'ludicrous' ? 'ludicrous-glow' : ''}`}
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="bg-gradient-to-br from-gray-800/90 to-gray-900/90 backdrop-blur-sm rounded-xl p-5 border-2 border-white/10 hover:border-purple-500/50 transition-all shadow-lg">
+                <div className={`bg-gradient-to-br backdrop-blur-sm rounded-xl p-5 border-2 transition-all shadow-lg h-full flex flex-col ${
+                  puzzle.difficulty === 'ludicrous' 
+                    ? 'from-purple-900/90 to-red-900/90 border-red-500/50 hover:border-red-400' 
+                    : 'from-gray-800/90 to-gray-900/90 border-white/10 hover:border-purple-500/50'
+                }`}>
                   {/* Header */}
                   <div className="flex items-start justify-between mb-3">
-                    <div className="flex-1">
+                    <div className="flex-1 min-w-0">
                       <div className="text-sm text-gray-400 mb-1">Puzzle #{index + 1}</div>
-                      <h3 className="text-xl font-bold text-white group-hover:text-purple-300 transition">
+                      <h3 className="text-xl font-bold text-white group-hover:text-purple-300 transition line-clamp-2">
                         {puzzle.title}
                       </h3>
                     </div>
                     {completed && (
-                      <div className="text-2xl animate-bounce">✓</div>
+                      <div className="text-2xl animate-bounce ml-2 flex-shrink-0">✓</div>
                     )}
                   </div>
 
                   {/* Difficulty Badge */}
-                  <div className={`inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold border mb-3 ${getDifficultyColor(puzzle.difficulty)}`}>
+                  <div className={`inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold border mb-3 self-start ${getDifficultyColor(puzzle.difficulty)}`}>
                     <span>{getDifficultyIcon(puzzle.difficulty)}</span>
                     <span className="capitalize">{puzzle.difficulty}</span>
                   </div>
 
                   {/* Description */}
-                  <p className="text-gray-400 text-sm mb-4 line-clamp-2">
+                  <p className="text-gray-400 text-sm mb-4 line-clamp-2 flex-grow">
                     {puzzle.backstory}
                   </p>
 
                   {/* Stats */}
-                  <div className="flex items-center justify-between text-xs text-gray-500">
+                  <div className="flex items-center justify-between text-xs text-gray-500 mb-4">
                     <div>
                       {puzzle.suspects.length} suspects • {puzzle.clues.length} clues
                     </div>
@@ -105,8 +111,12 @@ export default function PuzzleArchive() {
                   </div>
 
                   {/* Play Button */}
-                  <div className="mt-4 text-center">
-                    <div className="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded-lg transition-all group-hover:scale-105">
+                  <div className="mt-auto">
+                    <div className={`text-center font-bold py-2 px-4 rounded-lg transition-all group-hover:scale-105 ${
+                      puzzle.difficulty === 'ludicrous'
+                        ? 'bg-gradient-to-r from-red-600 to-purple-600 hover:from-red-700 hover:to-purple-700 text-white'
+                        : 'bg-purple-600 hover:bg-purple-700 text-white'
+                    }`}>
                       {completed ? 'Play Again' : 'Start Puzzle'} →
                     </div>
                   </div>
