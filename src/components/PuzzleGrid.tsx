@@ -105,7 +105,7 @@ export default function PuzzleGrid({
   return (
     <div className="p-2 md:p-4">
       {/* Keyboard Shortcuts Help */}
-      <div className="bg-blue-950/30 border border-blue-500/30 rounded-lg p-3 mb-4 text-sm text-blue-200">
+      <div className="hidden md:block bg-blue-950/30 border border-blue-500/30 rounded-lg p-3 mb-4 text-sm text-blue-200">
         <div className="font-semibold mb-2 flex items-center gap-2">
           <span>⌨️</span> Keyboard Shortcuts
         </div>

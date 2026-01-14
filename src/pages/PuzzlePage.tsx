@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useParams, useNavigate } from 'react-router-dom';
 import PuzzleGrid from '../components/PuzzleGrid';
 import SolutionForm from '../components/SolutionForm';
 import CollapsibleSection from '../components/CollapsibleSection';
@@ -8,8 +8,15 @@ import { usePuzzleGrid } from '../hooks/usePuzzleGrid';
 import { useTimer } from '../hooks/useTimer';
 
 export default function PuzzlePage() {
-  const puzzle = puzzles[0];
+  const { puzzleId } = useParams<{ puzzleId: string }>();
   const navigate = useNavigate();
+  
+  // Find the puzzle by ID, fallback to first puzzle if not found
+  const puzzle = puzzles.find(p => p.id === puzzleId) || puzzles[0];
+  
+  // Find the next puzzle
+  const currentIndex = puzzles.findIndex(p => p.id === puzzle.id);
+  const nextPuzzle = puzzles[currentIndex + 1];
 
   const [showResult, setShowResult] = useState(false);
   const [isCorrect, setIsCorrect] = useState(false);
@@ -32,11 +39,28 @@ export default function PuzzlePage() {
     setWeaponLocationGrid,
     resetGrids
   } = usePuzzleGrid({
-    
     suspectCount: puzzle.suspects.length,
     weaponCount: puzzle.weapons.length,
     locationCount: puzzle.locations.length
   });
+
+  // Reset state when puzzle changes
+  useEffect(() => {
+    setShowResult(false);
+    setIsCorrect(false);
+    setGaveUp(false);
+    setHintsUsed(0);
+    setIsNewRecord(false);
+    setShowGiveUpConfirm(false);
+    setRedirectCountdown(null);
+    resetGrids();
+    timer.reset();
+  }, [puzzleId]);
+
+  // Scroll to top when puzzle changes
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [puzzleId]);
 
   // Check if first visit for tutorial
   useEffect(() => {
@@ -69,7 +93,6 @@ export default function PuzzlePage() {
         if (showGiveUpConfirm) {
           setShowGiveUpConfirm(false);
         } else if (showResult && !gaveUp) {
-          // Don't allow escape if gave up and countdown is running
           setShowResult(false);
         } else if (showTutorial) {
           closeTutorial();
@@ -150,7 +173,7 @@ export default function PuzzlePage() {
     setIsCorrect(false);
     setShowResult(true);
     setShowGiveUpConfirm(false);
-    setRedirectCountdown(3); // Start 3 second countdown
+    setRedirectCountdown(3);
   };
 
   const closeTutorial = () => {
@@ -343,7 +366,7 @@ export default function PuzzlePage() {
                 )}
               </div>
             ) : isCorrect ? (
-              // SUCCESS MODAL - Congratulations, stats, no replay option
+              // SUCCESS MODAL - Congratulations, stats, navigation
               <div className="max-w-md w-full p-6 md:p-8 rounded-lg bg-green-900 border-4 border-green-500 animate-slideUp">
                 <h2 className="text-2xl md:text-3xl font-bold mb-3 md:mb-4 text-green-400 animate-bounce">🎉 Case Solved!</h2>
                 
@@ -389,15 +412,21 @@ export default function PuzzlePage() {
                   <button onClick={() => setShowResult(false)} className="flex-1 bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 rounded-lg transition-all duration-200 hover:scale-105 text-sm md:text-base">
                     Close
                   </button>
-                  <button 
-                    disabled
-                    className="flex-1 bg-gray-600 text-gray-400 font-bold py-3 rounded-lg cursor-not-allowed text-sm md:text-base relative group"
-                  >
-                    Next Puzzle
-                    <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-1 bg-gray-900 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
-                      Coming Soon
-                    </span>
-                  </button>
+                  {nextPuzzle ? (
+                    <button 
+                      onClick={() => navigate(`/puzzle/${nextPuzzle.id}`)}
+                      className="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-lg transition-all duration-200 hover:scale-105 text-sm md:text-base"
+                    >
+                      Next Puzzle →
+                    </button>
+                  ) : (
+                    <button 
+                      onClick={() => navigate('/puzzles')}
+                      className="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-lg transition-all duration-200 hover:scale-105 text-sm md:text-base"
+                    >
+                      Browse Puzzles
+                    </button>
+                  )}
                 </div>
               </div>
             ) : (
