@@ -55,10 +55,19 @@
 
   @keyframes shimmer {
     0% {
-      background-position: -1000px 0;
+      transform: translateX(-100%);
     }
     100% {
-      background-position: 1000px 0;
+      transform: translateX(100%);
+    }
+  }
+
+  @keyframes ludicrousGlow {
+    0%, 100% {
+      box-shadow: 0 0 20px rgba(239, 68, 68, 0.3);
+    }
+    50% {
+      box-shadow: 0 0 40px rgba(168, 85, 247, 0.5);
     }
   }
 
@@ -100,5 +109,9 @@
 
   .card-hover:hover {
     transform: translateY(-8px) scale(1.02);
+  }
+
+  .ludicrous-glow {
+    animation: ludicrousGlow 3s ease-in-out infinite;
   }
 }

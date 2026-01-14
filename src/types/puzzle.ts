@@ -1,6 +1,6 @@
 export type GridCell = 'empty' | 'check' | 'cross';
 
-export type Difficulty = 'easy' | 'medium' | 'hard';
+export type Difficulty = 'easy' | 'medium' | 'hard' | 'ludicrous';
 
 export interface Suspect {
   name: string;

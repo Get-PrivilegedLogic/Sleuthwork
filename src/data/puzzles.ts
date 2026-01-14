@@ -1,7 +1,7 @@
 import type { Puzzle } from '../types/puzzle';
 
 export const puzzles: Puzzle[] = [
-  // PUZZLE #1 - Easy (Already rewritten above)
+  // PUZZLE #1 - Easy
   {
     id: 'puzzle-1',
     title: 'Murder at the Gala',
@@ -454,10 +454,218 @@ export const puzzles: Puzzle[] = [
       'The murder was in the Vault - who had reason to go there?'
     ],
     solution: { suspect: 'Sophia Romano', weapon: 'Crystal Decanter', location: 'Vault' }
+  },
+
+  // PUZZLE #12 - LUDICROUS (5x5)
+  {
+    id: 'puzzle-12',
+    title: 'The Impossible Case at Blackwood Estate',
+    difficulty: 'ludicrous',
+    releaseDate: '2025-12-12T12:00:00Z',
+    backstory: 'Renowned detective critic Lord Percival Blackwood was found dead during his annual "Unsolvable Mystery" dinner party. Five master detectives were present. The killer must be among them. This is Detective Finch\'s greatest challenge.',
+    
+    suspects: [
+      { name: 'Inspector Aria Chen', bio: 'Forensic specialist who solved the "Crimson Cipher" case in 47 minutes.' },
+      { name: 'Detective Nikolas Voss', bio: 'Psychological profiler known for the "Mirror Murders" breakthrough.' },
+      { name: 'Agent Sophia Romano', bio: 'Undercover expert who infiltrated three crime syndicates.' },
+      { name: 'Professor Marcus Hyde', bio: 'Criminal psychology professor and author of "The Perfect Crime".' },
+      { name: 'Captain Elena Frost', bio: 'Retired homicide detective with 200+ solved cases.' }
+    ],
+    
+    weapons: [
+      { name: 'Antique Syringe', description: 'Victorian-era medical instrument containing traces of aconite poison.' },
+      { name: 'Crystal Decanter', description: 'Heavy lead crystal containing aged scotch, found shattered.' },
+      { name: 'Fencing Foil', description: 'Competition-grade épée with unusually sharp point, unbuttoned.' },
+      { name: 'Marble Bust', description: 'Sculpture of Sherlock Holmes, surprisingly heavy, chipped base.' },
+      { name: 'Silk Garrote', description: 'Custom-made strangling wire disguised as decorative cord.' }
+    ],
+    
+    locations: [
+      { name: 'Library', description: 'Three-story room with rolling ladder, rare book collection behind glass.' },
+      { name: 'Billiard Room', description: 'Victorian gaming room with full-size table and wall-mounted cue rack.' },
+      { name: 'Wine Cellar', description: 'Temperature-controlled basement vault, keypad access, hundreds of bottles.' },
+      { name: 'Conservatory', description: 'Glass-enclosed garden with exotic plants and koi pond.' },
+      { name: 'Trophy Room', description: 'Display of Lord Blackwood\'s case memorabilia and awards.' }
+    ],
+    
+    clues: [
+      'Lord Blackwood died between 9:45 PM and 10:15 PM according to the coroner.',
+      'Inspector Chen was examining evidence in the Library from 9:30 PM until she discovered the body at 10:20 PM. She never left the room.',
+      'The murder weapon was the Antique Syringe, but it was found in a location where the murder did NOT occur.',
+      'Detective Voss was seen entering the Wine Cellar at 9:40 PM. The cellar\'s keypad logs show it was accessed again at 10:05 PM, but Voss had already left by then.',
+      'Agent Romano was playing billiards with Captain Frost from 9:15 PM to 9:50 PM. Multiple witnesses confirm this.',
+      'Professor Hyde gave a toast in the Trophy Room at 9:35 PM, attended by everyone except the person who was in the Wine Cellar at that time.',
+      'The killer was in the Conservatory at exactly 10:00 PM, which is when the murder occurred.',
+      'Captain Frost went to the Billiard Room after playing billiards, but before 10:15 PM.',
+      'The person who accessed the Wine Cellar at 10:05 PM was NOT the same person who was there at 9:40 PM.',
+      'Neither Inspector Chen nor the person who was in the Trophy Room at 9:35 PM could have been in the Conservatory at 10:00 PM.',
+      'Agent Romano was never in the Wine Cellar at any point during the evening.',
+      'The murder did not take place in the Library, Wine Cellar, or Billiard Room.',
+      'Professor Hyde was not in the Conservatory between 9:45 PM and 10:15 PM.',
+      'The person who gave the toast at 9:35 PM was in a different location at 10:00 PM than they were at 9:35 PM.',
+      'Detective Voss left the Wine Cellar before Agent Romano finished playing billiards.'
+    ],
+    
+    hints: [
+      'Start by mapping out who was WHERE and WHEN. Create a timeline from 9:30-10:20.',
+      'Inspector Chen has an ironclad alibi - she\'s eliminated. Focus on the other four.',
+      'The Wine Cellar was accessed twice - once by Voss at 9:40, and once by someone else at 10:05. Who was free at 10:05?',
+      'The murder happened at 10:00 PM in the Conservatory. Who has NO alibi for that exact time?',
+      'If Professor Hyde gave the toast at 9:35 in the Trophy Room, and everyone except one person attended, who was missing? (The person in the Wine Cellar)',
+      'Captain Frost was playing billiards until 9:50, then went to the Billiard Room. She couldn\'t have been in the Conservatory at 10:00.',
+      'Agent Romano finished billiards at 9:50 and was never in the Wine Cellar. Where could she be at 10:00 PM?',
+      'Professor Hyde was NOT in the Conservatory during the murder window. But was he somewhere with an alibi?',
+      'Process of elimination: Chen (Library alibi), Frost (wrong location at 10:00), Hyde (explicitly not in Conservatory). That leaves two people...',
+      'Detective Voss left the Wine Cellar before 9:50 PM (when billiards ended). Where did he go after? Who can verify his location at 10:00 PM? No one.'
+    ],
+    
+    solution: {
+      suspect: 'Detective Nikolas Voss',
+      weapon: 'Antique Syringe',
+      location: 'Conservatory'
+    }
+  },
+
+  // PUZZLE #13 - LUDICROUS (5x5)
+  {
+    id: 'puzzle-13',
+    title: 'The Quantum Heist Paradox',
+    difficulty: 'ludicrous',
+    releaseDate: '2025-12-13T12:00:00Z',
+    backstory: 'Tech billionaire Dr. Quantum was found dead in his smart home during a power outage. The automated security system logged every movement, but the timestamps seem impossible. Five people had access codes.',
+    
+    suspects: [
+      { name: 'Dr. Sarah Chen', bio: 'Quantum physicist and business partner in the AI research lab.' },
+      { name: 'Marcus Kane', bio: 'Head of security who designed the entire surveillance system.' },
+      { name: 'Isabella Torres', bio: 'Personal assistant with master override codes to all systems.' },
+      { name: 'Professor James Wei', bio: 'Research rival who recently lost funding to Dr. Quantum.' },
+      { name: 'Alexandra Park', bio: 'Ex-spouse who still had access codes from the divorce settlement.' }
+    ],
+    
+    weapons: [
+      { name: 'Electromagnetic Pulse Device', description: 'Prototype EMP that caused the building-wide blackout.' },
+      { name: 'Liquid Nitrogen Canister', description: 'Lab equipment storing cryogenic samples, freezing cold.' },
+      { name: 'Carbon Fiber Cable', description: 'Ultra-thin research equipment cable, incredibly strong.' },
+      { name: 'Microscope Base', description: 'Heavy titanium base from electron microscope, sharp edges.' },
+      { name: 'Smart Glass Shard', description: 'Fragment from shattered electrochromic window panel.' }
+    ],
+    
+    locations: [
+      { name: 'Lab', description: 'Quantum computing research facility with biometric access.' },
+      { name: 'Server Room', description: 'Climate-controlled room housing backup power and data systems.' },
+      { name: 'Penthouse', description: 'Residential floor with panoramic views and smart home integration.' },
+      { name: 'Garage', description: 'Underground parking with electric vehicle charging stations.' },
+      { name: 'Rooftop', description: 'Helipad and solar panel array on building\'s top floor.' }
+    ],
+    
+    clues: [
+      'Dr. Quantum died between 11:50 PM and 12:10 AM during the power outage.',
+      'The security logs show Dr. Chen scanned into the Lab at 11:30 PM and didn\'t leave until power was restored at 12:15 AM.',
+      'Marcus Kane was monitoring the Server Room remotely from his home. His VPN connection logs confirm he never entered the building.',
+      'The EMP device was activated at exactly 11:48 PM from the Rooftop, causing the power outage.',
+      'Isabella Torres was logged entering the Garage at 11:40 PM. Her car\'s GPS shows she left the building at 11:55 PM.',
+      'Professor Wei had his access code revoked two weeks ago and cannot enter the building.',
+      'Alexandra Park used her access code to enter the Penthouse at 11:45 PM.',
+      'The murder weapon was found in the Server Room, but the murder did not occur there.',
+      'The killer was on the Rooftop at the time of the murder.',
+      'During the power outage, biometric scanners failed but backup keypad codes still worked.',
+      'The person who activated the EMP at 11:48 PM is the same person who committed the murder.',
+      'Isabella\'s car left the building before the murder occurred.',
+      'The only people physically in the building during the murder were those who entered before 11:48 PM.',
+      'Alexandra Park\'s access logs show no exit from the Penthouse between 11:45 PM and 12:15 AM.',
+      'The murder took place on the Rooftop at approximately 12:00 AM, during total darkness.'
+    ],
+    
+    hints: [
+      'Marcus Kane was remote - eliminate him immediately.',
+      'Professor Wei had no access - eliminate him.',
+      'Isabella left at 11:55 PM, before the murder at 12:00 AM - eliminate her.',
+      'That leaves Dr. Chen and Alexandra Park. Both were in the building.',
+      'Dr. Chen was locked in the Lab when power went out. Biometric scanners failed - could she leave?',
+      'The EMP was activated from the Rooftop at 11:48 PM. Who was on the Rooftop?',
+      'Alexandra entered the Penthouse at 11:45 PM. Her logs show no exit. Could she reach the Rooftop?',
+      'The Penthouse and Rooftop are adjacent - rooftop access is through the Penthouse.',
+      'Alexandra had keypad backup codes that worked during the outage. She could move freely.',
+      'The killer activated the EMP at 11:48, committed murder at 12:00, and was still logged in the Penthouse because she never "officially" left through scanners.'
+    ],
+    
+    solution: {
+      suspect: 'Alexandra Park',
+      weapon: 'Electromagnetic Pulse Device',
+      location: 'Rooftop'
+    }
+  },
+
+  // PUZZLE #14 - LUDICROUS (5x5)
+  {
+    id: 'puzzle-14',
+    title: 'Murder on the Midnight Express',
+    difficulty: 'ludicrous',
+    releaseDate: '2025-12-14T12:00:00Z',
+    backstory: 'International arms dealer Viktor Volkov was found dead in his private train car during an overnight journey through the Alps. Five passengers had access to his cabin. The train never stopped.',
+    
+    suspects: [
+      { name: 'Natasha Ivanova', bio: 'Volkov\'s former bodyguard turned rival, traveling under fake passport.' },
+      { name: 'Ambassador Chen Li', bio: 'Diplomat secretly negotiating weapons deal with Volkov.' },
+      { name: 'Dr. Heinrich Mueller', bio: 'Swiss banker managing Volkov\'s offshore accounts.' },
+      { name: 'Captain Maria Santos', bio: 'Interpol agent working undercover as train staff.' },
+      { name: 'Dmitri Federov', bio: 'Volkov\'s nephew and sole heir to the weapons empire.' }
+    ],
+    
+    weapons: [
+      { name: 'Poison Dart', description: 'Miniature dart coated with fast-acting neurotoxin, from blowgun.' },
+      { name: 'Train Cable', description: 'Emergency brake cable, 8 feet long, steel-reinforced.' },
+      { name: 'Ice Pick', description: 'Bar tool from the dining car, pointed and deadly.' },
+      { name: 'Crystal Ashtray', description: 'Heavy cut crystal from smoking lounge, sharp edges.' },
+      { name: 'Syringe', description: 'Medical supply from first aid kit, found empty.' }
+    ],
+    
+    locations: [
+      { name: 'Private Car', description: 'Volkov\'s luxury compartment with bulletproof windows.' },
+      { name: 'Dining Car', description: 'Restaurant car serving late-night meals and drinks.' },
+      { name: 'Observation Deck', description: 'Glass-domed car with panoramic Alpine views.' },
+      { name: 'Baggage Car', description: 'Cargo storage area with locked luggage compartments.' },
+      { name: 'Staff Quarters', description: 'Crew sleeping area restricted to train employees.' }
+    ],
+    
+    clues: [
+      'Volkov was killed between 2:15 AM and 2:45 AM while the train passed through a tunnel.',
+      'Natasha was playing poker in the Dining Car with three witnesses from 2:00 AM to 3:00 AM continuously.',
+      'Ambassador Chen was in his cabin (not Volkov\'s Private Car) from 1:00 AM until breakfast. The cabin door was locked from inside.',
+      'Dr. Mueller was conducting a video conference call from the Observation Deck from 2:10 AM to 2:50 AM. The timestamp is verified.',
+      'Captain Santos was required to do a security sweep of the Baggage Car at 2:30 AM. Log confirms she was there.',
+      'Dmitri Federov was seen leaving the Private Car at 2:05 AM by a passenger.',
+      'The murder weapon was the Poison Dart, found in the Staff Quarters.',
+      'The killer was in the Private Car at the time of death.',
+      'During the tunnel passage (2:20-2:40 AM), all cameras were disabled due to darkness protocol.',
+      'The Staff Quarters can only be accessed by train employees or someone with a staff key.',
+      'Dmitri had a staff key card stolen from his uncle two months ago.',
+      'The poker game in the Dining Car had four players and never paused.',
+      'Ambassador Chen\'s cabin was three cars away from Volkov\'s Private Car.',
+      'Captain Santos\'s security sweep took exactly 15 minutes according to procedure.',
+      'The person who left the Private Car at 2:05 AM returned during the tunnel blackout at 2:25 AM.',
+      'Neither the Observation Deck nor anyone\'s locked cabin can be confused with the Private Car.'
+    ],
+    
+    hints: [
+      'Four people have solid alibis. Find them first.',
+      'Natasha was playing poker with witnesses the entire time - eliminated.',
+      'Dr. Mueller was on video call with timestamp verification - eliminated.',
+      'Ambassador Chen was locked in his cabin three cars away - eliminated.',
+      'Captain Santos was in Baggage Car at 2:30 AM (during the murder window) - but verify the timing carefully.',
+      'Dmitri left at 2:05 AM and returned at 2:25 AM during the blackout.',
+      'The murder happened between 2:15-2:45. Who was in the Private Car during that window?',
+      'Captain Santos was in Baggage Car at 2:30 AM - but could she have been in Private Car at 2:20 or 2:40?',
+      'The security sweep took 15 minutes. If she started at 2:30, she was occupied until 2:45.',
+      'But the murder could have occurred at 2:20 AM, before her sweep. Who was there then? Dmitri returned at 2:25.',
+      'Wait - Dmitri LEFT at 2:05 but RETURNED at 2:25. He was in the Private Car during the critical 2:25-2:40 window.',
+      'Dmitri had the staff key to access Staff Quarters. He committed the murder during the blackout and stashed the weapon where only staff should go.'
+    ],
+    
+    solution: {
+      suspect: 'Dmitri Federov',
+      weapon: 'Poison Dart',
+      location: 'Private Car'
+    }
   }
 ];
-  
-  // Helper function to get a puzzle by ID
-  export function getPuzzleById(id: string): Puzzle | undefined {
-    return puzzles.find(p => p.id === id);
-  }
