@@ -5,16 +5,26 @@ export type Difficulty = 'easy' | 'medium' | 'hard' | 'ludicrous';
 export interface Suspect {
   name: string;
   bio: string;
+  height: string;
+  build: string;
+  eyeColor: string;
+  hairColor: string;
+  handedness: string;
+  age: string;
 }
 
 export interface Weapon {
   name: string;
   description: string;
+  weight: string;
+  type: string;
 }
 
 export interface Location {
   name: string;
   description: string;
+  setting: string;
+  access: string;
 }
 
 export interface Statement {

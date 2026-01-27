@@ -9,19 +9,76 @@ export const puzzles: Puzzle[] = [
     releaseDate: '2025-12-01T12:00:00Z',
     backstory: 'Billionaire Victor Blackwood was found dead in his study during the annual charity gala at Ravencrest Manor. Three guests had access to the locked wing where the body was discovered.',
     suspects: [
-      { name: 'Alice Chen', bio: 'Victor\'s business partner who arrived 30 minutes late to the gala.' },
-      { name: 'Marcus Webb', bio: 'Former security chief fired by Victor six months ago.' },
-      { name: 'Diana Cross', bio: 'Victor\'s ex-wife who was seen arguing with him in the hallway.' }
+      { 
+        name: 'Alice Chen', 
+        bio: 'Victor\'s business partner who arrived 30 minutes late to the gala.',
+        height: '5\'6"',
+        build: 'Slim',
+        eyeColor: 'Brown eyes',
+        hairColor: 'Black hair',
+        handedness: 'Right-handed',
+        age: 'Mid-30s'
+      },
+      { 
+        name: 'Marcus Webb', 
+        bio: 'Former security chief fired by Victor six months ago.',
+        height: '6\'2"',
+        build: 'Athletic',
+        eyeColor: 'Blue eyes',
+        hairColor: 'Gray hair',
+        handedness: 'Left-handed',
+        age: 'Late 40s'
+      },
+      { 
+        name: 'Diana Cross', 
+        bio: 'Victor\'s ex-wife who was seen arguing with him in the hallway.',
+        height: '5\'8"',
+        build: 'Average',
+        eyeColor: 'Green eyes',
+        hairColor: 'Blonde hair',
+        handedness: 'Right-handed',
+        age: 'Early 40s'
+      }
     ],
     weapons: [
-      { name: 'Letter Opener', description: 'Silver antique from Victor\'s desk, recently sharpened.' },
-      { name: 'Candlestick', description: 'Heavy brass candlestick from the mantle, 12 inches tall.' },
-      { name: 'Poison', description: 'Rat poison from the manor\'s storage room, fast-acting.' }
+      { 
+        name: 'Letter Opener', 
+        description: 'Silver antique from Victor\'s desk, recently sharpened.',
+        weight: 'Light-weight',
+        type: 'Sharp'
+      },
+      { 
+        name: 'Candlestick', 
+        description: 'Heavy brass candlestick from the mantle, 12 inches tall.',
+        weight: 'Heavy-weight',
+        type: 'Blunt'
+      },
+      { 
+        name: 'Poison', 
+        description: 'Rat poison from the manor\'s storage room, fast-acting.',
+        weight: 'Light-weight',
+        type: 'Poison'
+      }
     ],
     locations: [
-      { name: 'Study', description: 'Victor\'s private study with locked door, key kept on his person.' },
-      { name: 'Library', description: 'Large room adjacent to the study, connected by side door.' },
-      { name: 'Conservatory', description: 'Glass-walled room at the back of the manor, recently renovated.' }
+      { 
+        name: 'Study', 
+        description: 'Victor\'s private study with locked door, key kept on his person.',
+        setting: 'Indoors',
+        access: 'Private'
+      },
+      { 
+        name: 'Library', 
+        description: 'Large room adjacent to the study, connected by side door.',
+        setting: 'Indoors',
+        access: 'Restricted'
+      },
+      { 
+        name: 'Conservatory', 
+        description: 'Glass-walled room at the back of the manor, recently renovated.',
+        setting: 'Mixed',
+        access: 'Public'
+      }
     ],
     clues: [
       'The victim was killed between 9:00 PM and 9:30 PM.',
@@ -62,19 +119,76 @@ export const puzzles: Puzzle[] = [
     releaseDate: '2025-12-02T12:00:00Z',
     backstory: 'Dr. Helen Moore, curator of the City Museum, was found dead in the Egyptian wing after closing time. Security footage shows three people entered the restricted area.',
     suspects: [
-      { name: 'James Porter', bio: 'Night janitor who discovered the body at 11 PM.' },
-      { name: 'Sarah Kim', bio: 'Assistant curator working late on inventory records.' },
-      { name: 'Robert Greene', bio: 'Private collector who met with Helen at 9 PM.' }
+      { 
+        name: 'James Porter', 
+        bio: 'Night janitor who discovered the body at 11 PM.',
+        height: '5\'10"',
+        build: 'Stocky',
+        eyeColor: 'Brown eyes',
+        hairColor: 'Bald',
+        handedness: 'Right-handed',
+        age: 'Early 50s'
+      },
+      { 
+        name: 'Sarah Kim', 
+        bio: 'Assistant curator working late on inventory records.',
+        height: '5\'4"',
+        build: 'Petite',
+        eyeColor: 'Dark brown eyes',
+        hairColor: 'Black hair',
+        handedness: 'Left-handed',
+        age: 'Late 20s'
+      },
+      { 
+        name: 'Robert Greene', 
+        bio: 'Private collector who met with Helen at 9 PM.',
+        height: '6\'0"',
+        build: 'Average',
+        eyeColor: 'Gray eyes',
+        hairColor: 'Salt and pepper',
+        handedness: 'Right-handed',
+        age: 'Mid-60s'
+      }
     ],
     weapons: [
-      { name: 'Statue', description: 'Heavy marble statue of Anubis, approximately 15 pounds.' },
-      { name: 'Knife', description: 'Ancient ceremonial dagger from the display case.' },
-      { name: 'Rope', description: 'Velvet rope barrier from the hallway entrance.' }
+      { 
+        name: 'Statue', 
+        description: 'Heavy marble statue of Anubis, approximately 15 pounds.',
+        weight: 'Heavy-weight',
+        type: 'Blunt'
+      },
+      { 
+        name: 'Knife', 
+        description: 'Ancient ceremonial dagger from the display case.',
+        weight: 'Light-weight',
+        type: 'Sharp'
+      },
+      { 
+        name: 'Rope', 
+        description: 'Velvet rope barrier from the hallway entrance.',
+        weight: 'Light-weight',
+        type: 'Other'
+      }
     ],
     locations: [
-      { name: 'Egyptian Wing', description: 'Main exhibit hall containing artifacts and display cases.' },
-      { name: 'Storage Room', description: 'Climate-controlled room where valuable items are kept.' },
-      { name: 'Office', description: 'Helen\'s private office on the second floor of the museum.' }
+      { 
+        name: 'Egyptian Wing', 
+        description: 'Main exhibit hall containing artifacts and display cases.',
+        setting: 'Indoors',
+        access: 'Public'
+      },
+      { 
+        name: 'Storage Room', 
+        description: 'Climate-controlled room where valuable items are kept.',
+        setting: 'Indoors',
+        access: 'Restricted'
+      },
+      { 
+        name: 'Office', 
+        description: 'Helen\'s private office on the second floor of the museum.',
+        setting: 'Indoors',
+        access: 'Private'
+      }
     ],
     clues: [
       'The murder occurred between 10 PM and 11 PM.',
@@ -114,19 +228,76 @@ export const puzzles: Puzzle[] = [
     releaseDate: '2025-12-03T12:00:00Z',
     backstory: 'Director Thomas Laurent was found dead backstage during intermission of opening night. Three cast members had access to the restricted backstage area.',
     suspects: [
-      { name: 'Emma Stone', bio: 'Lead actress who had a public dispute with Thomas last week.' },
-      { name: 'David Chen', bio: 'Stage manager responsible for props and equipment.' },
-      { name: 'Lisa Brown', bio: 'Understudy hoping to replace Emma as the lead.' }
+      { 
+        name: 'Emma Stone', 
+        bio: 'Lead actress who had a public dispute with Thomas last week.',
+        height: '5\'5"',
+        build: 'Slim',
+        eyeColor: 'Hazel eyes',
+        hairColor: 'Auburn hair',
+        handedness: 'Right-handed',
+        age: 'Early 30s'
+      },
+      { 
+        name: 'David Chen', 
+        bio: 'Stage manager responsible for props and equipment.',
+        height: '5\'9"',
+        build: 'Average',
+        eyeColor: 'Brown eyes',
+        hairColor: 'Black hair',
+        handedness: 'Left-handed',
+        age: 'Mid-40s'
+      },
+      { 
+        name: 'Lisa Brown', 
+        bio: 'Understudy hoping to replace Emma as the lead.',
+        height: '5\'7"',
+        build: 'Athletic',
+        eyeColor: 'Blue eyes',
+        hairColor: 'Blonde hair',
+        handedness: 'Right-handed',
+        age: 'Late 20s'
+      }
     ],
     weapons: [
-      { name: 'Stage Weight', description: 'Iron counterweight used for rigging, 20 pounds.' },
-      { name: 'Prop Sword', description: 'Metal stage sword with dulled blade but heavy hilt.' },
-      { name: 'Cable', description: 'Electrical cable from lighting equipment, 6 feet long.' }
+      { 
+        name: 'Stage Weight', 
+        description: 'Iron counterweight used for rigging, 20 pounds.',
+        weight: 'Heavy-weight',
+        type: 'Blunt'
+      },
+      { 
+        name: 'Prop Sword', 
+        description: 'Metal stage sword with dulled blade but heavy hilt.',
+        weight: 'Medium-weight',
+        type: 'Blunt'
+      },
+      { 
+        name: 'Cable', 
+        description: 'Electrical cable from lighting equipment, 6 feet long.',
+        weight: 'Light-weight',
+        type: 'Other'
+      }
     ],
     locations: [
-      { name: 'Backstage', description: 'Narrow area behind the main stage with quick-change stations.' },
-      { name: 'Prop Room', description: 'Locked room containing costumes and props.' },
-      { name: 'Lighting Booth', description: 'Elevated control booth overlooking the stage.' }
+      { 
+        name: 'Backstage', 
+        description: 'Narrow area behind the main stage with quick-change stations.',
+        setting: 'Indoors',
+        access: 'Restricted'
+      },
+      { 
+        name: 'Prop Room', 
+        description: 'Locked room containing costumes and props.',
+        setting: 'Indoors',
+        access: 'Restricted'
+      },
+      { 
+        name: 'Lighting Booth', 
+        description: 'Elevated control booth overlooking the stage.',
+        setting: 'Indoors',
+        access: 'Restricted'
+      }
     ],
     clues: [
       'Thomas was killed between 8:15 PM and 8:30 PM during intermission.',
@@ -166,19 +337,76 @@ export const puzzles: Puzzle[] = [
     releaseDate: '2025-12-04T12:00:00Z',
     backstory: 'Celebrity chef Antoine Rousseau was found dead in the walk-in freezer of his Michelin-starred restaurant. Three staff members were working the closing shift.',
     suspects: [
-      { name: 'Maria Santos', bio: 'Sous chef who was passed over for head chef position.' },
-      { name: 'Kevin Wright', bio: 'Restaurant manager handling the night\'s receipts.' },
-      { name: 'Nina Patel', bio: 'Server who had her tips docked by Antoine last week.' }
+      { 
+        name: 'Maria Santos', 
+        bio: 'Sous chef who was passed over for head chef position.',
+        height: '5\'3"',
+        build: 'Petite',
+        eyeColor: 'Dark brown eyes',
+        hairColor: 'Black hair',
+        handedness: 'Right-handed',
+        age: 'Early 30s'
+      },
+      { 
+        name: 'Kevin Wright', 
+        bio: 'Restaurant manager handling the night\'s receipts.',
+        height: '6\'1"',
+        build: 'Average',
+        eyeColor: 'Blue eyes',
+        hairColor: 'Brown hair',
+        handedness: 'Right-handed',
+        age: 'Late 30s'
+      },
+      { 
+        name: 'Nina Patel', 
+        bio: 'Server who had her tips docked by Antoine last week.',
+        height: '5\'6"',
+        build: 'Slim',
+        eyeColor: 'Brown eyes',
+        hairColor: 'Black hair',
+        handedness: 'Left-handed',
+        age: 'Mid-20s'
+      }
     ],
     weapons: [
-      { name: 'Cleaver', description: 'Professional kitchen cleaver, freshly sharpened.' },
-      { name: 'Pan', description: 'Cast iron skillet, 12 inches, very heavy.' },
-      { name: 'Corkscrew', description: 'Sommelier corkscrew with sharp spiral blade.' }
+      { 
+        name: 'Cleaver', 
+        description: 'Professional kitchen cleaver, freshly sharpened.',
+        weight: 'Medium-weight',
+        type: 'Sharp'
+      },
+      { 
+        name: 'Pan', 
+        description: 'Cast iron skillet, 12 inches, very heavy.',
+        weight: 'Heavy-weight',
+        type: 'Blunt'
+      },
+      { 
+        name: 'Corkscrew', 
+        description: 'Sommelier corkscrew with sharp spiral blade.',
+        weight: 'Light-weight',
+        type: 'Sharp'
+      }
     ],
     locations: [
-      { name: 'Freezer', description: 'Large walk-in freezer at -10°F, door locks from outside.' },
-      { name: 'Kitchen', description: 'Main prep kitchen with all cooking equipment.' },
-      { name: 'Office', description: 'Small back office where Antoine kept records and safe.' }
+      { 
+        name: 'Freezer', 
+        description: 'Large walk-in freezer at -10°F, door locks from outside.',
+        setting: 'Indoors',
+        access: 'Restricted'
+      },
+      { 
+        name: 'Kitchen', 
+        description: 'Main prep kitchen with all cooking equipment.',
+        setting: 'Indoors',
+        access: 'Restricted'
+      },
+      { 
+        name: 'Office', 
+        description: 'Small back office where Antoine kept records and safe.',
+        setting: 'Indoors',
+        access: 'Private'
+      }
     ],
     clues: [
       'Antoine died between 11 PM and midnight on closing night.',
@@ -218,19 +446,76 @@ export const puzzles: Puzzle[] = [
     releaseDate: '2025-12-05T12:00:00Z',
     backstory: 'Head librarian Margaret Foster was found dead in the rare books vault. Three people had access to the restricted archives that evening.',
     suspects: [
-      { name: 'Peter Walsh', bio: 'Graduate student researching historical manuscripts.' },
-      { name: 'Catherine Lee', bio: 'Fellow librarian who worked the evening shift.' },
-      { name: 'Frank Miller', bio: 'Security guard on duty that night.' }
+      { 
+        name: 'Peter Walsh', 
+        bio: 'Graduate student researching historical manuscripts.',
+        height: '5\'11"',
+        build: 'Slim',
+        eyeColor: 'Green eyes',
+        hairColor: 'Red hair',
+        handedness: 'Left-handed',
+        age: 'Mid-20s'
+      },
+      { 
+        name: 'Catherine Lee', 
+        bio: 'Fellow librarian who worked the evening shift.',
+        height: '5\'5"',
+        build: 'Average',
+        eyeColor: 'Brown eyes',
+        hairColor: 'Black hair',
+        handedness: 'Right-handed',
+        age: 'Early 40s'
+      },
+      { 
+        name: 'Frank Miller', 
+        bio: 'Security guard on duty that night.',
+        height: '6\'3"',
+        build: 'Stocky',
+        eyeColor: 'Blue eyes',
+        hairColor: 'Bald',
+        handedness: 'Right-handed',
+        age: 'Late 50s'
+      }
     ],
     weapons: [
-      { name: 'Bookend', description: 'Heavy brass bookend shaped like a lion, 8 pounds.' },
-      { name: 'Letter Opener', description: 'Ornate Victorian letter opener with sharp point.' },
-      { name: 'Scarf', description: 'Silk scarf from the lost and found, 60 inches long.' }
+      { 
+        name: 'Bookend', 
+        description: 'Heavy brass bookend shaped like a lion, 8 pounds.',
+        weight: 'Heavy-weight',
+        type: 'Blunt'
+      },
+      { 
+        name: 'Letter Opener', 
+        description: 'Ornate Victorian letter opener with sharp point.',
+        weight: 'Light-weight',
+        type: 'Sharp'
+      },
+      { 
+        name: 'Scarf', 
+        description: 'Silk scarf from the lost and found, 60 inches long.',
+        weight: 'Light-weight',
+        type: 'Other'
+      }
     ],
     locations: [
-      { name: 'Vault', description: 'Climate-controlled rare books vault with coded access.' },
-      { name: 'Reading Room', description: 'Quiet study area with large oak tables.' },
-      { name: 'Main Desk', description: 'Central circulation desk near the library entrance.' }
+      { 
+        name: 'Vault', 
+        description: 'Climate-controlled rare books vault with coded access.',
+        setting: 'Indoors',
+        access: 'Restricted'
+      },
+      { 
+        name: 'Reading Room', 
+        description: 'Quiet study area with large oak tables.',
+        setting: 'Indoors',
+        access: 'Public'
+      },
+      { 
+        name: 'Main Desk', 
+        description: 'Central circulation desk near the library entrance.',
+        setting: 'Indoors',
+        access: 'Public'
+      }
     ],
     clues: [
       'Margaret was killed between 7 PM and 8 PM.',
@@ -270,19 +555,76 @@ export const puzzles: Puzzle[] = [
     releaseDate: '2025-12-06T12:00:00Z',
     backstory: 'Personal trainer Brad Morrison was found dead in the gym\'s sauna room after closing. Three clients had keys to the facility for after-hours access.',
     suspects: [
-      { name: 'Jessica Hunt', bio: 'Competitive bodybuilder training for a championship.' },
-      { name: 'Tom Bradley', bio: 'Business executive who trains early mornings.' },
-      { name: 'Rachel Kim', bio: 'Yoga instructor who rents studio space in the gym.' }
+      { 
+        name: 'Jessica Hunt', 
+        bio: 'Competitive bodybuilder training for a championship.',
+        height: '5\'9"',
+        build: 'Muscular',
+        eyeColor: 'Brown eyes',
+        hairColor: 'Blonde hair',
+        handedness: 'Right-handed',
+        age: 'Late 20s'
+      },
+      { 
+        name: 'Tom Bradley', 
+        bio: 'Business executive who trains early mornings.',
+        height: '6\'0"',
+        build: 'Average',
+        eyeColor: 'Blue eyes',
+        hairColor: 'Gray hair',
+        handedness: 'Right-handed',
+        age: 'Mid-50s'
+      },
+      { 
+        name: 'Rachel Kim', 
+        bio: 'Yoga instructor who rents studio space in the gym.',
+        height: '5\'4"',
+        build: 'Slim',
+        eyeColor: 'Dark brown eyes',
+        hairColor: 'Black hair',
+        handedness: 'Left-handed',
+        age: 'Early 30s'
+      }
     ],
     weapons: [
-      { name: 'Dumbbell', description: '45-pound hexagonal dumbbell from the weight rack.' },
-      { name: 'Towel', description: 'Thick cotton towel from the laundry bin.' },
-      { name: 'Jump Rope', description: 'Heavy-duty leather jump rope, 9 feet long.' }
+      { 
+        name: 'Dumbbell', 
+        description: '45-pound hexagonal dumbbell from the weight rack.',
+        weight: 'Heavy-weight',
+        type: 'Blunt'
+      },
+      { 
+        name: 'Towel', 
+        description: 'Thick cotton towel from the laundry bin.',
+        weight: 'Light-weight',
+        type: 'Other'
+      },
+      { 
+        name: 'Jump Rope', 
+        description: 'Heavy-duty leather jump rope, 9 feet long.',
+        weight: 'Light-weight',
+        type: 'Other'
+      }
     ],
     locations: [
-      { name: 'Sauna', description: 'Traditional Finnish sauna, temperature set to 180°F.' },
-      { name: 'Weight Room', description: 'Main training floor with free weights and machines.' },
-      { name: 'Yoga Studio', description: 'Mirrored studio with mats and peaceful atmosphere.' }
+      { 
+        name: 'Sauna', 
+        description: 'Traditional Finnish sauna, temperature set to 180°F.',
+        setting: 'Indoors',
+        access: 'Public'
+      },
+      { 
+        name: 'Weight Room', 
+        description: 'Main training floor with free weights and machines.',
+        setting: 'Indoors',
+        access: 'Public'
+      },
+      { 
+        name: 'Yoga Studio', 
+        description: 'Mirrored studio with mats and peaceful atmosphere.',
+        setting: 'Indoors',
+        access: 'Restricted'
+      }
     ],
     clues: [
       'Brad was killed between 9 PM and 10 PM after the gym closed.',
@@ -322,22 +664,98 @@ export const puzzles: Puzzle[] = [
     releaseDate: '2025-12-07T12:00:00Z',
     backstory: 'Tech billionaire Steven Park was found dead in his penthouse suite. Four people had access to the executive floor that evening.',
     suspects: [
-      { name: 'Amanda Cole', bio: 'Steven\'s executive assistant who manages his schedule.' },
-      { name: 'Richard Torres', bio: 'Business rival staying on the same floor.' },
-      { name: 'Jennifer Wu', bio: 'Hotel concierge with master key access.' },
-      { name: 'Michael Santos', bio: 'Steven\'s personal bodyguard on duty that night.' }
+      { 
+        name: 'Amanda Cole', 
+        bio: 'Steven\'s executive assistant who manages his schedule.',
+        height: '5\'7"',
+        build: 'Slim',
+        eyeColor: 'Hazel eyes',
+        hairColor: 'Brown hair',
+        handedness: 'Right-handed',
+        age: 'Late 20s'
+      },
+      { 
+        name: 'Richard Torres', 
+        bio: 'Business rival staying on the same floor.',
+        height: '6\'1"',
+        build: 'Athletic',
+        eyeColor: 'Brown eyes',
+        hairColor: 'Black hair',
+        handedness: 'Right-handed',
+        age: 'Early 40s'
+      },
+      { 
+        name: 'Jennifer Wu', 
+        bio: 'Hotel concierge with master key access.',
+        height: '5\'5"',
+        build: 'Average',
+        eyeColor: 'Dark brown eyes',
+        hairColor: 'Black hair',
+        handedness: 'Left-handed',
+        age: 'Mid-30s'
+      },
+      { 
+        name: 'Michael Santos', 
+        bio: 'Steven\'s personal bodyguard on duty that night.',
+        height: '6\'3"',
+        build: 'Muscular',
+        eyeColor: 'Brown eyes',
+        hairColor: 'Bald',
+        handedness: 'Right-handed',
+        age: 'Late 30s'
+      }
     ],
     weapons: [
-      { name: 'Champagne Bottle', description: 'Dom Perignon, 1.5L magnum, very heavy.' },
-      { name: 'Laptop Cord', description: 'Power cable, 6 feet long, heavy-duty connector.' },
-      { name: 'Ice Pick', description: 'Stainless steel ice pick from the bar cart.' },
-      { name: 'Paperweight', description: 'Crystal paperweight, 5 pounds, sharp edges.' }
+      { 
+        name: 'Champagne Bottle', 
+        description: 'Dom Perignon, 1.5L magnum, very heavy.',
+        weight: 'Heavy-weight',
+        type: 'Blunt'
+      },
+      { 
+        name: 'Laptop Cord', 
+        description: 'Power cable, 6 feet long, heavy-duty connector.',
+        weight: 'Light-weight',
+        type: 'Other'
+      },
+      { 
+        name: 'Ice Pick', 
+        description: 'Stainless steel ice pick from the bar cart.',
+        weight: 'Light-weight',
+        type: 'Sharp'
+      },
+      { 
+        name: 'Paperweight', 
+        description: 'Crystal paperweight, 5 pounds, sharp edges.',
+        weight: 'Medium-weight',
+        type: 'Blunt'
+      }
     ],
     locations: [
-      { name: 'Penthouse', description: 'Luxury suite on the 40th floor with private elevator.' },
-      { name: 'Spa', description: 'Executive spa with sauna and massage rooms.' },
-      { name: 'Rooftop Bar', description: 'Open-air bar overlooking the city skyline.' },
-      { name: 'Gym', description: 'Private gym facility exclusive to penthouse guests.' }
+      { 
+        name: 'Penthouse', 
+        description: 'Luxury suite on the 40th floor with private elevator.',
+        setting: 'Indoors',
+        access: 'Private'
+      },
+      { 
+        name: 'Spa', 
+        description: 'Executive spa with sauna and massage rooms.',
+        setting: 'Indoors',
+        access: 'Restricted'
+      },
+      { 
+        name: 'Rooftop Bar', 
+        description: 'Open-air bar overlooking the city skyline.',
+        setting: 'Outdoors',
+        access: 'Public'
+      },
+      { 
+        name: 'Gym', 
+        description: 'Private gym facility exclusive to penthouse guests.',
+        setting: 'Indoors',
+        access: 'Restricted'
+      }
     ],
     clues: [
       'Steven was killed between 10 PM and 11 PM.',
@@ -384,22 +802,98 @@ export const puzzles: Puzzle[] = [
     releaseDate: '2025-12-08T12:00:00Z',
     backstory: 'Shipping magnate Charles Winters was found dead on his private yacht during a sunset cruise. Four guests were aboard the vessel.',
     suspects: [
-      { name: 'Victoria Winters', bio: 'Charles\' daughter and heir to the shipping empire.' },
-      { name: 'Gregory Marsh', bio: 'Business partner negotiating a major merger.' },
-      { name: 'Sophie Laurent', bio: 'Charles\' personal attorney handling his will.' },
-      { name: 'Captain James Reed', bio: 'Yacht captain with 20 years of service.' }
+      { 
+        name: 'Victoria Winters', 
+        bio: 'Charles\' daughter and heir to the shipping empire.',
+        height: '5\'8"',
+        build: 'Slim',
+        eyeColor: 'Blue eyes',
+        hairColor: 'Blonde hair',
+        handedness: 'Right-handed',
+        age: 'Early 30s'
+      },
+      { 
+        name: 'Gregory Marsh', 
+        bio: 'Business partner negotiating a major merger.',
+        height: '6\'0"',
+        build: 'Average',
+        eyeColor: 'Brown eyes',
+        hairColor: 'Brown hair',
+        handedness: 'Right-handed',
+        age: 'Mid-40s'
+      },
+      { 
+        name: 'Sophie Laurent', 
+        bio: 'Charles\' personal attorney handling his will.',
+        height: '5\'6"',
+        build: 'Average',
+        eyeColor: 'Green eyes',
+        hairColor: 'Red hair',
+        handedness: 'Left-handed',
+        age: 'Late 30s'
+      },
+      { 
+        name: 'Captain James Reed', 
+        bio: 'Yacht captain with 20 years of service.',
+        height: '5\'11"',
+        build: 'Stocky',
+        eyeColor: 'Gray eyes',
+        hairColor: 'White hair',
+        handedness: 'Right-handed',
+        age: 'Late 50s'
+      }
     ],
     weapons: [
-      { name: 'Anchor', description: 'Decorative brass anchor, 25 pounds.' },
-      { name: 'Fishing Gaff', description: 'Sharp metal hook on wooden pole, 4 feet long.' },
-      { name: 'Champagne Flute', description: 'Crystal glass with sharp broken stem.' },
-      { name: 'Rope', description: 'Nautical rope used for mooring, 30 feet coiled.' }
+      { 
+        name: 'Anchor', 
+        description: 'Decorative brass anchor, 25 pounds.',
+        weight: 'Heavy-weight',
+        type: 'Blunt'
+      },
+      { 
+        name: 'Fishing Gaff', 
+        description: 'Sharp metal hook on wooden pole, 4 feet long.',
+        weight: 'Medium-weight',
+        type: 'Sharp'
+      },
+      { 
+        name: 'Champagne Flute', 
+        description: 'Crystal glass with sharp broken stem.',
+        weight: 'Light-weight',
+        type: 'Sharp'
+      },
+      { 
+        name: 'Rope', 
+        description: 'Nautical rope used for mooring, 30 feet coiled.',
+        weight: 'Light-weight',
+        type: 'Other'
+      }
     ],
     locations: [
-      { name: 'Main Deck', description: 'Open deck with seating area and bar setup.' },
-      { name: 'Bridge', description: 'Control room where captain operates the yacht.' },
-      { name: 'Cabin', description: 'Master cabin below deck with private quarters.' },
-      { name: 'Stern', description: 'Rear deck with fishing equipment and swim platform.' }
+      { 
+        name: 'Main Deck', 
+        description: 'Open deck with seating area and bar setup.',
+        setting: 'Outdoors',
+        access: 'Public'
+      },
+      { 
+        name: 'Bridge', 
+        description: 'Control room where captain operates the yacht.',
+        setting: 'Indoors',
+        access: 'Restricted'
+      },
+      { 
+        name: 'Cabin', 
+        description: 'Master cabin below deck with private quarters.',
+        setting: 'Indoors',
+        access: 'Private'
+      },
+      { 
+        name: 'Stern', 
+        description: 'Rear deck with fishing equipment and swim platform.',
+        setting: 'Outdoors',
+        access: 'Public'
+      }
     ],
     clues: [
       'Charles died between 7 PM and 8 PM as the sun was setting.',
@@ -446,22 +940,98 @@ export const puzzles: Puzzle[] = [
     releaseDate: '2025-12-09T12:00:00Z',
     backstory: 'CEO Jennifer Blake was found dead in the executive suite during the company holiday party. Four employees had access to the secured floor.',
     suspects: [
-      { name: 'David Park', bio: 'CFO recently accused of embezzling company funds.' },
-      { name: 'Rachel Green', bio: 'VP of Sales competing for Jennifer\'s position.' },
-      { name: 'Kevin Tran', bio: 'IT director with access to all security systems.' },
-      { name: 'Lisa Chen', bio: 'Executive assistant who organized the holiday party.' }
+      { 
+        name: 'David Park', 
+        bio: 'CFO recently accused of embezzling company funds.',
+        height: '5\'10"',
+        build: 'Average',
+        eyeColor: 'Brown eyes',
+        hairColor: 'Black hair',
+        handedness: 'Right-handed',
+        age: 'Early 40s'
+      },
+      { 
+        name: 'Rachel Green', 
+        bio: 'VP of Sales competing for Jennifer\'s position.',
+        height: '5\'9"',
+        build: 'Athletic',
+        eyeColor: 'Green eyes',
+        hairColor: 'Blonde hair',
+        handedness: 'Right-handed',
+        age: 'Mid-30s'
+      },
+      { 
+        name: 'Kevin Tran', 
+        bio: 'IT director with access to all security systems.',
+        height: '5\'8"',
+        build: 'Slim',
+        eyeColor: 'Brown eyes',
+        hairColor: 'Black hair',
+        handedness: 'Left-handed',
+        age: 'Late 20s'
+      },
+      { 
+        name: 'Lisa Chen', 
+        bio: 'Executive assistant who organized the holiday party.',
+        height: '5\'4"',
+        build: 'Petite',
+        eyeColor: 'Dark brown eyes',
+        hairColor: 'Black hair',
+        handedness: 'Right-handed',
+        age: 'Early 30s'
+      }
     ],
     weapons: [
-      { name: 'Trophy', description: 'Glass award from executive credenza, heavy base.' },
-      { name: 'Scissors', description: 'Large office scissors from supply closet, 10 inches.' },
-      { name: 'USB Cable', description: 'Reinforced charging cable, 6 feet long.' },
-      { name: 'Stapler', description: 'Heavy-duty metal stapler, industrial size.' }
+      { 
+        name: 'Trophy', 
+        description: 'Glass award from executive credenza, heavy base.',
+        weight: 'Medium-weight',
+        type: 'Blunt'
+      },
+      { 
+        name: 'Scissors', 
+        description: 'Large office scissors from supply closet, 10 inches.',
+        weight: 'Light-weight',
+        type: 'Sharp'
+      },
+      { 
+        name: 'USB Cable', 
+        description: 'Reinforced charging cable, 6 feet long.',
+        weight: 'Light-weight',
+        type: 'Other'
+      },
+      { 
+        name: 'Stapler', 
+        description: 'Heavy-duty metal stapler, industrial size.',
+        weight: 'Medium-weight',
+        type: 'Blunt'
+      }
     ],
     locations: [
-      { name: 'Executive Suite', description: 'Corner office with view, private entrance.' },
-      { name: 'Server Room', description: 'Climate-controlled IT room with backup systems.' },
-      { name: 'Conference Room', description: 'Large meeting room where the party was held.' },
-      { name: 'Break Room', description: 'Staff kitchen area on the executive floor.' }
+      { 
+        name: 'Executive Suite', 
+        description: 'Corner office with view, private entrance.',
+        setting: 'Indoors',
+        access: 'Private'
+      },
+      { 
+        name: 'Server Room', 
+        description: 'Climate-controlled IT room with backup systems.',
+        setting: 'Indoors',
+        access: 'Restricted'
+      },
+      { 
+        name: 'Conference Room', 
+        description: 'Large meeting room where the party was held.',
+        setting: 'Indoors',
+        access: 'Public'
+      },
+      { 
+        name: 'Break Room', 
+        description: 'Staff kitchen area on the executive floor.',
+        setting: 'Indoors',
+        access: 'Public'
+      }
     ],
     clues: [
       'Jennifer was killed between 8 PM and 9 PM during the party.',
@@ -508,22 +1078,98 @@ export const puzzles: Puzzle[] = [
     releaseDate: '2025-12-10T12:00:00Z',
     backstory: 'Lord Edmund Ashford was found dead in his private study. Four members of the household were present on the estate that stormy evening.',
     suspects: [
-      { name: 'Lady Charlotte', bio: 'Edmund\'s wife who inherited nothing under the current will.' },
-      { name: 'Arthur Ashford', bio: 'Edmund\'s younger brother and potential heir.' },
-      { name: 'Dr. Philip Hayes', bio: 'Family physician making a house call that evening.' },
-      { name: 'Margaret Price', bio: 'Head housekeeper who has served the family for 30 years.' }
+      { 
+        name: 'Lady Charlotte', 
+        bio: 'Edmund\'s wife who inherited nothing under the current will.',
+        height: '5\'7"',
+        build: 'Slim',
+        eyeColor: 'Blue eyes',
+        hairColor: 'Blonde hair',
+        handedness: 'Right-handed',
+        age: 'Late 30s'
+      },
+      { 
+        name: 'Arthur Ashford', 
+        bio: 'Edmund\'s younger brother and potential heir.',
+        height: '6\'1"',
+        build: 'Athletic',
+        eyeColor: 'Brown eyes',
+        hairColor: 'Brown hair',
+        handedness: 'Right-handed',
+        age: 'Mid-40s'
+      },
+      { 
+        name: 'Dr. Philip Hayes', 
+        bio: 'Family physician making a house call that evening.',
+        height: '5\'9"',
+        build: 'Average',
+        eyeColor: 'Hazel eyes',
+        hairColor: 'Gray hair',
+        handedness: 'Left-handed',
+        age: 'Late 50s'
+      },
+      { 
+        name: 'Margaret Price', 
+        bio: 'Head housekeeper who has served the family for 30 years.',
+        height: '5\'5"',
+        build: 'Stocky',
+        eyeColor: 'Brown eyes',
+        hairColor: 'White hair',
+        handedness: 'Right-handed',
+        age: 'Early 60s'
+      }
     ],
     weapons: [
-      { name: 'Fireplace Poker', description: 'Heavy iron poker from the study fireplace.' },
-      { name: 'Letter Opener', description: 'Victorian silver letter opener with 6-inch blade.' },
-      { name: 'Candlestick', description: 'Solid brass candlestick, 14 inches tall, ornate.' },
-      { name: 'Rope', description: 'Silk curtain tie from the drawing room, 8 feet long.' }
+      { 
+        name: 'Fireplace Poker', 
+        description: 'Heavy iron poker from the study fireplace.',
+        weight: 'Heavy-weight',
+        type: 'Blunt'
+      },
+      { 
+        name: 'Letter Opener', 
+        description: 'Victorian silver letter opener with 6-inch blade.',
+        weight: 'Light-weight',
+        type: 'Sharp'
+      },
+      { 
+        name: 'Candlestick', 
+        description: 'Solid brass candlestick, 14 inches tall, ornate.',
+        weight: 'Medium-weight',
+        type: 'Blunt'
+      },
+      { 
+        name: 'Rope', 
+        description: 'Silk curtain tie from the drawing room, 8 feet long.',
+        weight: 'Light-weight',
+        type: 'Other'
+      }
     ],
     locations: [
-      { name: 'Study', description: 'Wood-paneled room with locked desk and fireplace.' },
-      { name: 'Drawing Room', description: 'Formal sitting room with piano and portraits.' },
-      { name: 'Kitchen', description: 'Large servants\' kitchen in the basement level.' },
-      { name: 'Conservatory', description: 'Glass-enclosed garden room with tropical plants.' }
+      { 
+        name: 'Study', 
+        description: 'Wood-paneled room with locked desk and fireplace.',
+        setting: 'Indoors',
+        access: 'Private'
+      },
+      { 
+        name: 'Drawing Room', 
+        description: 'Formal sitting room with piano and portraits.',
+        setting: 'Indoors',
+        access: 'Public'
+      },
+      { 
+        name: 'Kitchen', 
+        description: 'Large servants\' kitchen in the basement level.',
+        setting: 'Indoors',
+        access: 'Restricted'
+      },
+      { 
+        name: 'Conservatory', 
+        description: 'Glass-enclosed garden room with tropical plants.',
+        setting: 'Mixed',
+        access: 'Public'
+      }
     ],
     clues: [
       'Edmund was killed between 9 PM and 10 PM during the thunderstorm.',
@@ -573,22 +1219,98 @@ export const puzzles: Puzzle[] = [
     releaseDate: '2025-12-11T12:00:00Z',
     backstory: 'Casino owner Vincent Romano was found dead in the high-roller suite. Four people had VIP access to the private gaming floor that night.',
     suspects: [
-      { name: 'Nicholas Carver', bio: 'Professional gambler who owed Vincent $500,000.' },
-      { name: 'Elena Petrova', bio: 'Casino floor manager responsible for security.' },
-      { name: 'Marcus DeVille', bio: 'Rival casino owner from across the street.' },
-      { name: 'Sophia Romano', bio: 'Vincent\'s sister and casino part-owner.' }
+      { 
+        name: 'Nicholas Carver', 
+        bio: 'Professional gambler who owed Vincent $500,000.',
+        height: '6\'0"',
+        build: 'Slim',
+        eyeColor: 'Gray eyes',
+        hairColor: 'Black hair',
+        handedness: 'Right-handed',
+        age: 'Late 30s'
+      },
+      { 
+        name: 'Elena Petrova', 
+        bio: 'Casino floor manager responsible for security.',
+        height: '5\'9"',
+        build: 'Athletic',
+        eyeColor: 'Green eyes',
+        hairColor: 'Red hair',
+        handedness: 'Right-handed',
+        age: 'Mid-30s'
+      },
+      { 
+        name: 'Marcus DeVille', 
+        bio: 'Rival casino owner from across the street.',
+        height: '6\'2"',
+        build: 'Average',
+        eyeColor: 'Brown eyes',
+        hairColor: 'Brown hair',
+        handedness: 'Left-handed',
+        age: 'Early 50s'
+      },
+      { 
+        name: 'Sophia Romano', 
+        bio: 'Vincent\'s sister and casino part-owner.',
+        height: '5\'6"',
+        build: 'Average',
+        eyeColor: 'Brown eyes',
+        hairColor: 'Black hair',
+        handedness: 'Right-handed',
+        age: 'Late 40s'
+      }
     ],
     weapons: [
-      { name: 'Poker Chip Rack', description: 'Heavy acrylic chip carrier, 10 pounds when full.' },
-      { name: 'Crystal Decanter', description: 'Lead crystal whiskey decanter, expensive and heavy.' },
-      { name: 'Tie', description: 'Designer silk necktie, 58 inches long.' },
-      { name: 'Dice', description: 'Oversized novelty dice made of solid brass, 3 inches per side.' }
+      { 
+        name: 'Poker Chip Rack', 
+        description: 'Heavy acrylic chip carrier, 10 pounds when full.',
+        weight: 'Heavy-weight',
+        type: 'Blunt'
+      },
+      { 
+        name: 'Crystal Decanter', 
+        description: 'Lead crystal whiskey decanter, expensive and heavy.',
+        weight: 'Heavy-weight',
+        type: 'Blunt'
+      },
+      { 
+        name: 'Tie', 
+        description: 'Designer silk necktie, 58 inches long.',
+        weight: 'Light-weight',
+        type: 'Other'
+      },
+      { 
+        name: 'Dice', 
+        description: 'Oversized novelty dice made of solid brass, 3 inches per side.',
+        weight: 'Medium-weight',
+        type: 'Blunt'
+      }
     ],
     locations: [
-      { name: 'High-Roller Suite', description: 'Private room for big-stakes poker games.' },
-      { name: 'Security Office', description: 'Monitoring room with live camera feeds.' },
-      { name: 'Bar', description: 'Exclusive VIP bar on the gaming floor.' },
-      { name: 'Vault', description: 'Secure room where cash and chips are stored.' }
+      { 
+        name: 'High-Roller Suite', 
+        description: 'Private room for big-stakes poker games.',
+        setting: 'Indoors',
+        access: 'Private'
+      },
+      { 
+        name: 'Security Office', 
+        description: 'Monitoring room with live camera feeds.',
+        setting: 'Indoors',
+        access: 'Restricted'
+      },
+      { 
+        name: 'Bar', 
+        description: 'Exclusive VIP bar on the gaming floor.',
+        setting: 'Indoors',
+        access: 'Public'
+      },
+      { 
+        name: 'Vault', 
+        description: 'Secure room where cash and chips are stored.',
+        setting: 'Indoors',
+        access: 'Restricted'
+      }
     ],
     clues: [
       'Vincent was killed between 2 AM and 3 AM.',
@@ -639,27 +1361,122 @@ export const puzzles: Puzzle[] = [
     backstory: 'Renowned detective critic Lord Percival Blackwood was found dead during his annual "Unsolvable Mystery" dinner party. Five master detectives were present. The killer must be among them. This is Detective Finch\'s greatest challenge.',
     
     suspects: [
-      { name: 'Inspector Aria Chen', bio: 'Forensic specialist who solved the "Crimson Cipher" case in 47 minutes.' },
-      { name: 'Detective Nikolas Voss', bio: 'Psychological profiler known for the "Mirror Murders" breakthrough.' },
-      { name: 'Agent Sophia Romano', bio: 'Undercover expert who infiltrated three crime syndicates.' },
-      { name: 'Professor Marcus Hyde', bio: 'Criminal psychology professor and author of "The Perfect Crime".' },
-      { name: 'Captain Elena Frost', bio: 'Retired homicide detective with 200+ solved cases.' }
+      { 
+        name: 'Inspector Aria Chen', 
+        bio: 'Forensic specialist who solved the "Crimson Cipher" case in 47 minutes.',
+        height: '5\'5"',
+        build: 'Slim',
+        eyeColor: 'Dark brown eyes',
+        hairColor: 'Black hair',
+        handedness: 'Right-handed',
+        age: 'Early 40s'
+      },
+      { 
+        name: 'Detective Nikolas Voss', 
+        bio: 'Psychological profiler known for the "Mirror Murders" breakthrough.',
+        height: '6\'1"',
+        build: 'Athletic',
+        eyeColor: 'Blue eyes',
+        hairColor: 'Blonde hair',
+        handedness: 'Left-handed',
+        age: 'Mid-30s'
+      },
+      { 
+        name: 'Agent Sophia Romano', 
+        bio: 'Undercover expert who infiltrated three crime syndicates.',
+        height: '5\'8"',
+        build: 'Athletic',
+        eyeColor: 'Green eyes',
+        hairColor: 'Brown hair',
+        handedness: 'Right-handed',
+        age: 'Late 30s'
+      },
+      { 
+        name: 'Professor Marcus Hyde', 
+        bio: 'Criminal psychology professor and author of "The Perfect Crime".',
+        height: '5\'11"',
+        build: 'Average',
+        eyeColor: 'Hazel eyes',
+        hairColor: 'Gray hair',
+        handedness: 'Right-handed',
+        age: 'Late 50s'
+      },
+      { 
+        name: 'Captain Elena Frost', 
+        bio: 'Retired homicide detective with 200+ solved cases.',
+        height: '5\'10"',
+        build: 'Stocky',
+        eyeColor: 'Brown eyes',
+        hairColor: 'White hair',
+        handedness: 'Left-handed',
+        age: 'Early 60s'
+      }
     ],
     
     weapons: [
-      { name: 'Antique Syringe', description: 'Victorian-era medical instrument containing traces of aconite poison.' },
-      { name: 'Crystal Decanter', description: 'Heavy lead crystal containing aged scotch, found shattered.' },
-      { name: 'Fencing Foil', description: 'Competition-grade épée with unusually sharp point, unbuttoned.' },
-      { name: 'Marble Bust', description: 'Sculpture of Sherlock Holmes, surprisingly heavy, chipped base.' },
-      { name: 'Silk Garrote', description: 'Custom-made strangling wire disguised as decorative cord.' }
+      { 
+        name: 'Antique Syringe', 
+        description: 'Victorian-era medical instrument containing traces of aconite poison.',
+        weight: 'Light-weight',
+        type: 'Poison'
+      },
+      { 
+        name: 'Crystal Decanter', 
+        description: 'Heavy lead crystal containing aged scotch, found shattered.',
+        weight: 'Heavy-weight',
+        type: 'Blunt'
+      },
+      { 
+        name: 'Fencing Foil', 
+        description: 'Competition-grade épée with unusually sharp point, unbuttoned.',
+        weight: 'Light-weight',
+        type: 'Sharp'
+      },
+      { 
+        name: 'Marble Bust', 
+        description: 'Sculpture of Sherlock Holmes, surprisingly heavy, chipped base.',
+        weight: 'Heavy-weight',
+        type: 'Blunt'
+      },
+      { 
+        name: 'Silk Garrote', 
+        description: 'Custom-made strangling wire disguised as decorative cord.',
+        weight: 'Light-weight',
+        type: 'Other'
+      }
     ],
     
     locations: [
-      { name: 'Library', description: 'Three-story room with rolling ladder, rare book collection behind glass.' },
-      { name: 'Billiard Room', description: 'Victorian gaming room with full-size table and wall-mounted cue rack.' },
-      { name: 'Wine Cellar', description: 'Temperature-controlled basement vault, keypad access, hundreds of bottles.' },
-      { name: 'Conservatory', description: 'Glass-enclosed garden with exotic plants and koi pond.' },
-      { name: 'Trophy Room', description: 'Display of Lord Blackwood\'s case memorabilia and awards.' }
+      { 
+        name: 'Library', 
+        description: 'Three-story room with rolling ladder, rare book collection behind glass.',
+        setting: 'Indoors',
+        access: 'Private'
+      },
+      { 
+        name: 'Billiard Room', 
+        description: 'Victorian gaming room with full-size table and wall-mounted cue rack.',
+        setting: 'Indoors',
+        access: 'Public'
+      },
+      { 
+        name: 'Wine Cellar', 
+        description: 'Temperature-controlled basement vault, keypad access, hundreds of bottles.',
+        setting: 'Indoors',
+        access: 'Restricted'
+      },
+      { 
+        name: 'Conservatory', 
+        description: 'Glass-enclosed garden with exotic plants and koi pond.',
+        setting: 'Mixed',
+        access: 'Public'
+      },
+      { 
+        name: 'Trophy Room', 
+        description: 'Display of Lord Blackwood\'s case memorabilia and awards.',
+        setting: 'Indoors',
+        access: 'Public'
+      }
     ],
     
     clues: [
@@ -732,27 +1549,122 @@ export const puzzles: Puzzle[] = [
     backstory: 'Tech billionaire Dr. Quantum was found dead in his smart home during a power outage. The automated security system logged every movement, but the timestamps seem impossible. Five people had access codes.',
     
     suspects: [
-      { name: 'Dr. Sarah Chen', bio: 'Quantum physicist and business partner in the AI research lab.' },
-      { name: 'Marcus Kane', bio: 'Head of security who designed the entire surveillance system.' },
-      { name: 'Isabella Torres', bio: 'Personal assistant with master override codes to all systems.' },
-      { name: 'Professor James Wei', bio: 'Research rival who recently lost funding to Dr. Quantum.' },
-      { name: 'Alexandra Park', bio: 'Ex-spouse who still had access codes from the divorce settlement.' }
+      { 
+        name: 'Dr. Sarah Chen', 
+        bio: 'Quantum physicist and business partner in the AI research lab.',
+        height: '5\'4"',
+        build: 'Petite',
+        eyeColor: 'Dark brown eyes',
+        hairColor: 'Black hair',
+        handedness: 'Right-handed',
+        age: 'Mid-30s'
+      },
+      { 
+        name: 'Marcus Kane', 
+        bio: 'Head of security who designed the entire surveillance system.',
+        height: '6\'2"',
+        build: 'Muscular',
+        eyeColor: 'Brown eyes',
+        hairColor: 'Bald',
+        handedness: 'Right-handed',
+        age: 'Early 40s'
+      },
+      { 
+        name: 'Isabella Torres', 
+        bio: 'Personal assistant with master override codes to all systems.',
+        height: '5\'7"',
+        build: 'Average',
+        eyeColor: 'Hazel eyes',
+        hairColor: 'Brown hair',
+        handedness: 'Left-handed',
+        age: 'Late 20s'
+      },
+      { 
+        name: 'Professor James Wei', 
+        bio: 'Research rival who recently lost funding to Dr. Quantum.',
+        height: '5\'10"',
+        build: 'Slim',
+        eyeColor: 'Brown eyes',
+        hairColor: 'Black hair',
+        handedness: 'Right-handed',
+        age: 'Early 50s'
+      },
+      { 
+        name: 'Alexandra Park', 
+        bio: 'Ex-spouse who still had access codes from the divorce settlement.',
+        height: '5\'9"',
+        build: 'Athletic',
+        eyeColor: 'Blue eyes',
+        hairColor: 'Blonde hair',
+        handedness: 'Right-handed',
+        age: 'Late 30s'
+      }
     ],
     
     weapons: [
-      { name: 'Electromagnetic Pulse Device', description: 'Prototype EMP that caused the building-wide blackout.' },
-      { name: 'Liquid Nitrogen Canister', description: 'Lab equipment storing cryogenic samples, freezing cold.' },
-      { name: 'Carbon Fiber Cable', description: 'Ultra-thin research equipment cable, incredibly strong.' },
-      { name: 'Microscope Base', description: 'Heavy titanium base from electron microscope, sharp edges.' },
-      { name: 'Smart Glass Shard', description: 'Fragment from shattered electrochromic window panel.' }
+      { 
+        name: 'Electromagnetic Pulse Device', 
+        description: 'Prototype EMP that caused the building-wide blackout.',
+        weight: 'Medium-weight',
+        type: 'Other'
+      },
+      { 
+        name: 'Liquid Nitrogen Canister', 
+        description: 'Lab equipment storing cryogenic samples, freezing cold.',
+        weight: 'Heavy-weight',
+        type: 'Other'
+      },
+      { 
+        name: 'Carbon Fiber Cable', 
+        description: 'Ultra-thin research equipment cable, incredibly strong.',
+        weight: 'Light-weight',
+        type: 'Other'
+      },
+      { 
+        name: 'Microscope Base', 
+        description: 'Heavy titanium base from electron microscope, sharp edges.',
+        weight: 'Heavy-weight',
+        type: 'Blunt'
+      },
+      { 
+        name: 'Smart Glass Shard', 
+        description: 'Fragment from shattered electrochromic window panel.',
+        weight: 'Light-weight',
+        type: 'Sharp'
+      }
     ],
     
     locations: [
-      { name: 'Lab', description: 'Quantum computing research facility with biometric access.' },
-      { name: 'Server Room', description: 'Climate-controlled room housing backup power and data systems.' },
-      { name: 'Penthouse', description: 'Residential floor with panoramic views and smart home integration.' },
-      { name: 'Garage', description: 'Underground parking with electric vehicle charging stations.' },
-      { name: 'Rooftop', description: 'Helipad and solar panel array on building\'s top floor.' }
+      { 
+        name: 'Lab', 
+        description: 'Quantum computing research facility with biometric access.',
+        setting: 'Indoors',
+        access: 'Restricted'
+      },
+      { 
+        name: 'Server Room', 
+        description: 'Climate-controlled room housing backup power and data systems.',
+        setting: 'Indoors',
+        access: 'Restricted'
+      },
+      { 
+        name: 'Penthouse', 
+        description: 'Residential floor with panoramic views and smart home integration.',
+        setting: 'Indoors',
+        access: 'Private'
+      },
+      { 
+        name: 'Garage', 
+        description: 'Underground parking with electric vehicle charging stations.',
+        setting: 'Indoors',
+        access: 'Public'
+      },
+      { 
+        name: 'Rooftop', 
+        description: 'Helipad and solar panel array on building\'s top floor.',
+        setting: 'Outdoors',
+        access: 'Restricted'
+      }
     ],
     
     clues: [
@@ -825,27 +1737,122 @@ export const puzzles: Puzzle[] = [
     backstory: 'International arms dealer Viktor Volkov was found dead in his private train car during an overnight journey through the Alps. Five passengers had access to his cabin. The train never stopped.',
     
     suspects: [
-      { name: 'Natasha Ivanova', bio: 'Volkov\'s former bodyguard turned rival, traveling under fake passport.' },
-      { name: 'Ambassador Chen Li', bio: 'Diplomat secretly negotiating weapons deal with Volkov.' },
-      { name: 'Dr. Heinrich Mueller', bio: 'Swiss banker managing Volkov\'s offshore accounts.' },
-      { name: 'Captain Maria Santos', bio: 'Interpol agent working undercover as train staff.' },
-      { name: 'Dmitri Federov', bio: 'Volkov\'s nephew and sole heir to the weapons empire.' }
+      { 
+        name: 'Natasha Ivanova', 
+        bio: 'Volkov\'s former bodyguard turned rival, traveling under fake passport.',
+        height: '5\'10"',
+        build: 'Muscular',
+        eyeColor: 'Gray eyes',
+        hairColor: 'Black hair',
+        handedness: 'Right-handed',
+        age: 'Mid-30s'
+      },
+      { 
+        name: 'Ambassador Chen Li', 
+        bio: 'Diplomat secretly negotiating weapons deal with Volkov.',
+        height: '5\'9"',
+        build: 'Average',
+        eyeColor: 'Brown eyes',
+        hairColor: 'Black hair',
+        handedness: 'Right-handed',
+        age: 'Early 50s'
+      },
+      { 
+        name: 'Dr. Heinrich Mueller', 
+        bio: 'Swiss banker managing Volkov\'s offshore accounts.',
+        height: '6\'1"',
+        build: 'Slim',
+        eyeColor: 'Blue eyes',
+        hairColor: 'Blonde hair',
+        handedness: 'Left-handed',
+        age: 'Late 40s'
+      },
+      { 
+        name: 'Captain Maria Santos', 
+        bio: 'Interpol agent working undercover as train staff.',
+        height: '5\'7"',
+        build: 'Athletic',
+        eyeColor: 'Brown eyes',
+        hairColor: 'Brown hair',
+        handedness: 'Right-handed',
+        age: 'Early 40s'
+      },
+      { 
+        name: 'Dmitri Federov', 
+        bio: 'Volkov\'s nephew and sole heir to the weapons empire.',
+        height: '5\'11"',
+        build: 'Average',
+        eyeColor: 'Brown eyes',
+        hairColor: 'Brown hair',
+        handedness: 'Right-handed',
+        age: 'Late 20s'
+      }
     ],
     
     weapons: [
-      { name: 'Poison Dart', description: 'Miniature dart coated with fast-acting neurotoxin, from blowgun.' },
-      { name: 'Train Cable', description: 'Emergency brake cable, 8 feet long, steel-reinforced.' },
-      { name: 'Ice Pick', description: 'Bar tool from the dining car, pointed and deadly.' },
-      { name: 'Crystal Ashtray', description: 'Heavy cut crystal from smoking lounge, sharp edges.' },
-      { name: 'Syringe', description: 'Medical supply from first aid kit, found empty.' }
+      { 
+        name: 'Poison Dart', 
+        description: 'Miniature dart coated with fast-acting neurotoxin, from blowgun.',
+        weight: 'Light-weight',
+        type: 'Poison'
+      },
+      { 
+        name: 'Train Cable', 
+        description: 'Emergency brake cable, 8 feet long, steel-reinforced.',
+        weight: 'Medium-weight',
+        type: 'Other'
+      },
+      { 
+        name: 'Ice Pick', 
+        description: 'Bar tool from the dining car, pointed and deadly.',
+        weight: 'Light-weight',
+        type: 'Sharp'
+      },
+      { 
+        name: 'Crystal Ashtray', 
+        description: 'Heavy cut crystal from smoking lounge, sharp edges.',
+        weight: 'Medium-weight',
+        type: 'Blunt'
+      },
+      { 
+        name: 'Syringe', 
+        description: 'Medical supply from first aid kit, found empty.',
+        weight: 'Light-weight',
+        type: 'Poison'
+      }
     ],
     
     locations: [
-      { name: 'Private Car', description: 'Volkov\'s luxury compartment with bulletproof windows.' },
-      { name: 'Dining Car', description: 'Restaurant car serving late-night meals and drinks.' },
-      { name: 'Observation Deck', description: 'Glass-domed car with panoramic Alpine views.' },
-      { name: 'Baggage Car', description: 'Cargo storage area with locked luggage compartments.' },
-      { name: 'Staff Quarters', description: 'Crew sleeping area restricted to train employees.' }
+      { 
+        name: 'Private Car', 
+        description: 'Volkov\'s luxury compartment with bulletproof windows.',
+        setting: 'Indoors',
+        access: 'Private'
+      },
+      { 
+        name: 'Dining Car', 
+        description: 'Restaurant car serving late-night meals and drinks.',
+        setting: 'Indoors',
+        access: 'Public'
+      },
+      { 
+        name: 'Observation Deck', 
+        description: 'Glass-domed car with panoramic Alpine views.',
+        setting: 'Mixed',
+        access: 'Public'
+      },
+      { 
+        name: 'Baggage Car', 
+        description: 'Cargo storage area with locked luggage compartments.',
+        setting: 'Indoors',
+        access: 'Restricted'
+      },
+      { 
+        name: 'Staff Quarters', 
+        description: 'Crew sleeping area restricted to train employees.',
+        setting: 'Indoors',
+        access: 'Restricted'
+      }
     ],
     
     clues: [
