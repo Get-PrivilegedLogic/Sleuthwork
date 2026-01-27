@@ -7,6 +7,9 @@ import StatementsSection from '../components/StatementsSection';
 import { puzzles } from '../data/puzzles';
 import { usePuzzleGrid } from '../hooks/usePuzzleGrid';
 import { useTimer } from '../hooks/useTimer';
+import SuspectsCard from '../components/SuspectsCard';
+import WeaponsCard from '../components/WeaponsCard';
+import LocationsCard from '../components/LocationsCard';
 
 export default function PuzzlePage() {
   const { puzzleId } = useParams<{ puzzleId: string }>();
@@ -237,75 +240,10 @@ export default function PuzzlePage() {
           </div>
         </CollapsibleSection>
 
-        {/* Collapsible Suspects */}
-       {/* Collapsible Suspects */}
-       <CollapsibleSection 
-          title="Suspects" 
-          titleColor="text-red-400" 
-          borderColor="border-red-400"
-          defaultOpen={true}
-        >
-          <div className="space-y-3 md:space-y-4">
-            {puzzle.suspects.map((suspect, idx) => (
-              <div key={idx} className="border-l-4 border-red-500 pl-3 md:pl-4">
-                <h3 className="text-lg md:text-xl font-semibold text-white mb-1">{suspect.name}</h3>
-                <p className="text-sm md:text-base text-gray-400 mb-2">{suspect.bio}</p>
-                <div className="flex flex-wrap gap-2 text-xs text-gray-500">
-                  <span className="bg-gray-800 px-2 py-1 rounded">{suspect.height}</span>
-                  <span className="bg-gray-800 px-2 py-1 rounded">{suspect.build}</span>
-                  <span className="bg-gray-800 px-2 py-1 rounded">{suspect.eyeColor}</span>
-                  <span className="bg-gray-800 px-2 py-1 rounded">{suspect.hairColor}</span>
-                  <span className="bg-gray-800 px-2 py-1 rounded">{suspect.handedness}</span>
-                  <span className="bg-gray-800 px-2 py-1 rounded">{suspect.age}</span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </CollapsibleSection>
-
-        {/* Collapsible Weapons */}
-        {/* Collapsible Weapons */}
-        <CollapsibleSection 
-          title="Weapons" 
-          titleColor="text-orange-400" 
-          borderColor="border-orange-400"
-          defaultOpen={true}
-        >
-          <div className="space-y-3 md:space-y-4">
-            {puzzle.weapons.map((weapon, idx) => (
-              <div key={idx} className="border-l-4 border-orange-500 pl-3 md:pl-4">
-                <h3 className="text-lg md:text-xl font-semibold text-white mb-1">{weapon.name}</h3>
-                <p className="text-sm md:text-base text-gray-400 mb-2">{weapon.description}</p>
-                <div className="flex flex-wrap gap-2 text-xs text-gray-500">
-                  <span className="bg-gray-800 px-2 py-1 rounded">{weapon.weight}</span>
-                  <span className="bg-gray-800 px-2 py-1 rounded">{weapon.type}</span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </CollapsibleSection>
-
-        {/* Collapsible Locations */}
-        {/* Collapsible Locations */}
-        <CollapsibleSection 
-          title="Locations" 
-          titleColor="text-blue-400" 
-          borderColor="border-blue-400"
-          defaultOpen={true}
-        >
-          <div className="space-y-3 md:space-y-4">
-            {puzzle.locations.map((location, idx) => (
-              <div key={idx} className="border-l-4 border-blue-500 pl-3 md:pl-4">
-                <h3 className="text-lg md:text-xl font-semibold text-white mb-1">{location.name}</h3>
-                <p className="text-sm md:text-base text-gray-400 mb-2">{location.description}</p>
-                <div className="flex flex-wrap gap-2 text-xs text-gray-500">
-                  <span className="bg-gray-800 px-2 py-1 rounded">{location.setting}</span>
-                  <span className="bg-gray-800 px-2 py-1 rounded">{location.access}</span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </CollapsibleSection>
+       {/* Card-Based Layout - Suspects, Weapons, Locations */}
+       <SuspectsCard suspects={puzzle.suspects} />
+        <WeaponsCard weapons={puzzle.weapons} />
+        <LocationsCard locations={puzzle.locations} />
 
         {/* Clues - ALWAYS VISIBLE, HIGHLIGHTED */}
         <div id="clues-section" className="bg-gradient-to-br from-green-900 to-green-800 p-4 md:p-6 rounded-lg mb-6 md:mb-8 border-2 border-green-500 shadow-lg shadow-green-900/50">

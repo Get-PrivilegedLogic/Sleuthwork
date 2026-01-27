@@ -17,7 +17,8 @@ export const puzzles: Puzzle[] = [
         eyeColor: 'Brown eyes',
         hairColor: 'Black hair',
         handedness: 'Right-handed',
-        age: 'Mid-30s'
+        age: 'Mid-30s',
+        icon: 'user-tie'
       },
       { 
         name: 'Marcus Webb', 
@@ -27,7 +28,8 @@ export const puzzles: Puzzle[] = [
         eyeColor: 'Blue eyes',
         hairColor: 'Gray hair',
         handedness: 'Left-handed',
-        age: 'Late 40s'
+        age: 'Late 40s',
+        icon: 'user-shield'
       },
       { 
         name: 'Diana Cross', 
@@ -37,7 +39,8 @@ export const puzzles: Puzzle[] = [
         eyeColor: 'Green eyes',
         hairColor: 'Blonde hair',
         handedness: 'Right-handed',
-        age: 'Early 40s'
+        age: 'Early 40s',
+        icon: 'user'
       }
     ],
     weapons: [
@@ -45,19 +48,22 @@ export const puzzles: Puzzle[] = [
         name: 'Letter Opener', 
         description: 'Silver antique from Victor\'s desk, recently sharpened.',
         weight: 'Light-weight',
-        type: 'Sharp'
+        type: 'Sharp',
+        icon: 'knife'
       },
       { 
         name: 'Candlestick', 
         description: 'Heavy brass candlestick from the mantle, 12 inches tall.',
         weight: 'Heavy-weight',
-        type: 'Blunt'
+        type: 'Blunt',
+        icon: 'lightbulb'
       },
       { 
         name: 'Poison', 
         description: 'Rat poison from the manor\'s storage room, fast-acting.',
         weight: 'Light-weight',
-        type: 'Poison'
+        type: 'Poison',
+        icon: 'skull'
       }
     ],
     locations: [
@@ -65,19 +71,22 @@ export const puzzles: Puzzle[] = [
         name: 'Study', 
         description: 'Victor\'s private study with locked door, key kept on his person.',
         setting: 'Indoors',
-        access: 'Private'
+        access: 'Private',
+        icon: 'book'
       },
       { 
         name: 'Library', 
         description: 'Large room adjacent to the study, connected by side door.',
         setting: 'Indoors',
-        access: 'Restricted'
+        access: 'Restricted',
+        icon: 'book'
       },
       { 
         name: 'Conservatory', 
         description: 'Glass-walled room at the back of the manor, recently renovated.',
         setting: 'Mixed',
-        access: 'Public'
+        access: 'Public',
+        icon: 'tree'
       }
     ],
     clues: [
@@ -127,7 +136,8 @@ export const puzzles: Puzzle[] = [
         eyeColor: 'Brown eyes',
         hairColor: 'Bald',
         handedness: 'Right-handed',
-        age: 'Early 50s'
+        age: 'Early 50s',
+        icon: 'user'
       },
       { 
         name: 'Sarah Kim', 
@@ -137,7 +147,8 @@ export const puzzles: Puzzle[] = [
         eyeColor: 'Dark brown eyes',
         hairColor: 'Black hair',
         handedness: 'Left-handed',
-        age: 'Late 20s'
+        age: 'Late 20s',
+        icon: 'user-graduate'
       },
       { 
         name: 'Robert Greene', 
@@ -147,7 +158,8 @@ export const puzzles: Puzzle[] = [
         eyeColor: 'Gray eyes',
         hairColor: 'Salt and pepper',
         handedness: 'Right-handed',
-        age: 'Mid-60s'
+        age: 'Mid-60s',
+        icon: 'user-tie'
       }
     ],
     weapons: [
@@ -155,19 +167,22 @@ export const puzzles: Puzzle[] = [
         name: 'Statue', 
         description: 'Heavy marble statue of Anubis, approximately 15 pounds.',
         weight: 'Heavy-weight',
-        type: 'Blunt'
+        type: 'Blunt',
+        icon: 'landmark'
       },
       { 
         name: 'Knife', 
         description: 'Ancient ceremonial dagger from the display case.',
         weight: 'Light-weight',
-        type: 'Sharp'
+        type: 'Sharp',
+        icon: 'knife'
       },
       { 
         name: 'Rope', 
         description: 'Velvet rope barrier from the hallway entrance.',
         weight: 'Light-weight',
-        type: 'Other'
+        type: 'Other',
+        icon: 'anchor'
       }
     ],
     locations: [
@@ -175,19 +190,22 @@ export const puzzles: Puzzle[] = [
         name: 'Egyptian Wing', 
         description: 'Main exhibit hall containing artifacts and display cases.',
         setting: 'Indoors',
-        access: 'Public'
+        access: 'Public',
+        icon: 'landmark'
       },
       { 
         name: 'Storage Room', 
         description: 'Climate-controlled room where valuable items are kept.',
         setting: 'Indoors',
-        access: 'Restricted'
+        access: 'Restricted',
+        icon: 'warehouse'
       },
       { 
         name: 'Office', 
         description: 'Helen\'s private office on the second floor of the museum.',
         setting: 'Indoors',
-        access: 'Private'
+        access: 'Private',
+        icon: 'briefcase'
       }
     ],
     clues: [
@@ -236,7 +254,8 @@ export const puzzles: Puzzle[] = [
         eyeColor: 'Hazel eyes',
         hairColor: 'Auburn hair',
         handedness: 'Right-handed',
-        age: 'Early 30s'
+        age: 'Early 30s',
+        icon: 'user'
       },
       { 
         name: 'David Chen', 
@@ -246,7 +265,8 @@ export const puzzles: Puzzle[] = [
         eyeColor: 'Brown eyes',
         hairColor: 'Black hair',
         handedness: 'Left-handed',
-        age: 'Mid-40s'
+        age: 'Mid-40s',
+        icon: 'user-tie'
       },
       { 
         name: 'Lisa Brown', 
@@ -256,7 +276,8 @@ export const puzzles: Puzzle[] = [
         eyeColor: 'Blue eyes',
         hairColor: 'Blonde hair',
         handedness: 'Right-handed',
-        age: 'Late 20s'
+        age: 'Late 20s',
+        icon: 'user'
       }
     ],
     weapons: [
@@ -264,19 +285,22 @@ export const puzzles: Puzzle[] = [
         name: 'Stage Weight', 
         description: 'Iron counterweight used for rigging, 20 pounds.',
         weight: 'Heavy-weight',
-        type: 'Blunt'
+        type: 'Blunt',
+        icon: 'dumbbell'
       },
       { 
         name: 'Prop Sword', 
         description: 'Metal stage sword with dulled blade but heavy hilt.',
         weight: 'Medium-weight',
-        type: 'Blunt'
+        type: 'Blunt',
+        icon: 'knife'
       },
       { 
         name: 'Cable', 
         description: 'Electrical cable from lighting equipment, 6 feet long.',
         weight: 'Light-weight',
-        type: 'Other'
+        type: 'Other',
+        icon: 'lightbulb'
       }
     ],
     locations: [
@@ -284,19 +308,22 @@ export const puzzles: Puzzle[] = [
         name: 'Backstage', 
         description: 'Narrow area behind the main stage with quick-change stations.',
         setting: 'Indoors',
-        access: 'Restricted'
+        access: 'Restricted',
+        icon: 'door-open'
       },
       { 
         name: 'Prop Room', 
         description: 'Locked room containing costumes and props.',
         setting: 'Indoors',
-        access: 'Restricted'
+        access: 'Restricted',
+        icon: 'warehouse'
       },
       { 
         name: 'Lighting Booth', 
         description: 'Elevated control booth overlooking the stage.',
         setting: 'Indoors',
-        access: 'Restricted'
+        access: 'Restricted',
+        icon: 'lightbulb'
       }
     ],
     clues: [
@@ -345,7 +372,8 @@ export const puzzles: Puzzle[] = [
         eyeColor: 'Dark brown eyes',
         hairColor: 'Black hair',
         handedness: 'Right-handed',
-        age: 'Early 30s'
+        age: 'Early 30s',
+        icon: 'user'
       },
       { 
         name: 'Kevin Wright', 
@@ -355,7 +383,8 @@ export const puzzles: Puzzle[] = [
         eyeColor: 'Blue eyes',
         hairColor: 'Brown hair',
         handedness: 'Right-handed',
-        age: 'Late 30s'
+        age: 'Late 30s',
+        icon: 'user-tie'
       },
       { 
         name: 'Nina Patel', 
@@ -365,7 +394,8 @@ export const puzzles: Puzzle[] = [
         eyeColor: 'Brown eyes',
         hairColor: 'Black hair',
         handedness: 'Left-handed',
-        age: 'Mid-20s'
+        age: 'Mid-20s',
+        icon: 'user'
       }
     ],
     weapons: [
@@ -373,19 +403,22 @@ export const puzzles: Puzzle[] = [
         name: 'Cleaver', 
         description: 'Professional kitchen cleaver, freshly sharpened.',
         weight: 'Medium-weight',
-        type: 'Sharp'
+        type: 'Sharp',
+        icon: 'knife'
       },
       { 
         name: 'Pan', 
         description: 'Cast iron skillet, 12 inches, very heavy.',
         weight: 'Heavy-weight',
-        type: 'Blunt'
+        type: 'Blunt',
+        icon: 'utensils'
       },
       { 
         name: 'Corkscrew', 
         description: 'Sommelier corkscrew with sharp spiral blade.',
         weight: 'Light-weight',
-        type: 'Sharp'
+        type: 'Sharp',
+        icon: 'wine-bottle'
       }
     ],
     locations: [
@@ -393,19 +426,22 @@ export const puzzles: Puzzle[] = [
         name: 'Freezer', 
         description: 'Large walk-in freezer at -10°F, door locks from outside.',
         setting: 'Indoors',
-        access: 'Restricted'
+        access: 'Restricted',
+        icon: 'warehouse'
       },
       { 
         name: 'Kitchen', 
         description: 'Main prep kitchen with all cooking equipment.',
         setting: 'Indoors',
-        access: 'Restricted'
+        access: 'Restricted',
+        icon: 'utensils'
       },
       { 
         name: 'Office', 
         description: 'Small back office where Antoine kept records and safe.',
         setting: 'Indoors',
-        access: 'Private'
+        access: 'Private',
+        icon: 'briefcase'
       }
     ],
     clues: [
@@ -454,7 +490,8 @@ export const puzzles: Puzzle[] = [
         eyeColor: 'Green eyes',
         hairColor: 'Red hair',
         handedness: 'Left-handed',
-        age: 'Mid-20s'
+        age: 'Mid-20s',
+        icon: 'user-graduate'
       },
       { 
         name: 'Catherine Lee', 
@@ -464,7 +501,8 @@ export const puzzles: Puzzle[] = [
         eyeColor: 'Brown eyes',
         hairColor: 'Black hair',
         handedness: 'Right-handed',
-        age: 'Early 40s'
+        age: 'Early 40s',
+        icon: 'user'
       },
       { 
         name: 'Frank Miller', 
@@ -474,7 +512,8 @@ export const puzzles: Puzzle[] = [
         eyeColor: 'Blue eyes',
         hairColor: 'Bald',
         handedness: 'Right-handed',
-        age: 'Late 50s'
+        age: 'Late 50s',
+        icon: 'user-shield'
       }
     ],
     weapons: [
@@ -482,19 +521,22 @@ export const puzzles: Puzzle[] = [
         name: 'Bookend', 
         description: 'Heavy brass bookend shaped like a lion, 8 pounds.',
         weight: 'Heavy-weight',
-        type: 'Blunt'
+        type: 'Blunt',
+        icon: 'book'
       },
       { 
         name: 'Letter Opener', 
         description: 'Ornate Victorian letter opener with sharp point.',
         weight: 'Light-weight',
-        type: 'Sharp'
+        type: 'Sharp',
+        icon: 'knife'
       },
       { 
         name: 'Scarf', 
         description: 'Silk scarf from the lost and found, 60 inches long.',
         weight: 'Light-weight',
-        type: 'Other'
+        type: 'Other',
+        icon: 'user'
       }
     ],
     locations: [
@@ -502,19 +544,22 @@ export const puzzles: Puzzle[] = [
         name: 'Vault', 
         description: 'Climate-controlled rare books vault with coded access.',
         setting: 'Indoors',
-        access: 'Restricted'
+        access: 'Restricted',
+        icon: 'warehouse'
       },
       { 
         name: 'Reading Room', 
         description: 'Quiet study area with large oak tables.',
         setting: 'Indoors',
-        access: 'Public'
+        access: 'Public',
+        icon: 'book'
       },
       { 
         name: 'Main Desk', 
         description: 'Central circulation desk near the library entrance.',
         setting: 'Indoors',
-        access: 'Public'
+        access: 'Public',
+        icon: 'briefcase'
       }
     ],
     clues: [
@@ -563,7 +608,8 @@ export const puzzles: Puzzle[] = [
         eyeColor: 'Brown eyes',
         hairColor: 'Blonde hair',
         handedness: 'Right-handed',
-        age: 'Late 20s'
+        age: 'Late 20s',
+        icon: 'user'
       },
       { 
         name: 'Tom Bradley', 
@@ -573,7 +619,8 @@ export const puzzles: Puzzle[] = [
         eyeColor: 'Blue eyes',
         hairColor: 'Gray hair',
         handedness: 'Right-handed',
-        age: 'Mid-50s'
+        age: 'Mid-50s',
+        icon: 'user-tie'
       },
       { 
         name: 'Rachel Kim', 
@@ -583,7 +630,8 @@ export const puzzles: Puzzle[] = [
         eyeColor: 'Dark brown eyes',
         hairColor: 'Black hair',
         handedness: 'Left-handed',
-        age: 'Early 30s'
+        age: 'Early 30s',
+        icon: 'user'
       }
     ],
     weapons: [
@@ -591,19 +639,22 @@ export const puzzles: Puzzle[] = [
         name: 'Dumbbell', 
         description: '45-pound hexagonal dumbbell from the weight rack.',
         weight: 'Heavy-weight',
-        type: 'Blunt'
+        type: 'Blunt',
+        icon: 'dumbbell'
       },
       { 
         name: 'Towel', 
         description: 'Thick cotton towel from the laundry bin.',
         weight: 'Light-weight',
-        type: 'Other'
+        type: 'Other',
+        icon: 'user'
       },
       { 
         name: 'Jump Rope', 
         description: 'Heavy-duty leather jump rope, 9 feet long.',
         weight: 'Light-weight',
-        type: 'Other'
+        type: 'Other',
+        icon: 'anchor'
       }
     ],
     locations: [
@@ -611,19 +662,22 @@ export const puzzles: Puzzle[] = [
         name: 'Sauna', 
         description: 'Traditional Finnish sauna, temperature set to 180°F.',
         setting: 'Indoors',
-        access: 'Public'
+        access: 'Public',
+        icon: 'hospital'
       },
       { 
         name: 'Weight Room', 
         description: 'Main training floor with free weights and machines.',
         setting: 'Indoors',
-        access: 'Public'
+        access: 'Public',
+        icon: 'dumbbell'
       },
       { 
         name: 'Yoga Studio', 
         description: 'Mirrored studio with mats and peaceful atmosphere.',
         setting: 'Indoors',
-        access: 'Restricted'
+        access: 'Restricted',
+        icon: 'couch'
       }
     ],
     clues: [
@@ -672,7 +726,8 @@ export const puzzles: Puzzle[] = [
         eyeColor: 'Hazel eyes',
         hairColor: 'Brown hair',
         handedness: 'Right-handed',
-        age: 'Late 20s'
+        age: 'Late 20s',
+        icon: 'user-tie'
       },
       { 
         name: 'Richard Torres', 
@@ -682,7 +737,8 @@ export const puzzles: Puzzle[] = [
         eyeColor: 'Brown eyes',
         hairColor: 'Black hair',
         handedness: 'Right-handed',
-        age: 'Early 40s'
+        age: 'Early 40s',
+        icon: 'user-tie'
       },
       { 
         name: 'Jennifer Wu', 
@@ -692,7 +748,8 @@ export const puzzles: Puzzle[] = [
         eyeColor: 'Dark brown eyes',
         hairColor: 'Black hair',
         handedness: 'Left-handed',
-        age: 'Mid-30s'
+        age: 'Mid-30s',
+        icon: 'user'
       },
       { 
         name: 'Michael Santos', 
@@ -702,7 +759,8 @@ export const puzzles: Puzzle[] = [
         eyeColor: 'Brown eyes',
         hairColor: 'Bald',
         handedness: 'Right-handed',
-        age: 'Late 30s'
+        age: 'Late 30s',
+        icon: 'user-shield'
       }
     ],
     weapons: [
@@ -710,25 +768,29 @@ export const puzzles: Puzzle[] = [
         name: 'Champagne Bottle', 
         description: 'Dom Perignon, 1.5L magnum, very heavy.',
         weight: 'Heavy-weight',
-        type: 'Blunt'
+        type: 'Blunt',
+        icon: 'wine-bottle'
       },
       { 
         name: 'Laptop Cord', 
         description: 'Power cable, 6 feet long, heavy-duty connector.',
         weight: 'Light-weight',
-        type: 'Other'
+        type: 'Other',
+        icon: 'lightbulb'
       },
       { 
         name: 'Ice Pick', 
         description: 'Stainless steel ice pick from the bar cart.',
         weight: 'Light-weight',
-        type: 'Sharp'
+        type: 'Sharp',
+        icon: 'knife'
       },
       { 
         name: 'Paperweight', 
         description: 'Crystal paperweight, 5 pounds, sharp edges.',
         weight: 'Medium-weight',
-        type: 'Blunt'
+        type: 'Blunt',
+        icon: 'dice'
       }
     ],
     locations: [
@@ -736,25 +798,29 @@ export const puzzles: Puzzle[] = [
         name: 'Penthouse', 
         description: 'Luxury suite on the 40th floor with private elevator.',
         setting: 'Indoors',
-        access: 'Private'
+        access: 'Private',
+        icon: 'hotel'
       },
       { 
         name: 'Spa', 
         description: 'Executive spa with sauna and massage rooms.',
         setting: 'Indoors',
-        access: 'Restricted'
+        access: 'Restricted',
+        icon: 'hospital'
       },
       { 
         name: 'Rooftop Bar', 
         description: 'Open-air bar overlooking the city skyline.',
         setting: 'Outdoors',
-        access: 'Public'
+        access: 'Public',
+        icon: 'glass-cheers'
       },
       { 
         name: 'Gym', 
         description: 'Private gym facility exclusive to penthouse guests.',
         setting: 'Indoors',
-        access: 'Restricted'
+        access: 'Restricted',
+        icon: 'dumbbell'
       }
     ],
     clues: [
@@ -810,7 +876,8 @@ export const puzzles: Puzzle[] = [
         eyeColor: 'Blue eyes',
         hairColor: 'Blonde hair',
         handedness: 'Right-handed',
-        age: 'Early 30s'
+        age: 'Early 30s',
+        icon: 'user'
       },
       { 
         name: 'Gregory Marsh', 
@@ -820,7 +887,8 @@ export const puzzles: Puzzle[] = [
         eyeColor: 'Brown eyes',
         hairColor: 'Brown hair',
         handedness: 'Right-handed',
-        age: 'Mid-40s'
+        age: 'Mid-40s',
+        icon: 'user-tie'
       },
       { 
         name: 'Sophie Laurent', 
@@ -830,7 +898,8 @@ export const puzzles: Puzzle[] = [
         eyeColor: 'Green eyes',
         hairColor: 'Red hair',
         handedness: 'Left-handed',
-        age: 'Late 30s'
+        age: 'Late 30s',
+        icon: 'user-tie'
       },
       { 
         name: 'Captain James Reed', 
@@ -840,7 +909,8 @@ export const puzzles: Puzzle[] = [
         eyeColor: 'Gray eyes',
         hairColor: 'White hair',
         handedness: 'Right-handed',
-        age: 'Late 50s'
+        age: 'Late 50s',
+        icon: 'user-shield'
       }
     ],
     weapons: [
@@ -848,25 +918,29 @@ export const puzzles: Puzzle[] = [
         name: 'Anchor', 
         description: 'Decorative brass anchor, 25 pounds.',
         weight: 'Heavy-weight',
-        type: 'Blunt'
+        type: 'Blunt',
+        icon: 'anchor'
       },
       { 
         name: 'Fishing Gaff', 
         description: 'Sharp metal hook on wooden pole, 4 feet long.',
         weight: 'Medium-weight',
-        type: 'Sharp'
+        type: 'Sharp',
+        icon: 'fish'
       },
       { 
         name: 'Champagne Flute', 
         description: 'Crystal glass with sharp broken stem.',
         weight: 'Light-weight',
-        type: 'Sharp'
+        type: 'Sharp',
+        icon: 'glass-cheers'
       },
       { 
         name: 'Rope', 
         description: 'Nautical rope used for mooring, 30 feet coiled.',
         weight: 'Light-weight',
-        type: 'Other'
+        type: 'Other',
+        icon: 'anchor'
       }
     ],
     locations: [
@@ -874,25 +948,29 @@ export const puzzles: Puzzle[] = [
         name: 'Main Deck', 
         description: 'Open deck with seating area and bar setup.',
         setting: 'Outdoors',
-        access: 'Public'
+        access: 'Public',
+        icon: 'ship'
       },
       { 
         name: 'Bridge', 
         description: 'Control room where captain operates the yacht.',
         setting: 'Indoors',
-        access: 'Restricted'
+        access: 'Restricted',
+        icon: 'briefcase'
       },
       { 
         name: 'Cabin', 
         description: 'Master cabin below deck with private quarters.',
         setting: 'Indoors',
-        access: 'Private'
+        access: 'Private',
+        icon: 'bed'
       },
       { 
         name: 'Stern', 
         description: 'Rear deck with fishing equipment and swim platform.',
         setting: 'Outdoors',
-        access: 'Public'
+        access: 'Public',
+        icon: 'ship'
       }
     ],
     clues: [
@@ -948,7 +1026,8 @@ export const puzzles: Puzzle[] = [
         eyeColor: 'Brown eyes',
         hairColor: 'Black hair',
         handedness: 'Right-handed',
-        age: 'Early 40s'
+        age: 'Early 40s',
+        icon: 'user-tie'
       },
       { 
         name: 'Rachel Green', 
@@ -958,7 +1037,8 @@ export const puzzles: Puzzle[] = [
         eyeColor: 'Green eyes',
         hairColor: 'Blonde hair',
         handedness: 'Right-handed',
-        age: 'Mid-30s'
+        age: 'Mid-30s',
+        icon: 'user-tie'
       },
       { 
         name: 'Kevin Tran', 
@@ -968,7 +1048,8 @@ export const puzzles: Puzzle[] = [
         eyeColor: 'Brown eyes',
         hairColor: 'Black hair',
         handedness: 'Left-handed',
-        age: 'Late 20s'
+        age: 'Late 20s',
+        icon: 'user'
       },
       { 
         name: 'Lisa Chen', 
@@ -978,7 +1059,8 @@ export const puzzles: Puzzle[] = [
         eyeColor: 'Dark brown eyes',
         hairColor: 'Black hair',
         handedness: 'Right-handed',
-        age: 'Early 30s'
+        age: 'Early 30s',
+        icon: 'user'
       }
     ],
     weapons: [
@@ -986,25 +1068,29 @@ export const puzzles: Puzzle[] = [
         name: 'Trophy', 
         description: 'Glass award from executive credenza, heavy base.',
         weight: 'Medium-weight',
-        type: 'Blunt'
+        type: 'Blunt',
+        icon: 'trophy'
       },
       { 
         name: 'Scissors', 
         description: 'Large office scissors from supply closet, 10 inches.',
         weight: 'Light-weight',
-        type: 'Sharp'
+        type: 'Sharp',
+        icon: 'scissors'
       },
       { 
         name: 'USB Cable', 
         description: 'Reinforced charging cable, 6 feet long.',
         weight: 'Light-weight',
-        type: 'Other'
+        type: 'Other',
+        icon: 'lightbulb'
       },
       { 
         name: 'Stapler', 
         description: 'Heavy-duty metal stapler, industrial size.',
         weight: 'Medium-weight',
-        type: 'Blunt'
+        type: 'Blunt',
+        icon: 'briefcase'
       }
     ],
     locations: [
@@ -1012,25 +1098,29 @@ export const puzzles: Puzzle[] = [
         name: 'Executive Suite', 
         description: 'Corner office with view, private entrance.',
         setting: 'Indoors',
-        access: 'Private'
+        access: 'Private',
+        icon: 'briefcase'
       },
       { 
         name: 'Server Room', 
         description: 'Climate-controlled IT room with backup systems.',
         setting: 'Indoors',
-        access: 'Restricted'
+        access: 'Restricted',
+        icon: 'warehouse'
       },
       { 
         name: 'Conference Room', 
         description: 'Large meeting room where the party was held.',
         setting: 'Indoors',
-        access: 'Public'
+        access: 'Public',
+        icon: 'building'
       },
       { 
         name: 'Break Room', 
         description: 'Staff kitchen area on the executive floor.',
         setting: 'Indoors',
-        access: 'Public'
+        access: 'Public',
+        icon: 'coffee'
       }
     ],
     clues: [
@@ -1086,7 +1176,8 @@ export const puzzles: Puzzle[] = [
         eyeColor: 'Blue eyes',
         hairColor: 'Blonde hair',
         handedness: 'Right-handed',
-        age: 'Late 30s'
+        age: 'Late 30s',
+        icon: 'user'
       },
       { 
         name: 'Arthur Ashford', 
@@ -1096,7 +1187,8 @@ export const puzzles: Puzzle[] = [
         eyeColor: 'Brown eyes',
         hairColor: 'Brown hair',
         handedness: 'Right-handed',
-        age: 'Mid-40s'
+        age: 'Mid-40s',
+        icon: 'user-tie'
       },
       { 
         name: 'Dr. Philip Hayes', 
@@ -1106,7 +1198,8 @@ export const puzzles: Puzzle[] = [
         eyeColor: 'Hazel eyes',
         hairColor: 'Gray hair',
         handedness: 'Left-handed',
-        age: 'Late 50s'
+        age: 'Late 50s',
+        icon: 'user-nurse'
       },
       { 
         name: 'Margaret Price', 
@@ -1116,7 +1209,8 @@ export const puzzles: Puzzle[] = [
         eyeColor: 'Brown eyes',
         hairColor: 'White hair',
         handedness: 'Right-handed',
-        age: 'Early 60s'
+        age: 'Early 60s',
+        icon: 'user'
       }
     ],
     weapons: [
@@ -1124,25 +1218,29 @@ export const puzzles: Puzzle[] = [
         name: 'Fireplace Poker', 
         description: 'Heavy iron poker from the study fireplace.',
         weight: 'Heavy-weight',
-        type: 'Blunt'
+        type: 'Blunt',
+        icon: 'hammer'
       },
       { 
         name: 'Letter Opener', 
         description: 'Victorian silver letter opener with 6-inch blade.',
         weight: 'Light-weight',
-        type: 'Sharp'
+        type: 'Sharp',
+        icon: 'knife'
       },
       { 
         name: 'Candlestick', 
         description: 'Solid brass candlestick, 14 inches tall, ornate.',
         weight: 'Medium-weight',
-        type: 'Blunt'
+        type: 'Blunt',
+        icon: 'lightbulb'
       },
       { 
         name: 'Rope', 
         description: 'Silk curtain tie from the drawing room, 8 feet long.',
         weight: 'Light-weight',
-        type: 'Other'
+        type: 'Other',
+        icon: 'anchor'
       }
     ],
     locations: [
@@ -1150,25 +1248,29 @@ export const puzzles: Puzzle[] = [
         name: 'Study', 
         description: 'Wood-paneled room with locked desk and fireplace.',
         setting: 'Indoors',
-        access: 'Private'
+        access: 'Private',
+        icon: 'book'
       },
       { 
         name: 'Drawing Room', 
         description: 'Formal sitting room with piano and portraits.',
         setting: 'Indoors',
-        access: 'Public'
+        access: 'Public',
+        icon: 'couch'
       },
       { 
         name: 'Kitchen', 
         description: 'Large servants\' kitchen in the basement level.',
         setting: 'Indoors',
-        access: 'Restricted'
+        access: 'Restricted',
+        icon: 'utensils'
       },
       { 
         name: 'Conservatory', 
         description: 'Glass-enclosed garden room with tropical plants.',
         setting: 'Mixed',
-        access: 'Public'
+        access: 'Public',
+        icon: 'tree'
       }
     ],
     clues: [
@@ -1227,7 +1329,8 @@ export const puzzles: Puzzle[] = [
         eyeColor: 'Gray eyes',
         hairColor: 'Black hair',
         handedness: 'Right-handed',
-        age: 'Late 30s'
+        age: 'Late 30s',
+        icon: 'user-secret'
       },
       { 
         name: 'Elena Petrova', 
@@ -1237,7 +1340,8 @@ export const puzzles: Puzzle[] = [
         eyeColor: 'Green eyes',
         hairColor: 'Red hair',
         handedness: 'Right-handed',
-        age: 'Mid-30s'
+        age: 'Mid-30s',
+        icon: 'user-shield'
       },
       { 
         name: 'Marcus DeVille', 
@@ -1247,7 +1351,8 @@ export const puzzles: Puzzle[] = [
         eyeColor: 'Brown eyes',
         hairColor: 'Brown hair',
         handedness: 'Left-handed',
-        age: 'Early 50s'
+        age: 'Early 50s',
+        icon: 'user-tie'
       },
       { 
         name: 'Sophia Romano', 
@@ -1257,7 +1362,8 @@ export const puzzles: Puzzle[] = [
         eyeColor: 'Brown eyes',
         hairColor: 'Black hair',
         handedness: 'Right-handed',
-        age: 'Late 40s'
+        age: 'Late 40s',
+        icon: 'user'
       }
     ],
     weapons: [
@@ -1265,25 +1371,29 @@ export const puzzles: Puzzle[] = [
         name: 'Poker Chip Rack', 
         description: 'Heavy acrylic chip carrier, 10 pounds when full.',
         weight: 'Heavy-weight',
-        type: 'Blunt'
+        type: 'Blunt',
+        icon: 'chess'
       },
       { 
         name: 'Crystal Decanter', 
         description: 'Lead crystal whiskey decanter, expensive and heavy.',
         weight: 'Heavy-weight',
-        type: 'Blunt'
+        type: 'Blunt',
+        icon: 'wine-bottle'
       },
       { 
         name: 'Tie', 
         description: 'Designer silk necktie, 58 inches long.',
         weight: 'Light-weight',
-        type: 'Other'
+        type: 'Other',
+        icon: 'user'
       },
       { 
         name: 'Dice', 
         description: 'Oversized novelty dice made of solid brass, 3 inches per side.',
         weight: 'Medium-weight',
-        type: 'Blunt'
+        type: 'Blunt',
+        icon: 'dice'
       }
     ],
     locations: [
@@ -1291,25 +1401,29 @@ export const puzzles: Puzzle[] = [
         name: 'High-Roller Suite', 
         description: 'Private room for big-stakes poker games.',
         setting: 'Indoors',
-        access: 'Private'
+        access: 'Private',
+        icon: 'chess'
       },
       { 
         name: 'Security Office', 
         description: 'Monitoring room with live camera feeds.',
         setting: 'Indoors',
-        access: 'Restricted'
+        access: 'Restricted',
+        icon: 'warehouse'
       },
       { 
         name: 'Bar', 
         description: 'Exclusive VIP bar on the gaming floor.',
         setting: 'Indoors',
-        access: 'Public'
+        access: 'Public',
+        icon: 'glass-cheers'
       },
       { 
         name: 'Vault', 
         description: 'Secure room where cash and chips are stored.',
         setting: 'Indoors',
-        access: 'Restricted'
+        access: 'Restricted',
+        icon: 'key'
       }
     ],
     clues: [
@@ -1369,7 +1483,8 @@ export const puzzles: Puzzle[] = [
         eyeColor: 'Dark brown eyes',
         hairColor: 'Black hair',
         handedness: 'Right-handed',
-        age: 'Early 40s'
+        age: 'Early 40s',
+        icon: 'user-shield'
       },
       { 
         name: 'Detective Nikolas Voss', 
@@ -1379,7 +1494,8 @@ export const puzzles: Puzzle[] = [
         eyeColor: 'Blue eyes',
         hairColor: 'Blonde hair',
         handedness: 'Left-handed',
-        age: 'Mid-30s'
+        age: 'Mid-30s',
+        icon: 'user-secret'
       },
       { 
         name: 'Agent Sophia Romano', 
@@ -1389,7 +1505,8 @@ export const puzzles: Puzzle[] = [
         eyeColor: 'Green eyes',
         hairColor: 'Brown hair',
         handedness: 'Right-handed',
-        age: 'Late 30s'
+        age: 'Late 30s',
+        icon: 'user-secret'
       },
       { 
         name: 'Professor Marcus Hyde', 
@@ -1399,7 +1516,8 @@ export const puzzles: Puzzle[] = [
         eyeColor: 'Hazel eyes',
         hairColor: 'Gray hair',
         handedness: 'Right-handed',
-        age: 'Late 50s'
+        age: 'Late 50s',
+        icon: 'user-graduate'
       },
       { 
         name: 'Captain Elena Frost', 
@@ -1409,7 +1527,8 @@ export const puzzles: Puzzle[] = [
         eyeColor: 'Brown eyes',
         hairColor: 'White hair',
         handedness: 'Left-handed',
-        age: 'Early 60s'
+        age: 'Early 60s',
+        icon: 'user-shield'
       }
     ],
     
@@ -1418,31 +1537,36 @@ export const puzzles: Puzzle[] = [
         name: 'Antique Syringe', 
         description: 'Victorian-era medical instrument containing traces of aconite poison.',
         weight: 'Light-weight',
-        type: 'Poison'
+        type: 'Poison',
+        icon: 'syringe'
       },
       { 
         name: 'Crystal Decanter', 
         description: 'Heavy lead crystal containing aged scotch, found shattered.',
         weight: 'Heavy-weight',
-        type: 'Blunt'
+        type: 'Blunt',
+        icon: 'wine-bottle'
       },
       { 
         name: 'Fencing Foil', 
         description: 'Competition-grade épée with unusually sharp point, unbuttoned.',
         weight: 'Light-weight',
-        type: 'Sharp'
+        type: 'Sharp',
+        icon: 'knife'
       },
       { 
         name: 'Marble Bust', 
         description: 'Sculpture of Sherlock Holmes, surprisingly heavy, chipped base.',
         weight: 'Heavy-weight',
-        type: 'Blunt'
+        type: 'Blunt',
+        icon: 'landmark'
       },
       { 
         name: 'Silk Garrote', 
         description: 'Custom-made strangling wire disguised as decorative cord.',
         weight: 'Light-weight',
-        type: 'Other'
+        type: 'Other',
+        icon: 'anchor'
       }
     ],
     
@@ -1451,31 +1575,36 @@ export const puzzles: Puzzle[] = [
         name: 'Library', 
         description: 'Three-story room with rolling ladder, rare book collection behind glass.',
         setting: 'Indoors',
-        access: 'Private'
+        access: 'Private',
+        icon: 'book'
       },
       { 
         name: 'Billiard Room', 
         description: 'Victorian gaming room with full-size table and wall-mounted cue rack.',
         setting: 'Indoors',
-        access: 'Public'
+        access: 'Public',
+        icon: 'chess'
       },
       { 
         name: 'Wine Cellar', 
         description: 'Temperature-controlled basement vault, keypad access, hundreds of bottles.',
         setting: 'Indoors',
-        access: 'Restricted'
+        access: 'Restricted',
+        icon: 'wine-bottle'
       },
       { 
         name: 'Conservatory', 
         description: 'Glass-enclosed garden with exotic plants and koi pond.',
         setting: 'Mixed',
-        access: 'Public'
+        access: 'Public',
+        icon: 'tree'
       },
       { 
         name: 'Trophy Room', 
         description: 'Display of Lord Blackwood\'s case memorabilia and awards.',
         setting: 'Indoors',
-        access: 'Public'
+        access: 'Public',
+        icon: 'trophy'
       }
     ],
     
@@ -1557,7 +1686,8 @@ export const puzzles: Puzzle[] = [
         eyeColor: 'Dark brown eyes',
         hairColor: 'Black hair',
         handedness: 'Right-handed',
-        age: 'Mid-30s'
+        age: 'Mid-30s',
+        icon: 'user-graduate'
       },
       { 
         name: 'Marcus Kane', 
@@ -1567,7 +1697,8 @@ export const puzzles: Puzzle[] = [
         eyeColor: 'Brown eyes',
         hairColor: 'Bald',
         handedness: 'Right-handed',
-        age: 'Early 40s'
+        age: 'Early 40s',
+        icon: 'user-shield'
       },
       { 
         name: 'Isabella Torres', 
@@ -1577,7 +1708,8 @@ export const puzzles: Puzzle[] = [
         eyeColor: 'Hazel eyes',
         hairColor: 'Brown hair',
         handedness: 'Left-handed',
-        age: 'Late 20s'
+        age: 'Late 20s',
+        icon: 'user-tie'
       },
       { 
         name: 'Professor James Wei', 
@@ -1587,7 +1719,8 @@ export const puzzles: Puzzle[] = [
         eyeColor: 'Brown eyes',
         hairColor: 'Black hair',
         handedness: 'Right-handed',
-        age: 'Early 50s'
+        age: 'Early 50s',
+        icon: 'user-graduate'
       },
       { 
         name: 'Alexandra Park', 
@@ -1597,7 +1730,8 @@ export const puzzles: Puzzle[] = [
         eyeColor: 'Blue eyes',
         hairColor: 'Blonde hair',
         handedness: 'Right-handed',
-        age: 'Late 30s'
+        age: 'Late 30s',
+        icon: 'user'
       }
     ],
     
@@ -1606,31 +1740,36 @@ export const puzzles: Puzzle[] = [
         name: 'Electromagnetic Pulse Device', 
         description: 'Prototype EMP that caused the building-wide blackout.',
         weight: 'Medium-weight',
-        type: 'Other'
+        type: 'Other',
+        icon: 'bomb'
       },
       { 
         name: 'Liquid Nitrogen Canister', 
         description: 'Lab equipment storing cryogenic samples, freezing cold.',
         weight: 'Heavy-weight',
-        type: 'Other'
+        type: 'Other',
+        icon: 'flask'
       },
       { 
         name: 'Carbon Fiber Cable', 
         description: 'Ultra-thin research equipment cable, incredibly strong.',
         weight: 'Light-weight',
-        type: 'Other'
+        type: 'Other',
+        icon: 'lightbulb'
       },
       { 
         name: 'Microscope Base', 
         description: 'Heavy titanium base from electron microscope, sharp edges.',
         weight: 'Heavy-weight',
-        type: 'Blunt'
+        type: 'Blunt',
+        icon: 'hammer'
       },
       { 
         name: 'Smart Glass Shard', 
         description: 'Fragment from shattered electrochromic window panel.',
         weight: 'Light-weight',
-        type: 'Sharp'
+        type: 'Sharp',
+        icon: 'knife'
       }
     ],
     
@@ -1639,31 +1778,36 @@ export const puzzles: Puzzle[] = [
         name: 'Lab', 
         description: 'Quantum computing research facility with biometric access.',
         setting: 'Indoors',
-        access: 'Restricted'
+        access: 'Restricted',
+        icon: 'flask'
       },
       { 
         name: 'Server Room', 
         description: 'Climate-controlled room housing backup power and data systems.',
         setting: 'Indoors',
-        access: 'Restricted'
+        access: 'Restricted',
+        icon: 'warehouse'
       },
       { 
         name: 'Penthouse', 
         description: 'Residential floor with panoramic views and smart home integration.',
         setting: 'Indoors',
-        access: 'Private'
+        access: 'Private',
+        icon: 'building'
       },
       { 
         name: 'Garage', 
         description: 'Underground parking with electric vehicle charging stations.',
         setting: 'Indoors',
-        access: 'Public'
+        access: 'Public',
+        icon: 'car'
       },
       { 
         name: 'Rooftop', 
         description: 'Helipad and solar panel array on building\'s top floor.',
         setting: 'Outdoors',
-        access: 'Restricted'
+        access: 'Restricted',
+        icon: 'plane'
       }
     ],
     
@@ -1745,7 +1889,8 @@ export const puzzles: Puzzle[] = [
         eyeColor: 'Gray eyes',
         hairColor: 'Black hair',
         handedness: 'Right-handed',
-        age: 'Mid-30s'
+        age: 'Mid-30s',
+        icon: 'user-shield'
       },
       { 
         name: 'Ambassador Chen Li', 
@@ -1755,7 +1900,8 @@ export const puzzles: Puzzle[] = [
         eyeColor: 'Brown eyes',
         hairColor: 'Black hair',
         handedness: 'Right-handed',
-        age: 'Early 50s'
+        age: 'Early 50s',
+        icon: 'user-tie'
       },
       { 
         name: 'Dr. Heinrich Mueller', 
@@ -1765,7 +1911,8 @@ export const puzzles: Puzzle[] = [
         eyeColor: 'Blue eyes',
         hairColor: 'Blonde hair',
         handedness: 'Left-handed',
-        age: 'Late 40s'
+        age: 'Late 40s',
+        icon: 'user-tie'
       },
       { 
         name: 'Captain Maria Santos', 
@@ -1775,7 +1922,8 @@ export const puzzles: Puzzle[] = [
         eyeColor: 'Brown eyes',
         hairColor: 'Brown hair',
         handedness: 'Right-handed',
-        age: 'Early 40s'
+        age: 'Early 40s',
+        icon: 'user-secret'
       },
       { 
         name: 'Dmitri Federov', 
@@ -1785,7 +1933,8 @@ export const puzzles: Puzzle[] = [
         eyeColor: 'Brown eyes',
         hairColor: 'Brown hair',
         handedness: 'Right-handed',
-        age: 'Late 20s'
+        age: 'Late 20s',
+        icon: 'user'
       }
     ],
     
@@ -1794,31 +1943,36 @@ export const puzzles: Puzzle[] = [
         name: 'Poison Dart', 
         description: 'Miniature dart coated with fast-acting neurotoxin, from blowgun.',
         weight: 'Light-weight',
-        type: 'Poison'
+        type: 'Poison',
+        icon: 'syringe'
       },
       { 
         name: 'Train Cable', 
         description: 'Emergency brake cable, 8 feet long, steel-reinforced.',
         weight: 'Medium-weight',
-        type: 'Other'
+        type: 'Other',
+        icon: 'anchor'
       },
       { 
         name: 'Ice Pick', 
         description: 'Bar tool from the dining car, pointed and deadly.',
         weight: 'Light-weight',
-        type: 'Sharp'
+        type: 'Sharp',
+        icon: 'knife'
       },
       { 
         name: 'Crystal Ashtray', 
         description: 'Heavy cut crystal from smoking lounge, sharp edges.',
         weight: 'Medium-weight',
-        type: 'Blunt'
+        type: 'Blunt',
+        icon: 'glass-cheers'
       },
       { 
         name: 'Syringe', 
         description: 'Medical supply from first aid kit, found empty.',
         weight: 'Light-weight',
-        type: 'Poison'
+        type: 'Poison',
+        icon: 'syringe'
       }
     ],
     
@@ -1827,31 +1981,36 @@ export const puzzles: Puzzle[] = [
         name: 'Private Car', 
         description: 'Volkov\'s luxury compartment with bulletproof windows.',
         setting: 'Indoors',
-        access: 'Private'
+        access: 'Private',
+        icon: 'bed'
       },
       { 
         name: 'Dining Car', 
         description: 'Restaurant car serving late-night meals and drinks.',
         setting: 'Indoors',
-        access: 'Public'
+        access: 'Public',
+        icon: 'utensils'
       },
       { 
         name: 'Observation Deck', 
         description: 'Glass-domed car with panoramic Alpine views.',
         setting: 'Mixed',
-        access: 'Public'
+        access: 'Public',
+        icon: 'train'
       },
       { 
         name: 'Baggage Car', 
         description: 'Cargo storage area with locked luggage compartments.',
         setting: 'Indoors',
-        access: 'Restricted'
+        access: 'Restricted',
+        icon: 'warehouse'
       },
       { 
         name: 'Staff Quarters', 
         description: 'Crew sleeping area restricted to train employees.',
         setting: 'Indoors',
-        access: 'Restricted'
+        access: 'Restricted',
+        icon: 'door-open'
       }
     ],
     

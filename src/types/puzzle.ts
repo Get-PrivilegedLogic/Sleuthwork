@@ -11,6 +11,7 @@ export interface Suspect {
   hairColor: string;
   handedness: string;
   age: string;
+  icon: string; // NEW: Font Awesome icon name
 }
 
 export interface Weapon {
@@ -18,6 +19,7 @@ export interface Weapon {
   description: string;
   weight: string;
   type: string;
+  icon: string; // NEW: Font Awesome icon name
 }
 
 export interface Location {
@@ -25,6 +27,7 @@ export interface Location {
   description: string;
   setting: string;
   access: string;
+  icon: string; // NEW: Font Awesome icon name
 }
 
 export interface Statement {
