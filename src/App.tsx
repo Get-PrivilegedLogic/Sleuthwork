@@ -9,7 +9,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/puzzles" element={<PuzzleArchive />} />
-        <Route path="/puzzle/:puzzleId" element={<PuzzlePage />} />
+        <Route path="/puzzle/:id" element={<PuzzlePage />} />
       </Routes>
     </Router>
   );

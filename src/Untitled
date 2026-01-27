@@ -1,0 +1,3 @@
+import { puzzles } from './data/puzzles';
+console.log('Puzzles loaded:', puzzles.length);
+console.log('First puzzle:', puzzles[0]);
