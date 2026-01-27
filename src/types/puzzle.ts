@@ -17,6 +17,11 @@ export interface Location {
   description: string;
 }
 
+export interface Statement {
+  suspect: string;
+  claim: string;
+}
+
 export interface Puzzle {
   id: string;
   title: string;
@@ -28,6 +33,7 @@ export interface Puzzle {
   locations: Location[];
   clues: string[];
   hints: string[];
+  statements: Statement[];
   solution: {
     suspect: string;
     weapon: string;

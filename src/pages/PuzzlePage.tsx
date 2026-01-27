@@ -3,6 +3,7 @@ import { Link, useParams, useNavigate } from 'react-router-dom';
 import PuzzleGrid from '../components/PuzzleGrid';
 import SolutionForm from '../components/SolutionForm';
 import CollapsibleSection from '../components/CollapsibleSection';
+import StatementsSection from '../components/StatementsSection';
 import { puzzles } from '../data/puzzles';
 import { usePuzzleGrid } from '../hooks/usePuzzleGrid';
 import { useTimer } from '../hooks/useTimer';
@@ -302,7 +303,10 @@ export default function PuzzlePage() {
             ))}
           </ul>
         </div>
-
+        {/* Statements Section */}
+        {puzzle.statements && puzzle.statements.length > 0 && (
+          <StatementsSection statements={puzzle.statements} />
+        )}
         {/* Hints Section */}
         {hintsUsed > 0 && (
           <div id="hints-section" className="bg-gradient-to-br from-yellow-900 to-yellow-800 border-2 border-yellow-500 p-4 md:p-6 rounded-lg mb-6 md:mb-8 animate-fadeIn shadow-lg shadow-yellow-900/50">

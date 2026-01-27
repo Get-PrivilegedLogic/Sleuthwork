@@ -31,6 +31,20 @@ export const puzzles: Puzzle[] = [
       'Diana Cross had access to the storage room where the poison was kept.',
       'The person in the Study at the time of death was not Marcus Webb.'
     ],
+    statements: [
+      {
+        suspect: 'Alice Chen',
+        claim: 'I arrived late because of traffic, but I was on stage giving my presentation during the time Victor must have died.'
+      },
+      {
+        suspect: 'Marcus Webb',
+        claim: 'Yes, I was fired, but I moved on. I was in the Conservatory smoking when it happened - two people saw me there.'
+      },
+      {
+        suspect: 'Diana Cross',
+        claim: 'We argued earlier about the divorce settlement, but I left him alive. I needed time to think, so I went to the storage room to cool off.'
+      }
+    ],
     hints: [
       'Consider where each person was during the time of the murder.',
       'The murder weapon\'s location tells you where the killer went after the crime.',
@@ -70,6 +84,20 @@ export const puzzles: Puzzle[] = [
       'Robert left the museum at 9:30 PM according to security logs.',
       'The killer was in the Egyptian Wing during the time of death.'
     ],
+    statements: [
+      {
+        suspect: 'James Porter',
+        claim: 'I was cleaning the basement all evening. I came upstairs around 11 and found Dr. Moore\'s body - it was horrible.'
+      },
+      {
+        suspect: 'Sarah Kim',
+        claim: 'I was doing inventory in the Storage Room until about 10:30. I saw Helen was still in her office when I left for the night.'
+      },
+      {
+        suspect: 'Robert Greene',
+        claim: 'Helen and I discussed a potential acquisition at 9 PM. Our meeting went well, and I left the museum at 9:30 as the logs show.'
+      }
+    ],
     hints: [
       'Check each person\'s whereabouts during the murder window.',
       'Who had opportunity to be in the Egyptian Wing at the right time?',
@@ -107,6 +135,20 @@ export const puzzles: Puzzle[] = [
       'David was operating lights from the Lighting Booth during intermission.',
       'Lisa was seen in Backstage at 8:20 PM by two witnesses.',
       'The murder did not take place in the Lighting Booth.'
+    ],
+    statements: [
+      {
+        suspect: 'Emma Stone',
+        claim: 'Thomas and I had our differences, but I was performing on stage. I barely had time for a costume change during intermission.'
+      },
+      {
+        suspect: 'David Chen',
+        claim: 'I was in the Lighting Booth the entire intermission managing the spotlight cues. I never left my post.'
+      },
+      {
+        suspect: 'Lisa Brown',
+        claim: 'I was backstage helping with quick changes. Several people saw me there during intermission.'
+      }
     ],
     hints: [
       'Who had both the opportunity and access to Backstage during intermission?',
@@ -146,6 +188,20 @@ export const puzzles: Puzzle[] = [
       'Nina finished her shift and left the restaurant at 10:45 PM.',
       'The killer was in the Freezer with Antoine at the time of death.'
     ],
+    statements: [
+      {
+        suspect: 'Maria Santos',
+        claim: 'I was disappointed about not getting promoted, but I stayed late cleaning the kitchen like I always do. I was there until nearly midnight.'
+      },
+      {
+        suspect: 'Kevin Wright',
+        claim: 'I was in the office doing the books from 10:30 to 11:30. After that I went home - I have the alarm system logs to prove when I left.'
+      },
+      {
+        suspect: 'Nina Patel',
+        claim: 'Yes, Antoine docked my tips unfairly, but I just wanted to go home. I clocked out at 10:45 and left immediately.'
+      }
+    ],
     hints: [
       'Consider who was still at the restaurant during the murder window.',
       'Where was the murder weapon found, and what does that tell you?',
@@ -184,6 +240,20 @@ export const puzzles: Puzzle[] = [
       'Frank was doing his rounds of the parking lot from 7 PM to 7:30 PM.',
       'The murder took place in the Vault.'
     ],
+    statements: [
+      {
+        suspect: 'Peter Walsh',
+        claim: 'I was in the Reading Room all evening working on my thesis. Several other students can confirm I was there the whole time.'
+      },
+      {
+        suspect: 'Catherine Lee',
+        claim: 'Margaret asked me to open the vault so she could retrieve some documents. I let her in around 7 PM and went back to the main desk.'
+      },
+      {
+        suspect: 'Frank Miller',
+        claim: 'I was outside checking the parking lot during my rounds. I do the same route every night - takes about 30 minutes.'
+      }
+    ],
     hints: [
       'Who had access to the Vault and opportunity during the murder time?',
       'Where the weapon ended up tells you the killer\'s path.',
@@ -221,6 +291,20 @@ export const puzzles: Puzzle[] = [
       'Tom\'s key card shows he entered at 6 AM, not in the evening.',
       'Rachel was teaching a private class until 8:45 PM.',
       'The murder occurred in the Sauna.'
+    ],
+    statements: [
+      {
+        suspect: 'Jessica Hunt',
+        claim: 'I came in for a late workout after my regular training session. The gym was empty when I arrived around 9:15.'
+      },
+      {
+        suspect: 'Tom Bradley',
+        claim: 'I only train in the mornings before work. I wasn\'t at the gym that evening - you can check the key card logs.'
+      },
+      {
+        suspect: 'Rachel Kim',
+        claim: 'I was teaching a private yoga session that ended at 8:45. After that I went straight home, I was exhausted.'
+      }
     ],
     hints: [
       'Check the security timestamps carefully.',
@@ -264,6 +348,24 @@ export const puzzles: Puzzle[] = [
       'Michael took a break and was in the lobby from 10 PM to 10:45 PM.',
       'The murder did not occur in the Spa or Rooftop Bar.',
       'The killer was in the Penthouse at the time of death.'
+    ],
+    statements: [
+      {
+        suspect: 'Amanda Cole',
+        claim: 'I finished my work and left at 9 PM. The valet gave me my car - I have the timestamp on my parking receipt.'
+      },
+      {
+        suspect: 'Richard Torres',
+        claim: 'Steven and I are competitors, but I was at the Rooftop Bar having drinks with colleagues all evening. The bartender can verify.'
+      },
+      {
+        suspect: 'Jennifer Wu',
+        claim: 'I was helping a guest in the Spa with their room amenities around 10:30. Hotel protocol requires me to log every guest interaction.'
+      },
+      {
+        suspect: 'Michael Santos',
+        claim: 'I took my scheduled break at 10 PM. I was in the lobby grabbing coffee and checking my phone. Security cameras will show me there.'
+      }
     ],
     hints: [
       'Amanda left before the murder - she\'s eliminated.',
@@ -309,6 +411,24 @@ export const puzzles: Puzzle[] = [
       'The murder occurred in the Cabin.',
       'Victoria was not in the Cabin at the time of death.'
     ],
+    statements: [
+      {
+        suspect: 'Victoria Winters',
+        claim: 'Gregory and I were on the Main Deck enjoying the sunset together. We were discussing the business when we heard the commotion.'
+      },
+      {
+        suspect: 'Gregory Marsh',
+        claim: 'Victoria and I were together on deck until I went to the Stern for a cigarette around 7:30. Beautiful evening, terrible end.'
+      },
+      {
+        suspect: 'Sophie Laurent',
+        claim: 'Charles asked me to review some estate documents in his cabin. I was down there working until about 7:15, then went up to get fresh air.'
+      },
+      {
+        suspect: 'Captain James Reed',
+        claim: 'I was at the helm the entire cruise. You can\'t leave the Bridge when you\'re navigating - it\'s basic seamanship.'
+      }
+    ],
     hints: [
       'Victoria and Gregory were together - they alibi each other.',
       'Captain Reed was busy piloting - could he have left the Bridge?',
@@ -352,6 +472,24 @@ export const puzzles: Puzzle[] = [
       'Lisa was setting up food in the Break Room at 8:20 PM.',
       'The murder took place in the Executive Suite.',
       'David was not in the Executive Suite during the murder.'
+    ],
+    statements: [
+      {
+        suspect: 'David Park',
+        claim: 'Those embezzlement accusations are false. I was giving the year-end financial update during the party - everyone saw me present.'
+      },
+      {
+        suspect: 'Rachel Green',
+        claim: 'Jennifer and I had our differences professionally, but I was networking at the party. I need witnesses to speak up if I want her job now.'
+      },
+      {
+        suspect: 'Kevin Tran',
+        claim: 'I was stuck in the Server Room dealing with a critical system update. Terrible timing, but the servers don\'t care about parties.'
+      },
+      {
+        suspect: 'Lisa Chen',
+        claim: 'I spent the whole evening running between the Break Room and the Conference Room making sure everything was perfect. So much work!'
+      }
     ],
     hints: [
       'David was giving a speech - he has witnesses.',
@@ -399,6 +537,24 @@ export const puzzles: Puzzle[] = [
       'Charlotte was not in the Study when the murder occurred.',
       'Arthur did not use the Candlestick.'
     ],
+    statements: [
+      {
+        suspect: 'Lady Charlotte',
+        claim: 'Edmund and I had a loveless marriage, but I was playing piano all evening. The servants heard me - they always complain about the noise.'
+      },
+      {
+        suspect: 'Arthur Ashford',
+        claim: 'The storm delayed me terribly. I didn\'t arrive until after 9 PM. When I got here, the house was in chaos - Edmund was already dead.'
+      },
+      {
+        suspect: 'Dr. Philip Hayes',
+        claim: 'Margaret called me because one of the kitchen staff had taken ill. I was treating them in the Kitchen when the tragedy occurred.'
+      },
+      {
+        suspect: 'Margaret Price',
+        claim: 'I\'ve served this family for 30 years. I was doing my duties - bringing tea to Lady Charlotte in the Drawing Room, then attending to the sick staff member with the doctor.'
+      }
+    ],
     hints: [
       'Charlotte was playing piano with witnesses - she\'s eliminated.',
       'Arthur arrived after the murder started - could he have done it?',
@@ -445,6 +601,24 @@ export const puzzles: Puzzle[] = [
       'The murder took place in the Vault.',
       'Elena was in the Security Office during the murder.',
       'Marcus was not at the Bar during the time of death.'
+    ],
+    statements: [
+      {
+        suspect: 'Nicholas Carver',
+        claim: 'Yes, I owe Vincent money. But I was at the poker table trying to win it back. I played until 2:30 AM - the dealer can confirm.'
+      },
+      {
+        suspect: 'Elena Petrova',
+        claim: 'I was in the Security Office reviewing footage from earlier in the evening. We had a suspected card counter and I was checking the tapes.'
+      },
+      {
+        suspect: 'Marcus DeVille',
+        claim: 'Vincent and I are business rivals, but I came to talk partnership. I arrived around 1:45 and we had drinks at the Bar to discuss terms.'
+      },
+      {
+        suspect: 'Sophia Romano',
+        claim: 'I was at the Bar having a nightcap until about 2 AM. Then I needed to get cash from the Vault for tomorrow\'s operations.'
+      }
     ],
     hints: [
       'Elena was watching cameras - she has a verifiable alibi.',
@@ -504,6 +678,29 @@ export const puzzles: Puzzle[] = [
       'Professor Hyde was not in the Conservatory between 9:45 PM and 10:15 PM.',
       'The person who gave the toast at 9:35 PM was in a different location at 10:00 PM than they were at 9:35 PM.',
       'Detective Voss left the Wine Cellar before Agent Romano finished playing billiards.'
+    ],
+    
+    statements: [
+      {
+        suspect: 'Inspector Aria Chen',
+        claim: 'I was in the Library examining Lord Blackwood\'s collection of solved case files. I never left - I was there when the body was discovered.'
+      },
+      {
+        suspect: 'Detective Nikolas Voss',
+        claim: 'I went to the Wine Cellar around 9:40 to select a vintage for dinner. I left before the billiards game ended and... well, I was alone after that.'
+      },
+      {
+        suspect: 'Agent Sophia Romano',
+        claim: 'Captain Frost and I played billiards from about 9:15 until nearly 10:00. It was quite competitive - we both wanted to win.'
+      },
+      {
+        suspect: 'Professor Marcus Hyde',
+        claim: 'I gave a toast to Lord Blackwood in the Trophy Room at 9:35. Everyone was there except whoever was in the cellar. After that, I... I don\'t recall exactly.'
+      },
+      {
+        suspect: 'Captain Elena Frost',
+        claim: 'Romano and I played billiards until about 9:50. Then I stayed in the Billiard Room practicing my shots. I wanted to redeem myself after losing.'
+      }
     ],
     
     hints: [
@@ -576,6 +773,29 @@ export const puzzles: Puzzle[] = [
       'The murder took place on the Rooftop at approximately 12:00 AM, during total darkness.'
     ],
     
+    statements: [
+      {
+        suspect: 'Dr. Sarah Chen',
+        claim: 'I was running critical quantum experiments that couldn\'t be interrupted. I was locked in the Lab when the power went out - the biometric door wouldn\'t open without electricity.'
+      },
+      {
+        suspect: 'Marcus Kane',
+        claim: 'I was monitoring the systems remotely from home. My VPN logs prove I was never at the building. When the power went out, I was trying to diagnose it from my home office.'
+      },
+      {
+        suspect: 'Isabella Torres',
+        claim: 'I was in the Garage getting my car to leave for the night. My GPS shows I left the building at 11:55 - before the murder even happened.'
+      },
+      {
+        suspect: 'Professor James Wei',
+        claim: 'My access was revoked after the funding dispute. I couldn\'t enter the building even if I wanted to. The security system would have flagged any attempt.'
+      },
+      {
+        suspect: 'Alexandra Park',
+        claim: 'I went to the Penthouse to pick up some belongings from when we were married. I was in the apartment when the lights went out. It was terrifying - completely dark.'
+      }
+    ],
+    
     hints: [
       'Marcus Kane was remote - eliminate him immediately.',
       'Professor Wei had no access - eliminate him.',
@@ -645,6 +865,29 @@ export const puzzles: Puzzle[] = [
       'Captain Santos\'s security sweep took exactly 15 minutes according to procedure.',
       'The person who left the Private Car at 2:05 AM returned during the tunnel blackout at 2:25 AM.',
       'Neither the Observation Deck nor anyone\'s locked cabin can be confused with the Private Car.'
+    ],
+    
+    statements: [
+      {
+        suspect: 'Natasha Ivanova',
+        claim: 'Viktor and I had our falling out, but I was playing poker all night. Four-handed Texas Hold\'em - we never stopped, not even for a bathroom break.'
+      },
+      {
+        suspect: 'Ambassador Chen Li',
+        claim: 'I was negotiating with Viktor earlier in the evening. After we finished at 1 AM, I retired to my cabin and locked the door. I didn\'t leave until morning.'
+      },
+      {
+        suspect: 'Dr. Heinrich Mueller',
+        claim: 'I had a video call with clients in Tokyo that couldn\'t be rescheduled. I was on the Observation Deck from 2:10 to 2:50 - the call logs prove it.'
+      },
+      {
+        suspect: 'Captain Maria Santos',
+        claim: 'I\'m... I was undercover as staff. My assignment was to watch Volkov. I was doing my required security sweep of the Baggage Car at 2:30 AM when he was killed.'
+      },
+      {
+        suspect: 'Dmitri Federov',
+        claim: 'Uncle Viktor and I had drinks in his car around 2 AM. I left at 2:05 because he wanted to sleep. When I heard what happened, I... I should have stayed.'
+      }
     ],
     
     hints: [
