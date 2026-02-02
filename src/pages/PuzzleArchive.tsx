@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { puzzles } from '../data/puzzles';
+import { Layout } from '../components/Layout';
 
 export default function PuzzleArchive() {
   const getDifficultyColor = (difficulty: string) => {
@@ -39,21 +40,15 @@ export default function PuzzleArchive() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 text-white p-4 md:p-8 relative overflow-hidden animate-gradientShift">
-      {/* Animated Background Elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }}></div>
-      </div>
-
-      <div className="max-w-5xl mx-auto relative z-10">
+    <Layout maxWidth="5xl">
+      <div className="relative z-10">
         {/* Header */}
         <div className="mb-8 animate-slideUp">
-          <Link to="/" className="inline-block mb-4 text-blue-400 hover:text-blue-300 transition">
+          <Link to="/" className="inline-block mb-4 text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 transition-colors">
             ← Back to Home
           </Link>
           <h1 className="text-4xl md:text-5xl font-bold mb-2">Puzzle Archive</h1>
-          <p className="text-gray-300">All available mysteries for Detective Marlowe Finch</p>
+          <p className="text-gray-600 dark:text-gray-300">All available mysteries for Detective Marlowe Finch</p>
         </div>
 
         {/* Puzzle Grid */}
@@ -69,16 +64,15 @@ export default function PuzzleArchive() {
                 className={`card-hover group ${puzzle.difficulty === 'ludicrous' ? 'ludicrous-glow' : ''}`}
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className={`bg-gradient-to-br backdrop-blur-sm rounded-xl p-5 border-2 transition-all shadow-lg h-full flex flex-col ${
-                  puzzle.difficulty === 'ludicrous' 
-                    ? 'from-purple-900/90 to-red-900/90 border-red-500/50 hover:border-red-400' 
-                    : 'from-gray-800/90 to-gray-900/90 border-white/10 hover:border-purple-500/50'
-                }`}>
+                <div className={`bg-white/80 dark:bg-gray-800/90 backdrop-blur-sm rounded-xl p-5 border-2 transition-all shadow-lg h-full flex flex-col ${puzzle.difficulty === 'ludicrous'
+                  ? 'border-red-500/50 hover:border-red-400'
+                  : 'border-white dark:border-white/10 hover:border-purple-500/50'
+                  }`}>
                   {/* Header */}
                   <div className="flex items-start justify-between mb-3">
                     <div className="flex-1 min-w-0">
-                      <div className="text-sm text-gray-400 mb-1">Puzzle #{index + 1}</div>
-                      <h3 className="text-xl font-bold text-white group-hover:text-purple-300 transition line-clamp-2">
+                      <div className="text-sm text-gray-500 dark:text-gray-400 mb-1">Puzzle #{index + 1}</div>
+                      <h3 className="text-xl font-bold group-hover:text-purple-600 dark:group-hover:text-purple-300 transition line-clamp-2">
                         {puzzle.title}
                       </h3>
                     </div>
@@ -94,7 +88,7 @@ export default function PuzzleArchive() {
                   </div>
 
                   {/* Description */}
-                  <p className="text-gray-400 text-sm mb-4 line-clamp-2 flex-grow">
+                  <p className="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-2 flex-grow">
                     {puzzle.backstory}
                   </p>
 
@@ -112,11 +106,10 @@ export default function PuzzleArchive() {
 
                   {/* Play Button */}
                   <div className="mt-auto">
-                    <div className={`text-center font-bold py-2 px-4 rounded-lg transition-all group-hover:scale-105 ${
-                      puzzle.difficulty === 'ludicrous'
-                        ? 'bg-gradient-to-r from-red-600 to-purple-600 hover:from-red-700 hover:to-purple-700 text-white'
-                        : 'bg-purple-600 hover:bg-purple-700 text-white'
-                    }`}>
+                    <div className={`text-center font-bold py-2 px-4 rounded-lg transition-all group-hover:scale-105 ${puzzle.difficulty === 'ludicrous'
+                      ? 'bg-gradient-to-r from-red-600 to-purple-600 hover:from-red-700 hover:to-purple-700 text-white'
+                      : 'bg-purple-600 hover:bg-purple-700 text-white'
+                      }`}>
                       {completed ? 'Play Again' : 'Start Puzzle'} →
                     </div>
                   </div>
@@ -126,6 +119,6 @@ export default function PuzzleArchive() {
           })}
         </div>
       </div>
-    </div>
+    </Layout>
   );
 }

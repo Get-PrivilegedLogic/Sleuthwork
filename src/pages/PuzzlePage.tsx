@@ -10,6 +10,8 @@ import StatementsSection from '../components/StatementsSection';
 import type { GridCell } from '../types/puzzle';
 import { useTimer } from '../hooks/useTimer';
 import { STORAGE_KEYS } from '../constants';
+import { Layout } from '../components/Layout';
+import useSound from 'use-sound';
 
 export default function PuzzlePage() {
   const { id } = useParams<{ id: string }>();
@@ -22,6 +24,10 @@ export default function PuzzlePage() {
 
   // Timer integration
   const { seconds, formattedTime, stop: stopTimer, reset: resetTimer, isRunning } = useTimer();
+
+  // Sound effects
+  const [playSuccess] = useSound('https://assets.mixkit.co/active_storage/sfx/2019/2019-preview.mp3', { volume: 0.5, html5: true });
+  const [playFailure] = useSound('https://assets.mixkit.co/active_storage/sfx/2568/2568-preview.mp3', { volume: 0.3, html5: true });
 
   // Load grid state from localStorage
   const [grid, setGrid] = useState<Record<string, GridCell>>(() => {
@@ -82,6 +88,7 @@ export default function PuzzlePage() {
     setCheckResult(isCorrect ? 'correct' : 'incorrect');
 
     if (isCorrect) {
+      playSuccess();
       // Stop timer on correct solution
       stopTimer();
 
@@ -91,6 +98,7 @@ export default function PuzzlePage() {
         localStorage.setItem(STORAGE_KEYS.BEST_TIME(puzzle.id), seconds.toString());
       }
     } else {
+      playFailure();
       // Unlock hints on first incorrect attempt
       setHintsUnlocked(true);
     }
@@ -126,26 +134,28 @@ export default function PuzzlePage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900">
-      <div className="max-w-6xl mx-auto px-4 py-6 md:py-8">
+    <Layout maxWidth="6xl">
+      <div className="relative z-10">
         {/* Header */}
         <div className="mb-6 md:mb-8">
           <Link
             to="/"
-            className="inline-flex items-center text-purple-400 hover:text-purple-300 mb-4 transition-colors"
+            className="inline-flex items-center text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 mb-4 transition-colors"
           >
             <span className="mr-2">←</span>
             Back to All Puzzles
           </Link>
 
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-3">
-            <h1 className="text-3xl md:text-4xl font-bold text-white">{puzzle.title}</h1>
+            <h1 className="text-3xl md:text-4xl font-bold dark:text-white">{puzzle.title}</h1>
             <div className="flex items-center gap-3">
               <span className={`inline-block px-4 py-2 rounded-lg border-2 font-bold text-sm uppercase tracking-wider ${getDifficultyBadgeColor(puzzle.difficulty)}`}>
                 {puzzle.difficulty}
               </span>
               {/* Timer Display */}
-              <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-lg border-2 font-bold text-sm ${isRunning ? 'bg-blue-900/30 border-blue-500/50 text-blue-400' : 'bg-gray-900/30 border-gray-500/50 text-gray-400'
+              <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-lg border-2 font-bold text-sm ${isRunning
+                ? 'bg-blue-100 dark:bg-blue-900/30 border-blue-500/50 text-blue-600 dark:text-blue-400'
+                : 'bg-gray-100 dark:bg-gray-900/30 border-gray-400/50 text-gray-500 dark:text-gray-400'
                 }`}>
                 <span>⏱️</span>
                 <span className="font-mono">{formattedTime}</span>
@@ -153,7 +163,7 @@ export default function PuzzlePage() {
             </div>
           </div>
 
-          <p className="text-base md:text-lg text-gray-300 leading-relaxed">{puzzle.backstory}</p>
+          <p className="text-base md:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">{puzzle.backstory}</p>
         </div>
 
         {/* Card-Based Layout - Suspects, Weapons, Locations */}
@@ -360,6 +370,6 @@ export default function PuzzlePage() {
           </div>
         )}
       </div>
-    </div>
+    </Layout>
   );
 }

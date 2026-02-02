@@ -3,6 +3,7 @@ import type { GridCell } from '../types/puzzle';
 import type { Suspect, Weapon, Location } from '../types/puzzle';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { getIcon } from '../utils/iconMapping';
+import { motion, AnimatePresence } from 'framer-motion';
 
 interface LogicGridProps {
   suspects: Suspect[];
@@ -25,12 +26,32 @@ export default function LogicGrid({ suspects, weapons, locations, grid, onCellCl
   }, [onCellClick]);
 
   const renderCell = useCallback((value: GridCell) => {
-    if (value === 'check') {
-      return <span className="text-green-400 text-xl">✓</span>;
-    } else if (value === 'cross') {
-      return <span className="text-red-400 text-xl">✗</span>;
-    }
-    return null;
+    return (
+      <AnimatePresence mode="wait">
+        {value === 'check' && (
+          <motion.span
+            key="check"
+            initial={{ scale: 0, rotate: -45 }}
+            animate={{ scale: 1, rotate: 0 }}
+            exit={{ scale: 0 }}
+            className="text-green-500 dark:text-green-400 text-2xl font-bold block"
+          >
+            ✓
+          </motion.span>
+        )}
+        {value === 'cross' && (
+          <motion.span
+            key="cross"
+            initial={{ scale: 0, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0, opacity: 0 }}
+            className="text-red-500 dark:text-red-400 text-2xl font-bold block"
+          >
+            ✗
+          </motion.span>
+        )}
+      </AnimatePresence>
+    );
   }, []);
 
   const gridContent = useMemo(() => {
@@ -121,8 +142,8 @@ export default function LogicGrid({ suspects, weapons, locations, grid, onCellCl
   }, [activeGrid, suspects, weapons, locations, hoveredItem, getCellValue, handleCellClick, renderCell]);
 
   return (
-    <div className="bg-gradient-to-br from-gray-800 to-gray-900 p-4 md:p-6 rounded-lg border-2 border-purple-500/30 shadow-lg">
-      <h2 className="text-xl md:text-2xl font-bold text-purple-400 mb-4 flex items-center">
+    <div className="bg-white dark:bg-gradient-to-br dark:from-gray-800 dark:to-gray-900 p-4 md:p-6 rounded-lg border-2 border-purple-500/30 shadow-lg transition-colors duration-300">
+      <h2 className="text-xl md:text-2xl font-bold text-purple-600 dark:text-purple-400 mb-4 flex items-center">
         <span className="text-2xl mr-2">📊</span>
         Logic Grid
       </h2>
@@ -133,12 +154,12 @@ export default function LogicGrid({ suspects, weapons, locations, grid, onCellCl
           onClick={() => setActiveGrid('suspect-weapon')}
           className={`px-3 py-2 rounded-lg text-sm font-semibold transition-all flex items-center gap-2 ${activeGrid === 'suspect-weapon'
             ? 'bg-purple-600 text-white'
-            : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
+            : 'bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'
             }`}
         >
-          <span className="text-purple-400">👤</span>
-          <span>×</span>
-          <span className="text-orange-400">🔪</span>
+          <span className="text-purple-600 dark:text-purple-400">👤</span>
+          <span className="dark:text-white">×</span>
+          <span className="text-orange-600 dark:text-orange-400">🔪</span>
           <span className="hidden sm:inline">Suspect × Weapon</span>
         </button>
 
@@ -146,12 +167,12 @@ export default function LogicGrid({ suspects, weapons, locations, grid, onCellCl
           onClick={() => setActiveGrid('suspect-location')}
           className={`px-3 py-2 rounded-lg text-sm font-semibold transition-all flex items-center gap-2 ${activeGrid === 'suspect-location'
             ? 'bg-purple-600 text-white'
-            : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
+            : 'bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'
             }`}
         >
-          <span className="text-purple-400">👤</span>
-          <span>×</span>
-          <span className="text-blue-400">📍</span>
+          <span className="text-purple-600 dark:text-purple-400">👤</span>
+          <span className="dark:text-white">×</span>
+          <span className="text-blue-600 dark:text-blue-400">📍</span>
           <span className="hidden sm:inline">Suspect × Location</span>
         </button>
 
@@ -159,21 +180,21 @@ export default function LogicGrid({ suspects, weapons, locations, grid, onCellCl
           onClick={() => setActiveGrid('weapon-location')}
           className={`px-3 py-2 rounded-lg text-sm font-semibold transition-all flex items-center gap-2 ${activeGrid === 'weapon-location'
             ? 'bg-purple-600 text-white'
-            : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
+            : 'bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'
             }`}
         >
-          <span className="text-orange-400">🔪</span>
-          <span>×</span>
-          <span className="text-blue-400">📍</span>
+          <span className="text-orange-600 dark:text-orange-400">🔪</span>
+          <span className="dark:text-white">×</span>
+          <span className="text-blue-600 dark:text-blue-400">📍</span>
           <span className="hidden sm:inline">Weapon × Location</span>
         </button>
       </div>
 
       {/* Instructions */}
-      <p className="text-sm text-gray-400 mb-4">
+      <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
         <span className="font-semibold">How to use:</span> Hover over icons to see names. Click cells to mark them.
-        <span className="text-green-400 ml-2">✓ = Yes</span>
-        <span className="text-red-400 ml-2">✗ = No</span>
+        <span className="text-green-600 dark:text-green-400 ml-2">✓ = Yes</span>
+        <span className="text-red-600 dark:text-red-400 ml-2">✗ = No</span>
       </p>
 
       {/* Grid */}

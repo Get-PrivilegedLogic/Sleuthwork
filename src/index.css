@@ -2,11 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+
+  html,
+  body {
+    @apply transition-colors duration-500 min-h-screen;
+    background-attachment: fixed;
+  }
+
+  body {
+    @apply bg-slate-50 text-slate-900;
+  }
+
+  .dark body {
+    @apply bg-gray-900 text-white;
+    background-image: linear-gradient(to bottom right, #111827, #1e3a8a, #581c87);
+  }
+
+  body:not(.dark) {
+    background-image: linear-gradient(to bottom right, #f8fafc, #f1f5f9, #eff6ff);
+  }
+}
+
 @layer utilities {
   @keyframes fadeIn {
     from {
       opacity: 0;
     }
+
     to {
       opacity: 1;
     }
@@ -17,6 +40,7 @@
       opacity: 0;
       transform: translateY(20px);
     }
+
     to {
       opacity: 1;
       transform: translateY(0);
@@ -27,27 +51,35 @@
     0% {
       background-position: 0% 50%;
     }
+
     50% {
       background-position: 100% 50%;
     }
+
     100% {
       background-position: 0% 50%;
     }
   }
 
   @keyframes float {
-    0%, 100% {
+
+    0%,
+    100% {
       transform: translateY(0px);
     }
+
     50% {
       transform: translateY(-10px);
     }
   }
 
   @keyframes pulse-glow {
-    0%, 100% {
+
+    0%,
+    100% {
       box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
     }
+
     50% {
       box-shadow: 0 0 40px rgba(59, 130, 246, 0.8);
     }
@@ -57,15 +89,19 @@
     0% {
       transform: translateX(-100%);
     }
+
     100% {
       transform: translateX(100%);
     }
   }
 
   @keyframes ludicrousGlow {
-    0%, 100% {
+
+    0%,
+    100% {
       box-shadow: 0 0 20px rgba(239, 68, 68, 0.3);
     }
+
     50% {
       box-shadow: 0 0 40px rgba(168, 85, 247, 0.5);
     }
@@ -93,12 +129,10 @@
   }
 
   .animate-shimmer {
-    background: linear-gradient(
-      90deg,
-      rgba(255, 255, 255, 0) 0%,
-      rgba(255, 255, 255, 0.1) 50%,
-      rgba(255, 255, 255, 0) 100%
-    );
+    background: linear-gradient(90deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.1) 50%,
+        rgba(255, 255, 255, 0) 100%);
     background-size: 1000px 100%;
     animation: shimmer 3s infinite;
   }
