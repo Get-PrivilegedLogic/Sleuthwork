@@ -1,6 +1,9 @@
 import { Link } from 'react-router-dom';
-import { puzzles } from '../data/puzzles';
+import { puzzles as classicPuzzles } from '../data/puzzles';
 import { Layout } from '../components/Layout';
+import { LAUNCH_EPOCH } from '../constants';
+import { getTodayDateString, getDaysSinceLaunch, formatDateString } from '../utils/dateUtils';
+import { generatePuzzle } from '../utils/puzzleGenerator';
 
 export default function PuzzleArchive() {
   const getDifficultyColor = (difficulty: string) => {
@@ -33,6 +36,36 @@ export default function PuzzleArchive() {
     return stored ? parseInt(stored) : null;
   };
 
+  const today = getTodayDateString();
+  const dayNumber = getDaysSinceLaunch(LAUNCH_EPOCH, today);
+
+  // Generate the list of available puzzles
+  const availablePuzzles = (() => {
+    const list = [];
+
+    // Add all classic puzzles (Founder's Collection)
+    for (let i = 0; i < classicPuzzles.length; i++) {
+      list.push({ ...classicPuzzles[i], isClassic: true, dayIndex: i + 1 });
+    }
+
+    // Add generated puzzles from day 15 up to today
+    if (dayNumber > classicPuzzles.length) {
+      // Only show a manageable number of generated ones if needed, 
+      // but for now, we'll show all up to today.
+      for (let i = classicPuzzles.length + 1; i <= dayNumber; i++) {
+        // We need a date string for each day.
+        // Simplified: we'll use a hacky date calculation or just focus on the count.
+        // For the archive, we can just generate them on the fly.
+        const date = new Date(LAUNCH_EPOCH + 'T00:00:00');
+        date.setDate(date.getDate() + (i - 1));
+        const dateStr = date.toISOString().split('T')[0];
+        list.push({ ...generatePuzzle(dateStr, `daily-${i}`), isClassic: false, dayIndex: i });
+      }
+    }
+
+    return list.reverse(); // Show newest first
+  })();
+
   const formatTime = (totalSeconds: number): string => {
     const mins = Math.floor(totalSeconds / 60);
     const secs = totalSeconds % 60;
@@ -53,16 +86,16 @@ export default function PuzzleArchive() {
 
         {/* Puzzle Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-          {puzzles.map((puzzle, index) => {
+          {availablePuzzles.map((puzzle, index) => {
             const completed = isPuzzleCompleted(puzzle.id);
             const bestTime = getBestTime(puzzle.id);
 
             return (
               <Link
                 key={puzzle.id}
-                to={`/puzzle/${puzzle.id}`}
+                to={puzzle.isClassic ? `/puzzle/${puzzle.id}` : `/daily/${puzzle.releaseDate.split('T')[0]}`}
                 className={`card-hover group ${puzzle.difficulty === 'ludicrous' ? 'ludicrous-glow' : ''}`}
-                style={{ animationDelay: `${index * 0.1}s` }}
+                style={{ animationDelay: `${index * 0.05}s` }}
               >
                 <div className={`bg-white/80 dark:bg-gray-800/90 backdrop-blur-sm rounded-xl p-5 border-2 transition-all shadow-lg h-full flex flex-col ${puzzle.difficulty === 'ludicrous'
                   ? 'border-red-500/50 hover:border-red-400'
@@ -71,10 +104,25 @@ export default function PuzzleArchive() {
                   {/* Header */}
                   <div className="flex items-start justify-between mb-3">
                     <div className="flex-1 min-w-0">
-                      <div className="text-sm text-gray-500 dark:text-gray-400 mb-1">Puzzle #{index + 1}</div>
+                      <div className="flex items-center gap-2 mb-1">
+                        <span className="text-sm text-gray-500 dark:text-gray-400">Puzzle #{puzzle.dayIndex}</span>
+                        {puzzle.isClassic && (
+                          <span className="text-[10px] font-bold uppercase tracking-widest px-1.5 py-0.5 rounded bg-blue-500/10 text-blue-400 border border-blue-500/20">
+                            Classic
+                          </span>
+                        )}
+                        {!puzzle.isClassic && (
+                          <span className="text-[10px] font-bold uppercase tracking-widest px-1.5 py-0.5 rounded bg-orange-500/10 text-orange-400 border border-orange-500/20">
+                            Daily
+                          </span>
+                        )}
+                      </div>
                       <h3 className="text-xl font-bold group-hover:text-purple-600 dark:group-hover:text-purple-300 transition line-clamp-2">
                         {puzzle.title}
                       </h3>
+                      {!puzzle.isClassic && (
+                        <div className="text-xs text-gray-500 mt-1">{formatDateString(puzzle.releaseDate.split('T')[0])}</div>
+                      )}
                     </div>
                     {completed && (
                       <div className="text-2xl animate-bounce ml-2 flex-shrink-0">✓</div>

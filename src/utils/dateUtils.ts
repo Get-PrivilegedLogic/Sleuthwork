@@ -58,3 +58,10 @@ export const getTimeUntilMidnight = (): { hours: number; minutes: number; second
 
     return { hours, minutes, seconds };
 };
+
+/**
+ * Get the number of days since the launch epoch
+ */
+export const getDaysSinceLaunch = (launchDate: string, currentDate: string): number => {
+    return getDaysDifference(launchDate, currentDate) + 1; // 1-indexed
+};

@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import { useDailyPuzzle } from '../hooks/useDailyPuzzle';
 import { useTimer } from '../hooks/useTimer';
 import CollapsibleSection from '../components/CollapsibleSection';
@@ -8,7 +9,7 @@ import WeaponsCard from '../components/WeaponsCard';
 import LocationsCard from '../components/LocationsCard';
 import LogicGrid from '../components/LogicGrid';
 import StatementsSection from '../components/StatementsSection';
-import { formatDateString, getTimeUntilMidnight } from '../utils/dateUtils';
+import { formatDateString, getTimeUntilMidnight, getTodayDateString } from '../utils/dateUtils';
 import { formatShareText, copyToClipboard } from '../utils/shareUtils';
 import { Share2, Check } from 'lucide-react';
 import { motion } from 'framer-motion';
@@ -16,6 +17,7 @@ import { Layout } from '../components/Layout';
 import useSound from 'use-sound';
 
 export default function DailyPuzzlePage() {
+    const { date } = useParams<{ date: string }>();
     const {
         puzzle,
         currentDate,
@@ -25,7 +27,7 @@ export default function DailyPuzzlePage() {
         streak,
         markComplete,
         updateGridState,
-    } = useDailyPuzzle();
+    } = useDailyPuzzle(date);
 
     const { seconds, formattedTime, stop: stopTimer, isRunning } = useTimer();
 
@@ -243,7 +245,14 @@ export default function DailyPuzzlePage() {
 
                     <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-3">
                         <div>
-                            <div className="text-sm text-gray-500 dark:text-gray-400 mb-1">Daily Puzzle</div>
+                            <div className="flex items-center gap-2 mb-1">
+                                <div className="text-sm text-gray-500 dark:text-gray-400">Daily Puzzle</div>
+                                {date && date !== getTodayDateString() && (
+                                    <span className="text-[10px] font-bold uppercase tracking-widest px-1.5 py-0.5 rounded bg-blue-500/10 text-blue-400 border border-blue-500/20">
+                                        Archive
+                                    </span>
+                                )}
+                            </div>
                             <h1 className="text-3xl md:text-4xl font-bold dark:text-white">{puzzle.title}</h1>
                             <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">{formatDateString(currentDate)}</p>
                         </div>

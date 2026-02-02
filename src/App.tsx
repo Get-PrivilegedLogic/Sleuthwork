@@ -13,6 +13,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/daily" element={<DailyPuzzlePage />} />
+          <Route path="/daily/:date" element={<DailyPuzzlePage />} />
           <Route path="/puzzles" element={<PuzzleArchive />} />
           <Route path="/puzzle/:id" element={<PuzzlePage />} />
         </Routes>

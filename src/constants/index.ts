@@ -15,3 +15,7 @@ export const STORAGE_KEYS = {
   DAILY_STREAK: 'daily-streak',
   LAST_COMPLETED_DATE: 'last-completed-date',
 } as const;
+
+// The date the app was launched (Day 1)
+// For existing puzzles 1-14 to align with early February 2026
+export const LAUNCH_EPOCH = '2026-02-01';

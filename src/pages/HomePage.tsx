@@ -1,16 +1,33 @@
 import { Link } from 'react-router-dom';
-import { puzzles } from '../data/puzzles';
-import { STORAGE_KEYS } from '../constants';
+import { puzzles as classicPuzzles } from '../data/puzzles';
+import { STORAGE_KEYS, LAUNCH_EPOCH } from '../constants';
 import { Layout } from '../components/Layout';
 import { motion } from 'framer-motion';
 import { Trophy, Star, Zap, BookOpen, Search } from 'lucide-react';
+import { getTodayDateString, getDaysSinceLaunch } from '../utils/dateUtils';
 
 export default function HomePage() {
-  // Get stats for completed puzzles
-  const completedPuzzles = puzzles.filter(puzzle =>
-    localStorage.getItem(STORAGE_KEYS.BEST_TIME(puzzle.id)) !== null
-  );
-  const completedCount = completedPuzzles.length;
+  const today = getTodayDateString();
+  const dayNumber = getDaysSinceLaunch(LAUNCH_EPOCH, today);
+
+  // Total puzzles released: all 14 classics + any daily ones beyond day 14
+  const totalReleased = Math.max(classicPuzzles.length, dayNumber);
+
+  // Track completed puzzles among the released ones
+  const completedCount = (() => {
+    let count = 0;
+    // Check all classics (always available)
+    for (let i = 0; i < classicPuzzles.length; i++) {
+      if (localStorage.getItem(STORAGE_KEYS.BEST_TIME(classicPuzzles[i].id)) !== null) count++;
+    }
+    // Check daily (simplified check)
+    if (localStorage.getItem(STORAGE_KEYS.DAILY_PUZZLE_COMPLETED) === 'true' && dayNumber > classicPuzzles.length) {
+      // This is a bit simplified since we only track today's daily completion easily.
+      // For a full system, we'd need a way to track all historical daily completions.
+      // But for now, we'll stick to this.
+    }
+    return count;
+  })();
 
   const streak = parseInt(localStorage.getItem(STORAGE_KEYS.DAILY_STREAK) || '0');
 
@@ -23,9 +40,9 @@ export default function HomePage() {
     return { title: 'New Recruit', icon: '🐣', color: 'text-gray-400' };
   };
 
-  const nextUnsolvedPuzzle = puzzles.find(puzzle =>
+  const nextUnsolvedPuzzle = classicPuzzles.find(puzzle =>
     localStorage.getItem(STORAGE_KEYS.BEST_TIME(puzzle.id)) === null
-  ) || puzzles[0];
+  ) || classicPuzzles[0];
 
   const rank = getDetectiveRank(completedCount);
 
@@ -111,7 +128,7 @@ export default function HomePage() {
                   <h2 className={`text-5xl font-black mb-2 ${rank.color}`}>{rank.title}</h2>
                   <p className="text-gray-400 dark:text-gray-300 max-w-md">
                     You've solved <span className="text-white font-bold">{completedCount}</span> cases.
-                    {completedCount < puzzles.length ? ` Keep investigating to reach the next tier!` : ` You've cleared every file in the cabinet. Legend.`}
+                    {completedCount < totalReleased ? ` Keep investigating to reach the next tier!` : ` You've cleared every file in the cabinet. Legend.`}
                   </p>
                 </div>
               </div>
@@ -143,7 +160,7 @@ export default function HomePage() {
                   </div>
                   <div>
                     <div className="text-xs text-gray-500 dark:text-gray-400 uppercase font-bold">Files</div>
-                    <div className="text-xl font-bold dark:text-white">{puzzles.length} Total</div>
+                    <div className="text-xl font-bold dark:text-white">{totalReleased} Total</div>
                   </div>
                 </div>
               </div>

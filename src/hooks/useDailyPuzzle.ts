@@ -1,31 +1,38 @@
 import { useState, useEffect, useMemo, useCallback } from 'react';
 import { puzzles } from '../data/puzzles';
 import type { Puzzle, GridCell } from '../types/puzzle';
-import { STORAGE_KEYS } from '../constants';
-import { getTodayDateString, dateToSeed, getDaysDifference } from '../utils/dateUtils';
+import { STORAGE_KEYS, LAUNCH_EPOCH } from '../constants';
+import { getTodayDateString, getDaysDifference, getDaysSinceLaunch } from '../utils/dateUtils';
+import { generatePuzzle } from '../utils/puzzleGenerator';
 
 /**
  * Hook for managing daily puzzle state and logic
  */
-export function useDailyPuzzle() {
+export function useDailyPuzzle(targetDate?: string) {
     const today = getTodayDateString();
+    const activeDate = targetDate || today;
     const storedDate = localStorage.getItem(STORAGE_KEYS.DAILY_PUZZLE_DATE);
     const isNewDay = storedDate !== today;
+    const isHistorical = !!targetDate && targetDate !== today;
 
     // Initialize state based on whether it's a new day
-    const [currentDate] = useState(today);
+    const [currentDate] = useState(activeDate);
     const [isCompleted, setIsCompleted] = useState(() => {
+        const key = isHistorical ? `daily-completed-${activeDate}` : STORAGE_KEYS.DAILY_PUZZLE_COMPLETED;
+        if (isHistorical) return localStorage.getItem(key) === 'true';
         if (isNewDay) return false;
         return localStorage.getItem(STORAGE_KEYS.DAILY_PUZZLE_COMPLETED) === 'true';
     });
     const [gridState, setGridState] = useState<Record<string, GridCell>>(() => {
-        if (isNewDay) return {};
-        const saved = localStorage.getItem(STORAGE_KEYS.DAILY_PUZZLE_GRID);
+        const key = isHistorical ? `daily-grid-${activeDate}` : STORAGE_KEYS.DAILY_PUZZLE_GRID;
+        if (!isHistorical && isNewDay) return {};
+        const saved = localStorage.getItem(key);
         return saved ? JSON.parse(saved) : {};
     });
     const [timeElapsed, setTimeElapsed] = useState(() => {
-        if (isNewDay) return 0;
-        return parseInt(localStorage.getItem(STORAGE_KEYS.DAILY_PUZZLE_TIME) || '0');
+        const key = isHistorical ? `daily-time-${activeDate}` : STORAGE_KEYS.DAILY_PUZZLE_TIME;
+        if (!isHistorical && isNewDay) return 0;
+        return parseInt(localStorage.getItem(key) || '0');
     });
     const [streak, setStreak] = useState(() =>
         parseInt(localStorage.getItem(STORAGE_KEYS.DAILY_STREAK) || '0')
@@ -36,20 +43,26 @@ export function useDailyPuzzle() {
 
     // Get today's puzzle based on date
     const dailyPuzzle = useMemo((): Puzzle => {
-        const seed = dateToSeed(currentDate);
-        const index = seed % puzzles.length;
-        return puzzles[index];
+        const dayNumber = getDaysSinceLaunch(LAUNCH_EPOCH, currentDate);
+
+        if (dayNumber <= puzzles.length) {
+            // First 14 days use hand-crafted puzzles
+            return puzzles[dayNumber - 1];
+        }
+
+        // Day 15+ use infinite generator
+        return generatePuzzle(currentDate, `daily-${dayNumber}`);
     }, [currentDate]);
 
-    // Clear localStorage for new day on mount
+    // Clear localStorage for new day on mount (only for today's puzzle)
     useEffect(() => {
-        if (isNewDay) {
+        if (isNewDay && !isHistorical) {
             localStorage.removeItem(STORAGE_KEYS.DAILY_PUZZLE_COMPLETED);
             localStorage.removeItem(STORAGE_KEYS.DAILY_PUZZLE_GRID);
             localStorage.removeItem(STORAGE_KEYS.DAILY_PUZZLE_TIME);
             localStorage.setItem(STORAGE_KEYS.DAILY_PUZZLE_DATE, today);
         }
-    }, [isNewDay, today]); // Run once on mount or if day changes
+    }, [isNewDay, isHistorical, today]); // Run once on mount or if day changes
 
     // Check for new day periodically and on focus
     useEffect(() => {
@@ -76,16 +89,18 @@ export function useDailyPuzzle() {
     // Save grid state to localStorage whenever it changes
     useEffect(() => {
         if (Object.keys(gridState).length > 0) {
-            localStorage.setItem(STORAGE_KEYS.DAILY_PUZZLE_GRID, JSON.stringify(gridState));
+            const key = isHistorical ? `daily-grid-${currentDate}` : STORAGE_KEYS.DAILY_PUZZLE_GRID;
+            localStorage.setItem(key, JSON.stringify(gridState));
         }
-    }, [gridState]);
+    }, [gridState, isHistorical, currentDate]);
 
     // Save time elapsed to localStorage
     useEffect(() => {
         if (timeElapsed > 0) {
-            localStorage.setItem(STORAGE_KEYS.DAILY_PUZZLE_TIME, String(timeElapsed));
+            const key = isHistorical ? `daily-time-${currentDate}` : STORAGE_KEYS.DAILY_PUZZLE_TIME;
+            localStorage.setItem(key, String(timeElapsed));
         }
-    }, [timeElapsed]);
+    }, [timeElapsed, isHistorical, currentDate]);
 
     // Update streak based on completion
     const updateStreak = useCallback((completionDate: string): number => {
@@ -110,6 +125,14 @@ export function useDailyPuzzle() {
 
     // Mark puzzle as complete
     const markComplete = useCallback((finalTime: number) => {
+        if (isHistorical) {
+            setIsCompleted(true);
+            setTimeElapsed(finalTime);
+            localStorage.setItem(`daily-completed-${currentDate}`, 'true');
+            localStorage.setItem(`daily-time-${currentDate}`, String(finalTime));
+            return; // Don't update streaks for historical
+        }
+
         const newStreak = updateStreak(currentDate);
 
         setIsCompleted(true);
@@ -122,7 +145,7 @@ export function useDailyPuzzle() {
         localStorage.setItem(STORAGE_KEYS.DAILY_STREAK, String(newStreak));
         localStorage.setItem(STORAGE_KEYS.LAST_COMPLETED_DATE, currentDate);
         localStorage.setItem(STORAGE_KEYS.DAILY_PUZZLE_TIME, String(finalTime));
-    }, [currentDate, updateStreak]);
+    }, [currentDate, updateStreak, isHistorical]);
 
     // Update grid state
     const updateGridState = useCallback((newGridState: Record<string, GridCell>) => {
