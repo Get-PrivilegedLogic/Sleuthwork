@@ -1,4 +1,4 @@
-import { useEffect, useState, useCallback } from 'react';
+import { useEffect, useState, useCallback, useRef } from 'react';
 
 interface Position {
   row: number;
@@ -64,10 +64,18 @@ export function useKeyboardNavigation({
     }
   }, [isActive, rows, cols, focusedCell, onToggle]);
 
+  // Store the latest callback in a ref to avoid re-attaching event listeners
+  const handleKeyDownRef = useRef(handleKeyDown);
+
   useEffect(() => {
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
+    handleKeyDownRef.current = handleKeyDown;
   }, [handleKeyDown]);
+
+  useEffect(() => {
+    const handler = (e: KeyboardEvent) => handleKeyDownRef.current(e);
+    window.addEventListener('keydown', handler);
+    return () => window.removeEventListener('keydown', handler);
+  }, []); // Empty deps - only attach once
 
   return { focusedCell };
 }

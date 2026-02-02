@@ -8,6 +8,8 @@ import LocationsCard from '../components/LocationsCard';
 import LogicGrid from '../components/LogicGrid';
 import StatementsSection from '../components/StatementsSection';
 import type { GridCell } from '../types/puzzle';
+import { useTimer } from '../hooks/useTimer';
+import { STORAGE_KEYS } from '../constants';
 
 export default function PuzzlePage() {
   const { id } = useParams<{ id: string }>();
@@ -16,18 +18,48 @@ export default function PuzzlePage() {
 
   const [showSolution, setShowSolution] = useState(false);
   const [currentHint, setCurrentHint] = useState(0);
-  const [grid, setGrid] = useState<Record<string, GridCell>>({});
-  const [hintsUnlocked, setHintsUnlocked] = useState(false); // NEW: Track if hints are unlocked
-  
+  const [checkResult, setCheckResult] = useState<'correct' | 'incorrect' | null>(null);
+
+  // Timer integration
+  const { seconds, formattedTime, stop: stopTimer, reset: resetTimer, isRunning } = useTimer();
+
+  // Load grid state from localStorage
+  const [grid, setGrid] = useState<Record<string, GridCell>>(() => {
+    if (!id) return {};
+    const saved = localStorage.getItem(STORAGE_KEYS.GRID_STATE(id));
+    return saved ? JSON.parse(saved) : {};
+  });
+
+  // Load hints unlocked state from localStorage
+  const [hintsUnlocked, setHintsUnlocked] = useState(() => {
+    if (!id) return false;
+    return localStorage.getItem(STORAGE_KEYS.HINTS_UNLOCKED(id)) === 'true';
+  });
+
   // Solution checker state
   const [selectedSuspect, setSelectedSuspect] = useState('');
   const [selectedWeapon, setSelectedWeapon] = useState('');
   const [selectedLocation, setSelectedLocation] = useState('');
-  const [checkResult, setCheckResult] = useState<'correct' | 'incorrect' | null>(null);
 
+  // Scroll to top and reset timer on puzzle change
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, [id]);
+    resetTimer();
+  }, [id, resetTimer]);
+
+  // Save grid state to localStorage whenever it changes
+  useEffect(() => {
+    if (id) {
+      localStorage.setItem(STORAGE_KEYS.GRID_STATE(id), JSON.stringify(grid));
+    }
+  }, [grid, id]);
+
+  // Save hints unlocked state to localStorage
+  useEffect(() => {
+    if (id) {
+      localStorage.setItem(STORAGE_KEYS.HINTS_UNLOCKED(id), hintsUnlocked.toString());
+    }
+  }, [hintsUnlocked, id]);
 
   const handleCellClick = (key: string) => {
     setGrid((prev) => {
@@ -48,9 +80,18 @@ export default function PuzzlePage() {
       selectedLocation === puzzle.solution.location;
 
     setCheckResult(isCorrect ? 'correct' : 'incorrect');
-    
-    // Unlock hints on first incorrect attempt
-    if (!isCorrect) {
+
+    if (isCorrect) {
+      // Stop timer on correct solution
+      stopTimer();
+
+      // Save best time to localStorage
+      const currentBest = localStorage.getItem(STORAGE_KEYS.BEST_TIME(puzzle.id));
+      if (!currentBest || seconds < parseInt(currentBest)) {
+        localStorage.setItem(STORAGE_KEYS.BEST_TIME(puzzle.id), seconds.toString());
+      }
+    } else {
+      // Unlock hints on first incorrect attempt
       setHintsUnlocked(true);
     }
   };
@@ -89,21 +130,29 @@ export default function PuzzlePage() {
       <div className="max-w-6xl mx-auto px-4 py-6 md:py-8">
         {/* Header */}
         <div className="mb-6 md:mb-8">
-          <Link 
-            to="/" 
+          <Link
+            to="/"
             className="inline-flex items-center text-purple-400 hover:text-purple-300 mb-4 transition-colors"
           >
             <span className="mr-2">←</span>
             Back to All Puzzles
           </Link>
-          
+
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-3">
             <h1 className="text-3xl md:text-4xl font-bold text-white">{puzzle.title}</h1>
-            <span className={`inline-block px-4 py-2 rounded-lg border-2 font-bold text-sm uppercase tracking-wider ${getDifficultyBadgeColor(puzzle.difficulty)}`}>
-              {puzzle.difficulty}
-            </span>
+            <div className="flex items-center gap-3">
+              <span className={`inline-block px-4 py-2 rounded-lg border-2 font-bold text-sm uppercase tracking-wider ${getDifficultyBadgeColor(puzzle.difficulty)}`}>
+                {puzzle.difficulty}
+              </span>
+              {/* Timer Display */}
+              <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-lg border-2 font-bold text-sm ${isRunning ? 'bg-blue-900/30 border-blue-500/50 text-blue-400' : 'bg-gray-900/30 border-gray-500/50 text-gray-400'
+                }`}>
+                <span>⏱️</span>
+                <span className="font-mono">{formattedTime}</span>
+              </div>
+            </div>
           </div>
-          
+
           <p className="text-base md:text-lg text-gray-300 leading-relaxed">{puzzle.backstory}</p>
         </div>
 
@@ -134,7 +183,7 @@ export default function PuzzlePage() {
         )}
 
         {/* Logic Grid */}
-        <LogicGrid 
+        <LogicGrid
           suspects={puzzle.suspects}
           weapons={puzzle.weapons}
           locations={puzzle.locations}
@@ -144,9 +193,9 @@ export default function PuzzlePage() {
 
         {/* Hints Section - Only shows after incorrect attempt */}
         {hintsUnlocked && (
-          <CollapsibleSection 
-            title="Hints (Unlocked)" 
-            titleColor="text-yellow-400" 
+          <CollapsibleSection
+            title="Hints (Unlocked)"
+            titleColor="text-yellow-400"
             borderColor="border-yellow-400"
             defaultOpen={true}
           >
@@ -193,11 +242,11 @@ export default function PuzzlePage() {
               <h3 className="text-2xl font-bold text-green-400 mb-2">Correct!</h3>
               <p className="text-green-100 mb-4">You solved the mystery! Detective Finch is impressed.</p>
               <button
-  onClick={() => navigate('/puzzles')}
-  className="px-6 py-2 bg-green-600 hover:bg-green-700 text-white font-bold rounded-lg transition-colors"
->
-  Solve Another Puzzle
-</button>
+                onClick={() => navigate('/puzzles')}
+                className="px-6 py-2 bg-green-600 hover:bg-green-700 text-white font-bold rounded-lg transition-colors"
+              >
+                Solve Another Puzzle
+              </button>
             </div>
           ) : (
             <div>

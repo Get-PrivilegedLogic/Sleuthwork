@@ -8,7 +8,9 @@ interface UsePuzzleGridProps {
 }
 
 const createEmptyGrid = (rows: number, cols: number): GridCell[][] => {
-  return Array(rows).fill(null).map(() => Array(cols).fill('empty'));
+  return Array.from({ length: rows }, () =>
+    Array.from({ length: cols }, () => 'empty' as GridCell)
+  );
 };
 
 export function usePuzzleGrid({ suspectCount, weaponCount, locationCount }: UsePuzzleGridProps) {
