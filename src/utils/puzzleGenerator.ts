@@ -33,55 +33,89 @@ export function generatePuzzle(dateString: string, puzzleId: string): Puzzle {
     const seedNum = parseInt(dateString.replace(/-/g, ''));
     const rng = new SeededRandom(seedNum);
 
-    // 1. Determine size based on difficulty (placeholder: 3 for now)
-    const size = 3;
-    const difficulty: Difficulty = 'easy';
+    // 1. Determine size and difficulty based on day
+    const dayIndex = Math.floor(new Date(dateString + 'T00:00:00').getTime() / (1000 * 60 * 60 * 24));
+    const difficultyCycle: Difficulty[] = ['easy', 'easy', 'medium', 'medium', 'hard'];
+    const difficulty = difficultyCycle[dayIndex % difficultyCycle.length];
+
+    const size = difficulty === 'easy' ? 3 : difficulty === 'medium' ? 4 : 5;
 
     // 2. Pick elements from pool
-    const selectedSuspects = rng.shuffle(suspectPool).slice(0, size);
-    const selectedWeapons = rng.shuffle(weaponPool).slice(0, size);
-    const selectedLocations = rng.shuffle(locationPool).slice(0, size);
+    const shuffledSuspects = rng.shuffle(suspectPool);
+    const shuffledWeapons = rng.shuffle(weaponPool);
+    const shuffledLocations = rng.shuffle(locationPool);
+
+    const selectedSuspects = shuffledSuspects.slice(0, size);
+    const selectedWeapons = shuffledWeapons.slice(0, size);
+    const selectedLocations = shuffledLocations.slice(0, size);
 
     // 3. Create a unique solution
+    // Map suspects to specific weapons and locations to ensure 1-to-1-to-1
     const weaponOrder = rng.shuffle(selectedWeapons);
     const locationOrder = rng.shuffle(selectedLocations);
 
+    // Track the mapping: suspect -> { weapon, location }
+    const mapping = selectedSuspects.map((suspect, i) => ({
+        suspect: suspect.name,
+        weapon: weaponOrder[i].name,
+        location: locationOrder[i].name
+    }));
+
     const solutionIndex = Math.floor(rng.next() * size);
-    const solution = {
-        suspect: selectedSuspects[solutionIndex].name,
-        weapon: weaponOrder[solutionIndex].name,
-        location: locationOrder[solutionIndex].name,
-    };
+    const solution = mapping[solutionIndex];
 
     // 4. Generate Clues
-    // For a 3x3x3 grid, we need enough clues to fix the O's.
-    // We'll generate a few direct and negative clues.
+    // We need different types of clues to satisfy the grid
     const clues: string[] = [];
 
-    // Clue 1: Direct location (NOT the solution to give some mystery)
-    const otherIdx = (solutionIndex + 1) % size;
-    clues.push(`${selectedSuspects[otherIdx].name} was seen in the ${locationOrder[otherIdx].name}.`);
+    // Type A: Direct Location (Suspect X was in Location Y)
+    // We'll give a few of these, but not for the killer typically
+    const usedIndices = new Set<number>();
 
-    // Clue 2: Weapon location
-    clues.push(`The ${weaponOrder[solutionIndex].name} was found in the ${locationOrder[solutionIndex].name}.`);
+    // Give 1-2 direct location clues (not for the solution)
+    const directCount = difficulty === 'easy' ? 1 : 2;
+    for (let i = 0; i < directCount; i++) {
+        const idx = (solutionIndex + i + 1) % size;
+        clues.push(`${mapping[idx].suspect} was seen in the ${mapping[idx].location}.`);
+        usedIndices.add(idx);
+    }
 
-    // Clue 3: Negative alibi
-    const thirdIdx = (solutionIndex + 2) % size;
-    clues.push(`${selectedSuspects[thirdIdx].name} was definitely not in the ${locationOrder[solutionIndex].name}.`);
+    // Type B: Weapon Location (The Weapon X was in Location Y)
+    // One of these is very helpful
+    const weaponLocIdx = (solutionIndex + rng.pick([0, 1])) % size;
+    clues.push(`The ${mapping[weaponLocIdx].weapon} was found in the ${mapping[weaponLocIdx].location}.`);
 
-    // Clue 4: Negative weapon alibi
-    clues.push(`${selectedSuspects[solutionIndex].name} does not own the ${weaponOrder[otherIdx].name}.`);
+    // Type C: Negative Alibi (Suspect X was not in Location Y)
+    const negAlibiIdx = (solutionIndex + directCount + 1) % size;
+    const wrongLocIdx = (negAlibiIdx + 1) % size;
+    clues.push(`${mapping[negAlibiIdx].suspect} was definitely not in the ${mapping[wrongLocIdx].location}.`);
+
+    // Type D: Negative Weapon (Suspect X does not have Weapon Y)
+    clues.push(`${solution.suspect} was not found with the ${weaponOrder[(solutionIndex + 1) % size].name}.`);
+
+    // Type E: Cross-Category (The person in X had the Y)
+    if (size >= 4) {
+        const crossIdx = (solutionIndex + 2) % size;
+        clues.push(`The person in the ${mapping[crossIdx].location} was found with the ${mapping[crossIdx].weapon}.`);
+    }
+
+    // Type F: Expert Clues for Hard
+    if (difficulty === 'hard') {
+        const expertIdx = (solutionIndex + 3) % size;
+        clues.push(`${mapping[expertIdx].suspect} was seen near the ${mapping[(expertIdx + 1) % size].location}, but didn't enter.`);
+    }
 
     // 5. Build Final Object
     const template = rng.pick(backstoryTemplates);
     const backstory = template.template;
 
     // Simple statements
-    const statements: Statement[] = selectedSuspects.map((s, i) => {
+    const statements: Statement[] = selectedSuspects.map((s) => {
+        const personMapping = mapping.find(m => m.suspect === s.name)!;
         if (s.name === solution.suspect) {
-            return { suspect: s.name, claim: `I was in the ${locationOrder[i].name} at the time, but I didn't do it!` };
+            return { suspect: s.name, claim: `I was in the ${personMapping.location} at the time, but I didn't do it!` };
         }
-        return { suspect: s.name, claim: `I was in the ${locationOrder[i].name} and I saw nothing suspicious.` };
+        return { suspect: s.name, claim: `I was in the ${personMapping.location} and I saw nothing suspicious.` };
     });
 
     return {
@@ -97,9 +131,17 @@ export function generatePuzzle(dateString: string, puzzleId: string): Puzzle {
         suspects: selectedSuspects,
         weapons: selectedWeapons,
         locations: selectedLocations,
-        clues,
+        clues: rng.shuffle(clues),
         statements,
-        hints: ['Check the weapon locations.', 'Remember that each suspect was in a unique location.'],
-        solution
+        hints: [
+            'Each suspect was in a unique location with a unique weapon.',
+            'Look for connections between weapons and locations first.',
+            `The killer committed the crime in the ${solution.location}.`
+        ],
+        solution: {
+            suspect: solution.suspect,
+            weapon: solution.weapon,
+            location: solution.location
+        }
     };
 }

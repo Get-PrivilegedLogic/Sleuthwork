@@ -1,5 +1,4 @@
 import type { Weapon } from '../types/puzzle';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { getIcon } from '../utils/iconMapping';
 
 interface WeaponsCardProps {
@@ -19,9 +18,12 @@ export default function WeaponsCard({ weapons }: WeaponsCardProps) {
             key={idx}
             className="bg-white/80 dark:bg-gray-800/90 backdrop-blur-sm rounded-xl p-4 border-2 border-orange-500/30 hover:border-orange-500/50 transition-all shadow-lg"
           >
-            {/* Font Awesome Icon */}
+            {/* Lucide Icon */}
             <div className="flex items-center justify-center w-16 h-16 mx-auto mb-3 bg-orange-500/20 rounded-full">
-              <FontAwesomeIcon icon={getIcon(weapon.icon)} className="text-3xl text-orange-600 dark:text-orange-400" />
+              {(() => {
+                const Icon = getIcon(weapon.icon);
+                return <Icon className="w-8 h-8 text-orange-600 dark:text-orange-400" />;
+              })()}
             </div>
 
             <h3 className="text-xl font-bold dark:text-white text-center mb-2">{weapon.name}</h3>

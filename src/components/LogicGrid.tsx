@@ -1,7 +1,6 @@
 import { useState, useMemo, useCallback } from 'react';
 import type { GridCell } from '../types/puzzle';
 import type { Suspect, Weapon, Location } from '../types/puzzle';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { getIcon } from '../utils/iconMapping';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -94,7 +93,10 @@ export default function LogicGrid({ suspects, weapons, locations, grid, onCellCl
                   onMouseLeave={() => setHoveredItem(null)}
                 >
                   <div className="flex flex-col items-center justify-center">
-                    <FontAwesomeIcon icon={getIcon(col.icon)} className="text-2xl" />
+                    {(() => {
+                      const Icon = getIcon(col.icon);
+                      return <Icon className="w-6 h-6" />;
+                    })()}
                     {/* Tooltip */}
                     {hoveredItem === col.name && (
                       <div className="absolute top-full mt-1 bg-gray-900 text-white text-xs px-2 py-1 rounded whitespace-nowrap z-10 shadow-lg">
@@ -115,7 +117,10 @@ export default function LogicGrid({ suspects, weapons, locations, grid, onCellCl
                   onMouseLeave={() => setHoveredItem(null)}
                 >
                   <div className="flex items-center justify-center">
-                    <FontAwesomeIcon icon={getIcon(row.icon)} className="text-2xl" />
+                    {(() => {
+                      const Icon = getIcon(row.icon);
+                      return <Icon className="w-6 h-6" />;
+                    })()}
                     {/* Tooltip */}
                     {hoveredItem === row.name && (
                       <div className="absolute left-full ml-1 bg-gray-900 text-white text-xs px-2 py-1 rounded whitespace-nowrap z-10 shadow-lg">
@@ -129,8 +134,17 @@ export default function LogicGrid({ suspects, weapons, locations, grid, onCellCl
                   return (
                     <td
                       key={col.name}
-                      className="border border-gray-600 bg-gray-900/30 p-2 text-center cursor-pointer hover:bg-gray-700/50 transition-colors min-h-[60px]"
+                      className="border border-gray-600 bg-gray-900/30 p-2 text-center cursor-pointer hover:bg-gray-700/50 transition-colors min-h-[60px] focus:outline-none focus:ring-2 focus:ring-purple-500 focus:bg-gray-700/70"
                       onClick={() => handleCellClick(row.name, col.name)}
+                      tabIndex={0}
+                      role="button"
+                      aria-label={`Mark ${row.name} and ${col.name} - Currently ${cellValue === 'empty' ? 'not marked' : cellValue}`}
+                      onKeyDown={(e) => {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                          e.preventDefault();
+                          handleCellClick(row.name, col.name);
+                        }
+                      }}
                     >
                       {renderCell(cellValue)}
                     </td>
