@@ -45,8 +45,8 @@ export function useDailyPuzzle(targetDate?: string) {
     const dailyPuzzle = useMemo((): Puzzle => {
         const dayNumber = getDaysSinceLaunch(LAUNCH_EPOCH, currentDate);
 
-        if (dayNumber <= puzzles.length) {
-            // First 14 days use hand-crafted puzzles
+        if (dayNumber <= 2) {
+            // Feb 1 and Feb 2 use hand-crafted puzzles
             return puzzles[dayNumber - 1];
         }
 
