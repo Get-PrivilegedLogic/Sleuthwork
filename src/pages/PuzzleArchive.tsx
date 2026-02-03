@@ -63,7 +63,7 @@ export default function PuzzleArchive() {
       }
     }
 
-    return list.reverse(); // Show newest first
+    return list; // Show in order (Puzzle 1 first)
   })();
 
   const formatTime = (totalSeconds: number): string => {

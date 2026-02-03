@@ -280,22 +280,36 @@ export default function DailyPuzzlePage() {
                     <p className="text-base md:text-lg text-gray-700 dark:text-gray-300 leading-relaxed mt-4">{puzzle.backstory}</p>
                 </motion.div>
 
-                {/* Daily Clues / Evidence Area (Emerald Theme) */}
+                {/* Card-Based Layout - Suspects, Weapons, Locations */}
                 <motion.div
                     initial={{ y: 20, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ delay: 0.1 }}
-                    className="bg-gradient-to-br from-green-900 to-emerald-800 p-6 rounded-lg border-2 border-green-500 shadow-lg shadow-green-900/50"
                 >
-                    <h2 className="text-2xl font-bold text-green-400 mb-4 flex items-center">
+                    <SuspectsCard suspects={puzzle.suspects} />
+                    <WeaponsCard weapons={puzzle.weapons} />
+                    <LocationsCard locations={puzzle.locations} />
+                </motion.div>
+
+                {/* Clues Section */}
+                <motion.div
+                    initial={{ y: 20, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ delay: 0.15 }}
+                    className="bg-gradient-to-br from-green-900 to-emerald-800 p-4 md:p-6 rounded-lg mb-6 md:mb-8 border-2 border-green-500 shadow-lg shadow-green-900/50"
+                >
+                    <h2 className="text-xl md:text-2xl font-bold text-green-400 mb-3 md:mb-4 flex items-center">
                         <span className="text-2xl mr-2">🔍</span>
-                        Daily Evidence
+                        Clues & Evidence
                     </h2>
-                    <div className="space-y-4">
-                        <SuspectsCard suspects={puzzle.suspects} />
-                        <WeaponsCard weapons={puzzle.weapons} />
-                        <LocationsCard locations={puzzle.locations} />
-                    </div>
+                    <ul className="space-y-2 md:space-y-3">
+                        {puzzle.clues.map((clue, idx) => (
+                            <li key={idx} className="flex items-start">
+                                <span className="text-green-400 font-bold mr-2 md:mr-3 mt-0.5 shrink-0">{idx + 1}.</span>
+                                <span className="text-sm md:text-base text-green-100">{clue}</span>
+                            </li>
+                        ))}
+                    </ul>
                 </motion.div>
 
                 {/* Logic Grid */}
@@ -314,13 +328,15 @@ export default function DailyPuzzlePage() {
                 </motion.div>
 
                 {/* Statements */}
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 0.3 }}
-                >
-                    <StatementsSection statements={puzzle.statements} />
-                </motion.div>
+                {puzzle.statements && puzzle.statements.length > 0 && (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ delay: 0.3 }}
+                    >
+                        <StatementsSection statements={puzzle.statements} />
+                    </motion.div>
+                )}
 
                 {/* Hints */}
                 <CollapsibleSection title="Hints" titleColor="text-yellow-400" borderColor="border-yellow-500/30" defaultOpen={false}>
