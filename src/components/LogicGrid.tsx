@@ -11,11 +11,14 @@ interface LogicGridProps {
   locations: Location[];
   grid: Record<string, GridCell>;
   onCellClick: (key: string) => void;
+  onClearGrid?: () => void;
 }
 
-export default function LogicGrid({ suspects, weapons, locations, grid, onCellClick }: LogicGridProps) {
+export default function LogicGrid({ suspects, weapons, locations, grid, onCellClick, onClearGrid }: LogicGridProps) {
   const [activeGrid, setActiveGrid] = useState<'suspect-weapon' | 'suspect-location' | 'weapon-location'>('suspect-weapon');
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
+
+  const hasMarks = useMemo(() => Object.keys(grid).length > 0, [grid]);
 
   const getCellValue = useCallback((row: string, col: string): GridCell => {
     return grid[`${row}-${col}`] || 'empty';
@@ -143,10 +146,22 @@ export default function LogicGrid({ suspects, weapons, locations, grid, onCellCl
 
   return (
     <div className="bg-white dark:bg-gradient-to-br dark:from-gray-800 dark:to-gray-900 p-4 md:p-6 rounded-lg border-2 border-purple-500/30 shadow-lg transition-colors duration-300">
-      <h2 className="text-xl md:text-2xl font-bold text-purple-600 dark:text-purple-400 mb-4 flex items-center">
-        <span className="text-2xl mr-2">📊</span>
-        Logic Grid
-      </h2>
+      <div className="flex justify-between items-center mb-4">
+        <h2 className="text-xl md:text-2xl font-bold text-purple-600 dark:text-purple-400 flex items-center">
+          <span className="text-2xl mr-2">📊</span>
+          Logic Grid
+        </h2>
+        {onClearGrid && (
+          <button
+            onClick={onClearGrid}
+            disabled={!hasMarks}
+            className="text-xs font-semibold px-3 py-1.5 rounded bg-red-100 hover:bg-red-200 dark:bg-red-900/20 dark:hover:bg-red-900/40 text-red-600 dark:text-red-400 border border-red-500/30 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-1.5"
+          >
+            <span>🗑️</span>
+            Clear Grid
+          </button>
+        )}
+      </div>
 
       {/* Grid Selector */}
       <div className="flex flex-wrap gap-2 mb-4">

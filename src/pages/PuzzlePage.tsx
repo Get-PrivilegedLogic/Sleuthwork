@@ -133,6 +133,12 @@ export default function PuzzlePage() {
     }
   };
 
+  const handleClearGrid = () => {
+    if (window.confirm('Are you sure you want to clear all marks on the grid?')) {
+      setGrid({});
+    }
+  };
+
   return (
     <Layout maxWidth="6xl">
       <div className="relative z-10">
@@ -199,6 +205,7 @@ export default function PuzzlePage() {
           locations={puzzle.locations}
           grid={grid}
           onCellClick={handleCellClick}
+          onClearGrid={handleClearGrid}
         />
 
         {/* Hints Section - Only shows after incorrect attempt */}

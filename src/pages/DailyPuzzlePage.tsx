@@ -324,6 +324,11 @@ export default function DailyPuzzlePage() {
                         locations={puzzle.locations}
                         grid={gridState}
                         onCellClick={handleCellClick}
+                        onClearGrid={() => {
+                            if (window.confirm('Are you sure you want to clear all marks on the grid?')) {
+                                updateGridState({});
+                            }
+                        }}
                     />
                 </motion.div>
 
