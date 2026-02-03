@@ -7,8 +7,8 @@ export const puzzle3: Puzzle = {
   releaseDate: '2025-12-03T12:00:00Z',
   backstory: 'Director Thomas Laurent was found dead backstage during intermission of opening night. Three cast members had access to the restricted backstage area.',
   suspects: [
-    { 
-      name: 'Emma Stone', 
+    {
+      name: 'Emma Stone',
       bio: 'Lead actress who had a public dispute with Thomas last week.',
       height: '5\'5"',
       build: 'Slim',
@@ -18,8 +18,8 @@ export const puzzle3: Puzzle = {
       age: 'Early 30s',
       icon: 'user'
     },
-    { 
-      name: 'David Chen', 
+    {
+      name: 'David Chen',
       bio: 'Stage manager responsible for props and equipment.',
       height: '5\'9"',
       build: 'Average',
@@ -29,8 +29,8 @@ export const puzzle3: Puzzle = {
       age: 'Mid-40s',
       icon: 'user-tie'
     },
-    { 
-      name: 'Lisa Brown', 
+    {
+      name: 'Lisa Brown',
       bio: 'Understudy hoping to replace Emma as the lead.',
       height: '5\'7"',
       build: 'Athletic',
@@ -42,22 +42,22 @@ export const puzzle3: Puzzle = {
     }
   ],
   weapons: [
-    { 
-      name: 'Stage Weight', 
+    {
+      name: 'Stage Weight',
       description: 'Iron counterweight used for rigging, 20 pounds.',
       weight: 'Heavy-weight',
       type: 'Blunt',
       icon: 'dumbbell'
     },
-    { 
-      name: 'Prop Sword', 
+    {
+      name: 'Prop Sword',
       description: 'Metal stage sword with dulled blade but heavy hilt.',
       weight: 'Medium-weight',
       type: 'Blunt',
       icon: 'knife'
     },
-    { 
-      name: 'Cable', 
+    {
+      name: 'Cable',
       description: 'Electrical cable from lighting equipment, 6 feet long.',
       weight: 'Light-weight',
       type: 'Other',
@@ -65,22 +65,22 @@ export const puzzle3: Puzzle = {
     }
   ],
   locations: [
-    { 
-      name: 'Backstage', 
+    {
+      name: 'Backstage',
       description: 'Narrow area behind the main stage with quick-change stations.',
       setting: 'Indoors',
       access: 'Restricted',
       icon: 'door-open'
     },
-    { 
-      name: 'Prop Room', 
+    {
+      name: 'Prop Room',
       description: 'Locked room containing costumes and props.',
       setting: 'Indoors',
       access: 'Restricted',
       icon: 'warehouse'
     },
-    { 
-      name: 'Lighting Booth', 
+    {
+      name: 'Lighting Booth',
       description: 'Elevated control booth overlooking the stage.',
       setting: 'Indoors',
       access: 'Restricted',
@@ -88,31 +88,32 @@ export const puzzle3: Puzzle = {
     }
   ],
   clues: [
-    'Thomas was killed between 8:15 PM and 8:30 PM during intermission.',
-    'Emma was on stage performing until 8:10 PM and back on at 8:35 PM.',
+    'Emma was on stage performing during the entire intermission.',
     'The Stage Weight was found in the Prop Room after the murder.',
-    'David was operating lights from the Lighting Booth during intermission.',
-    'Lisa was seen in Backstage at 8:20 PM by two witnesses.',
-    'The murder did not take place in the Lighting Booth.'
+    'David was operating lights from the Lighting Booth and never left his post.',
+    'Lisa was seen in the Backstage area by several stagehands.',
+    'The murder did not take place in the Lighting Booth.',
+    'The person in the Prop Room was not the killer.'
   ],
   statements: [
     {
       suspect: 'Emma Stone',
-      claim: 'Thomas and I had our differences, but I was performing on stage. I barely had time for a costume change during intermission.'
+      claim: 'I was center stage. I barely had time for a costume change, let alone a trip backstage.'
     },
     {
       suspect: 'David Chen',
-      claim: 'I was in the Lighting Booth the entire intermission managing the spotlight cues. I never left my post.'
+      claim: 'I was in the Lighting Booth managing the cues. I never left my post, and I have the logs to prove it.'
     },
     {
       suspect: 'Lisa Brown',
-      claim: 'I was backstage helping with quick changes. Several people saw me there during intermission.'
+      claim: 'I was backstage helping with quick changes. Several people saw me there during the intermission.'
     }
   ],
   hints: [
-    'Who had both the opportunity and access to Backstage during intermission?',
-    'The murder weapon\'s location suggests where the killer went after.',
-    'Emma was performing - could she have left the stage during the right window?'
+    'Emma Stone and David Chen both have verified locations during the murder.',
+    'Lisa Brown admits to being in the Backstage area - check if anyone else was there.',
+    'The murder weapon was found in the Prop Room - what does that tell you about the killer\'s path?',
+    'The murder occurred in the Backstage area - who was seen there?'
   ],
   solution: { suspect: 'Lisa Brown', weapon: 'Stage Weight', location: 'Backstage' }
 };

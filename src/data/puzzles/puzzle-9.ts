@@ -7,8 +7,8 @@ export const puzzle9: Puzzle = {
   releaseDate: '2025-12-09T12:00:00Z',
   backstory: 'CEO Jennifer Blake was found dead in the executive suite during the company holiday party. Four employees had access to the secured floor.',
   suspects: [
-    { 
-      name: 'David Park', 
+    {
+      name: 'David Park',
       bio: 'CFO recently accused of embezzling company funds.',
       height: '5\'10"',
       build: 'Average',
@@ -18,8 +18,8 @@ export const puzzle9: Puzzle = {
       age: 'Early 40s',
       icon: 'user-tie'
     },
-    { 
-      name: 'Rachel Green', 
+    {
+      name: 'Rachel Green',
       bio: 'VP of Sales competing for Jennifer\'s position.',
       height: '5\'9"',
       build: 'Athletic',
@@ -29,8 +29,8 @@ export const puzzle9: Puzzle = {
       age: 'Mid-30s',
       icon: 'user-tie'
     },
-    { 
-      name: 'Kevin Tran', 
+    {
+      name: 'Kevin Tran',
       bio: 'IT director with access to all security systems.',
       height: '5\'8"',
       build: 'Slim',
@@ -40,8 +40,8 @@ export const puzzle9: Puzzle = {
       age: 'Late 20s',
       icon: 'user'
     },
-    { 
-      name: 'Lisa Chen', 
+    {
+      name: 'Lisa Chen',
       bio: 'Executive assistant who organized the holiday party.',
       height: '5\'4"',
       build: 'Petite',
@@ -53,29 +53,29 @@ export const puzzle9: Puzzle = {
     }
   ],
   weapons: [
-    { 
-      name: 'Trophy', 
+    {
+      name: 'Trophy',
       description: 'Glass award from executive credenza, heavy base.',
       weight: 'Medium-weight',
       type: 'Blunt',
       icon: 'trophy'
     },
-    { 
-      name: 'Scissors', 
+    {
+      name: 'Scissors',
       description: 'Large office scissors from supply closet, 10 inches.',
       weight: 'Light-weight',
       type: 'Sharp',
       icon: 'scissors'
     },
-    { 
-      name: 'USB Cable', 
+    {
+      name: 'USB Cable',
       description: 'Reinforced charging cable, 6 feet long.',
       weight: 'Light-weight',
       type: 'Other',
       icon: 'lightbulb'
     },
-    { 
-      name: 'Stapler', 
+    {
+      name: 'Stapler',
       description: 'Heavy-duty metal stapler, industrial size.',
       weight: 'Medium-weight',
       type: 'Blunt',
@@ -83,29 +83,29 @@ export const puzzle9: Puzzle = {
     }
   ],
   locations: [
-    { 
-      name: 'Executive Suite', 
+    {
+      name: 'Executive Suite',
       description: 'Corner office with view, private entrance.',
       setting: 'Indoors',
       access: 'Private',
       icon: 'briefcase'
     },
-    { 
-      name: 'Server Room', 
+    {
+      name: 'Server Room',
       description: 'Climate-controlled IT room with backup systems.',
       setting: 'Indoors',
       access: 'Restricted',
       icon: 'warehouse'
     },
-    { 
-      name: 'Conference Room', 
+    {
+      name: 'Conference Room',
       description: 'Large meeting room where the party was held.',
       setting: 'Indoors',
       access: 'Public',
       icon: 'building'
     },
-    { 
-      name: 'Break Room', 
+    {
+      name: 'Break Room',
       description: 'Staff kitchen area on the executive floor.',
       setting: 'Indoors',
       access: 'Public',
@@ -113,38 +113,38 @@ export const puzzle9: Puzzle = {
     }
   ],
   clues: [
-    'Jennifer was killed between 8 PM and 9 PM during the party.',
-    'David gave a speech in the Conference Room from 8:15 PM to 8:45 PM.',
+    'David Park was giving a speech in the Conference Room, seen by everyone.',
     'The Scissors were found in the Break Room.',
-    'Rachel was seen by multiple witnesses in the Conference Room until 8:30 PM.',
-    'Kevin was rebooting servers in the Server Room from 7:45 PM to 9 PM.',
-    'Lisa was setting up food in the Break Room at 8:20 PM.',
+    'Rachel Green was networking at the party but left for a private meeting.',
+    'Kevin Tran was in the Server Room dealing with a system crash.',
+    'Lisa Chen was constant moving between the Break Room and Conference Room.',
     'The murder took place in the Executive Suite.',
-    'David was not in the Executive Suite during the murder.'
+    'The person with the Stapler was in the Conference Room.',
+    'David was not in the Executive Suite.'
   ],
   statements: [
     {
       suspect: 'David Park',
-      claim: 'Those embezzlement accusations are false. I was giving the year-end financial update during the party - everyone saw me present.'
+      claim: 'I was center stage in the Conference Room. I gave the year-end financial update and then spoke with investors.'
     },
     {
       suspect: 'Rachel Green',
-      claim: 'Jennifer and I had our differences professionally, but I was networking at the party. I need witnesses to speak up if I want her job now.'
+      claim: 'I was at the party for a while, but I eventually went to the executive suite to prepare some notes for tomorrow.'
     },
     {
       suspect: 'Kevin Tran',
-      claim: 'I was stuck in the Server Room dealing with a critical system update. Terrible timing, but the servers don\'t care about parties.'
+      claim: 'I spent the entire party level in the Server Room. We had a major system failure that required my full attention.'
     },
     {
       suspect: 'Lisa Chen',
-      claim: 'I spent the whole evening running between the Break Room and the Conference Room making sure everything was perfect. So much work!'
+      claim: 'I was everywhere but the executive suite! I was managing the catering in the Break Room and the setup in the Conference Room.'
     }
   ],
   hints: [
-    'David was giving a speech - he has witnesses.',
-    'Kevin was working in the Server Room the entire time.',
-    'Rachel was seen until 8:30 PM - what about after?',
-    'Lisa\'s presence in the Break Room is key - when was she there?'
+    'David Park and Kevin Tran both have solid alibis for their locations.',
+    'Lisa Chen was seen in specific public areas throughout the evening.',
+    'Rachel Green admits to being in the Executive Suite - check who else had access.',
+    'The murder weapon (Scissors) was found in the Break Room - what does that tell you about the killer\'s path?'
   ],
   solution: { suspect: 'Rachel Green', weapon: 'Scissors', location: 'Executive Suite' }
 };

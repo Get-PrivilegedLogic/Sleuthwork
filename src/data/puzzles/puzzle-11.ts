@@ -7,8 +7,8 @@ export const puzzle11: Puzzle = {
   releaseDate: '2025-12-11T12:00:00Z',
   backstory: 'Casino owner Vincent Romano was found dead in the high-roller suite. Four people had VIP access to the private gaming floor that night.',
   suspects: [
-    { 
-      name: 'Nicholas Carver', 
+    {
+      name: 'Nicholas Carver',
       bio: 'Professional gambler who owed Vincent $500,000.',
       height: '6\'0"',
       build: 'Slim',
@@ -18,8 +18,8 @@ export const puzzle11: Puzzle = {
       age: 'Late 30s',
       icon: 'user-secret'
     },
-    { 
-      name: 'Elena Petrova', 
+    {
+      name: 'Elena Petrova',
       bio: 'Casino floor manager responsible for security.',
       height: '5\'9"',
       build: 'Athletic',
@@ -29,8 +29,8 @@ export const puzzle11: Puzzle = {
       age: 'Mid-30s',
       icon: 'user-shield'
     },
-    { 
-      name: 'Marcus DeVille', 
+    {
+      name: 'Marcus DeVille',
       bio: 'Rival casino owner from across the street.',
       height: '6\'2"',
       build: 'Average',
@@ -40,8 +40,8 @@ export const puzzle11: Puzzle = {
       age: 'Early 50s',
       icon: 'user-tie'
     },
-    { 
-      name: 'Sophia Romano', 
+    {
+      name: 'Sophia Romano',
       bio: 'Vincent\'s sister and casino part-owner.',
       height: '5\'6"',
       build: 'Average',
@@ -53,29 +53,29 @@ export const puzzle11: Puzzle = {
     }
   ],
   weapons: [
-    { 
-      name: 'Poker Chip Rack', 
+    {
+      name: 'Poker Chip Rack',
       description: 'Heavy acrylic chip carrier, 10 pounds when full.',
       weight: 'Heavy-weight',
       type: 'Blunt',
       icon: 'chess'
     },
-    { 
-      name: 'Crystal Decanter', 
+    {
+      name: 'Crystal Decanter',
       description: 'Lead crystal whiskey decanter, expensive and heavy.',
       weight: 'Heavy-weight',
       type: 'Blunt',
       icon: 'wine-bottle'
     },
-    { 
-      name: 'Tie', 
+    {
+      name: 'Tie',
       description: 'Designer silk necktie, 58 inches long.',
       weight: 'Light-weight',
       type: 'Other',
       icon: 'user'
     },
-    { 
-      name: 'Dice', 
+    {
+      name: 'Dice',
       description: 'Oversized novelty dice made of solid brass, 3 inches per side.',
       weight: 'Medium-weight',
       type: 'Blunt',
@@ -83,29 +83,29 @@ export const puzzle11: Puzzle = {
     }
   ],
   locations: [
-    { 
-      name: 'High-Roller Suite', 
+    {
+      name: 'High-Roller Suite',
       description: 'Private room for big-stakes poker games.',
       setting: 'Indoors',
       access: 'Private',
       icon: 'chess'
     },
-    { 
-      name: 'Security Office', 
+    {
+      name: 'Security Office',
       description: 'Monitoring room with live camera feeds.',
       setting: 'Indoors',
       access: 'Restricted',
       icon: 'warehouse'
     },
-    { 
-      name: 'Bar', 
+    {
+      name: 'Bar',
       description: 'Exclusive VIP bar on the gaming floor.',
       setting: 'Indoors',
       access: 'Public',
       icon: 'glass-cheers'
     },
-    { 
-      name: 'Vault', 
+    {
+      name: 'Vault',
       description: 'Secure room where cash and chips are stored.',
       setting: 'Indoors',
       access: 'Restricted',
@@ -113,41 +113,40 @@ export const puzzle11: Puzzle = {
     }
   ],
   clues: [
-    'Vincent was killed between 2 AM and 3 AM.',
-    'Nicholas was playing poker in the High-Roller Suite from 1 AM to 2:30 AM.',
-    'Elena was reviewing security footage in the Security Office from 2:15 AM to 3:15 AM.',
+    'Nicholas Carver was at the poker table in the High-Roller Suite, seen by the dealer.',
+    'Elena Petrova was in the Security Office monitoring the casino floor.',
     'The Crystal Decanter was found in the Vault.',
-    'Marcus was seen entering the casino at 1:45 AM by the valet.',
-    'Sophia was at the Bar until 2 AM, then went to get cash.',
-    'Nicholas left the High-Roller Suite at 2:30 AM.',
+    'Marcus DeVille was at the VIP Bar having drinks with several patrons.',
+    'Sophia Romano was seen entering the Vault by a security guard.',
     'The murder took place in the Vault.',
-    'Elena was in the Security Office during the murder.',
-    'Marcus was not at the Bar during the time of death.'
+    'The person with the Dice was in the Bar.',
+    'Elena was in the Security Office and never left her post.',
+    'Marcus was not in the High-Roller Suite.',
+    'The killer did not use the Poker Chip Rack.'
   ],
   statements: [
     {
       suspect: 'Nicholas Carver',
-      claim: 'Yes, I owe Vincent money. But I was at the poker table trying to win it back. I played until 2:30 AM - the dealer can confirm.'
+      claim: 'I was at the poker table all night. I didn\'t leave until the game broke up - the dealer can confirm I never even stood up.'
     },
     {
       suspect: 'Elena Petrova',
-      claim: 'I was in the Security Office reviewing footage from earlier in the evening. We had a suspected card counter and I was checking the tapes.'
+      claim: 'I was assigned to the Security Office. I was watching the cards on the floor for counters and didn\'t leave for any reason.'
     },
     {
       suspect: 'Marcus DeVille',
-      claim: 'Vincent and I are business rivals, but I came to talk partnership. I arrived around 1:45 and we had drinks at the Bar to discuss terms.'
+      claim: 'I was at the VIP Bar. I\'m a rival, sure, but I was there for business and many people saw me enjoying a drink.'
     },
     {
       suspect: 'Sophia Romano',
-      claim: 'I was at the Bar having a nightcap until about 2 AM. Then I needed to get cash from the Vault for tomorrow\'s operations.'
+      claim: 'I went to the Vault to get some cash for the morning shift. I was only there for a few minutes while searching for the ledger.'
     }
   ],
   hints: [
-    'Elena was watching cameras - she has a verifiable alibi.',
-    'Nicholas left the poker game at 2:30 AM - where did he go?',
-    'Sophia went to get cash at 2 AM - which room has cash?',
-    'Marcus entered at 1:45 AM but where was he during the murder?',
-    'The murder was in the Vault - who had reason to go there?'
+    'Elena Petrova has a professional alibi for being in the Security Office.',
+    'Nicholas Carver and Marcus DeVille were both in public areas with witnesses.',
+    'Sophia Romano admits to being in the Vault - check if anyone else was there or if her alibi holds up.',
+    'The murder weapon (Crystal Decanter) was found in the Vault - who was the only one admitted to being there?'
   ],
   solution: { suspect: 'Sophia Romano', weapon: 'Crystal Decanter', location: 'Vault' }
 };

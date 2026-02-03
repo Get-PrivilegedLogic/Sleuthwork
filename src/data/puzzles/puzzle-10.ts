@@ -7,8 +7,8 @@ export const puzzle10: Puzzle = {
   releaseDate: '2025-12-10T12:00:00Z',
   backstory: 'Lord Edmund Ashford was found dead in his private study. Four members of the household were present on the estate that stormy evening.',
   suspects: [
-    { 
-      name: 'Lady Charlotte', 
+    {
+      name: 'Lady Charlotte',
       bio: 'Edmund\'s wife who inherited nothing under the current will.',
       height: '5\'7"',
       build: 'Slim',
@@ -18,8 +18,8 @@ export const puzzle10: Puzzle = {
       age: 'Late 30s',
       icon: 'user'
     },
-    { 
-      name: 'Arthur Ashford', 
+    {
+      name: 'Arthur Ashford',
       bio: 'Edmund\'s younger brother and potential heir.',
       height: '6\'1"',
       build: 'Athletic',
@@ -29,8 +29,8 @@ export const puzzle10: Puzzle = {
       age: 'Mid-40s',
       icon: 'user-tie'
     },
-    { 
-      name: 'Dr. Philip Hayes', 
+    {
+      name: 'Dr. Philip Hayes',
       bio: 'Family physician making a house call that evening.',
       height: '5\'9"',
       build: 'Average',
@@ -40,8 +40,8 @@ export const puzzle10: Puzzle = {
       age: 'Late 50s',
       icon: 'user-nurse'
     },
-    { 
-      name: 'Margaret Price', 
+    {
+      name: 'Margaret Price',
       bio: 'Head housekeeper who has served the family for 30 years.',
       height: '5\'5"',
       build: 'Stocky',
@@ -53,29 +53,29 @@ export const puzzle10: Puzzle = {
     }
   ],
   weapons: [
-    { 
-      name: 'Fireplace Poker', 
+    {
+      name: 'Fireplace Poker',
       description: 'Heavy iron poker from the study fireplace.',
       weight: 'Heavy-weight',
       type: 'Blunt',
       icon: 'hammer'
     },
-    { 
-      name: 'Letter Opener', 
+    {
+      name: 'Letter Opener',
       description: 'Victorian silver letter opener with 6-inch blade.',
       weight: 'Light-weight',
       type: 'Sharp',
       icon: 'knife'
     },
-    { 
-      name: 'Candlestick', 
+    {
+      name: 'Candlestick',
       description: 'Solid brass candlestick, 14 inches tall, ornate.',
       weight: 'Medium-weight',
       type: 'Blunt',
       icon: 'lightbulb'
     },
-    { 
-      name: 'Rope', 
+    {
+      name: 'Rope',
       description: 'Silk curtain tie from the drawing room, 8 feet long.',
       weight: 'Light-weight',
       type: 'Other',
@@ -83,29 +83,29 @@ export const puzzle10: Puzzle = {
     }
   ],
   locations: [
-    { 
-      name: 'Study', 
+    {
+      name: 'Study',
       description: 'Wood-paneled room with locked desk and fireplace.',
       setting: 'Indoors',
       access: 'Private',
       icon: 'book'
     },
-    { 
-      name: 'Drawing Room', 
+    {
+      name: 'Drawing Room',
       description: 'Formal sitting room with piano and portraits.',
       setting: 'Indoors',
       access: 'Public',
       icon: 'couch'
     },
-    { 
-      name: 'Kitchen', 
+    {
+      name: 'Kitchen',
       description: 'Large servants\' kitchen in the basement level.',
       setting: 'Indoors',
       access: 'Restricted',
       icon: 'utensils'
     },
-    { 
-      name: 'Conservatory', 
+    {
+      name: 'Conservatory',
       description: 'Glass-enclosed garden room with tropical plants.',
       setting: 'Mixed',
       access: 'Public',
@@ -113,41 +113,40 @@ export const puzzle10: Puzzle = {
     }
   ],
   clues: [
-    'Edmund was killed between 9 PM and 10 PM during the thunderstorm.',
-    'Lady Charlotte was playing piano in the Drawing Room from 8:45 PM to 9:30 PM, heard by servants.',
-    'Arthur arrived at the manor at 9:15 PM, delayed by the storm.',
+    'Lady Charlotte was playing piano in the Drawing Room, overheard by all the house staff.',
+    'Arthur Ashford arrived at the manor soaked from the storm, seen by the butler.',
     'The Candlestick was found in the Conservatory.',
-    'Dr. Hayes was examining a patient in the Kitchen at 9 PM.',
-    'Margaret was serving tea in the Drawing Room at 9 PM.',
+    'Dr. Philip Hayes was in the Kitchen treating an ill staff member.',
+    'Margaret Price was serving tea in the Drawing Room and then went to the Kitchen.',
     'The murder weapon was the Letter Opener.',
-    'The killer was in the Study at the time of death.',
-    'Charlotte was not in the Study when the murder occurred.',
-    'Arthur did not use the Candlestick.'
+    'The killer was in the Study.',
+    'Lady Charlotte was not in the Study.',
+    'Arthur Ashford did not use the Candlestick.',
+    'The person in the Kitchen was not the killer.'
   ],
   statements: [
     {
       suspect: 'Lady Charlotte',
-      claim: 'Edmund and I had a loveless marriage, but I was playing piano all evening. The servants heard me - they always complain about the noise.'
+      claim: 'I was in the Drawing Room playing piano all evening. Ask any of the servants, they couldn\'t miss the noise.'
     },
     {
       suspect: 'Arthur Ashford',
-      claim: 'The storm delayed me terribly. I didn\'t arrive until after 9 PM. When I got here, the house was in chaos - Edmund was already dead.'
+      claim: 'I just arrived from the train station! I was drenched and went straight to my room to change. I never even saw Edmund.'
     },
     {
       suspect: 'Dr. Philip Hayes',
-      claim: 'Margaret called me because one of the kitchen staff had taken ill. I was treating them in the Kitchen when the tragedy occurred.'
+      claim: 'I was in the Kitchen tending to one of the maids who had a sudden fever. Margaret was there with me for part of the time.'
     },
     {
       suspect: 'Margaret Price',
-      claim: 'I\'ve served this family for 30 years. I was doing my duties - bringing tea to Lady Charlotte in the Drawing Room, then attending to the sick staff member with the doctor.'
+      claim: 'I served tea to Lady Charlotte and then went downstairs to help the doctor with the sick staff member.'
     }
   ],
   hints: [
-    'Charlotte was playing piano with witnesses - she\'s eliminated.',
-    'Arthur arrived after the murder started - could he have done it?',
-    'The murder weapon is the Letter Opener, not the Candlestick.',
-    'Who was unaccounted for during the exact murder window?',
-    'Dr. Hayes and Margaret both have alibis at 9 PM - what about 9:30 PM?'
+    'Lady Charlotte has multiple witnesses for her location in the Drawing Room.',
+    'Arthur Ashford claims he went straight to his room, but where was he really seen first?',
+    'Dr. Hayes and Margaret alibi each other for being in the Kitchen.',
+    'The murder weapon (Letter Opener) was taken from the Study - who had no witness for their whereabouts during that time?'
   ],
   solution: { suspect: 'Dr. Philip Hayes', weapon: 'Letter Opener', location: 'Study' }
 };

@@ -7,8 +7,8 @@ export const puzzle5: Puzzle = {
   releaseDate: '2025-12-05T12:00:00Z',
   backstory: 'Head librarian Margaret Foster was found dead in the rare books vault. Three people had access to the restricted archives that evening.',
   suspects: [
-    { 
-      name: 'Peter Walsh', 
+    {
+      name: 'Peter Walsh',
       bio: 'Graduate student researching historical manuscripts.',
       height: '5\'11"',
       build: 'Slim',
@@ -18,8 +18,8 @@ export const puzzle5: Puzzle = {
       age: 'Mid-20s',
       icon: 'user-graduate'
     },
-    { 
-      name: 'Catherine Lee', 
+    {
+      name: 'Catherine Lee',
       bio: 'Fellow librarian who worked the evening shift.',
       height: '5\'5"',
       build: 'Average',
@@ -29,8 +29,8 @@ export const puzzle5: Puzzle = {
       age: 'Early 40s',
       icon: 'user'
     },
-    { 
-      name: 'Frank Miller', 
+    {
+      name: 'Frank Miller',
       bio: 'Security guard on duty that night.',
       height: '6\'3"',
       build: 'Stocky',
@@ -42,22 +42,22 @@ export const puzzle5: Puzzle = {
     }
   ],
   weapons: [
-    { 
-      name: 'Bookend', 
+    {
+      name: 'Bookend',
       description: 'Heavy brass bookend shaped like a lion, 8 pounds.',
       weight: 'Heavy-weight',
       type: 'Blunt',
       icon: 'book'
     },
-    { 
-      name: 'Letter Opener', 
+    {
+      name: 'Letter Opener',
       description: 'Ornate Victorian letter opener with sharp point.',
       weight: 'Light-weight',
       type: 'Sharp',
       icon: 'knife'
     },
-    { 
-      name: 'Scarf', 
+    {
+      name: 'Scarf',
       description: 'Silk scarf from the lost and found, 60 inches long.',
       weight: 'Light-weight',
       type: 'Other',
@@ -65,22 +65,22 @@ export const puzzle5: Puzzle = {
     }
   ],
   locations: [
-    { 
-      name: 'Vault', 
+    {
+      name: 'Vault',
       description: 'Climate-controlled rare books vault with coded access.',
       setting: 'Indoors',
       access: 'Restricted',
       icon: 'warehouse'
     },
-    { 
-      name: 'Reading Room', 
+    {
+      name: 'Reading Room',
       description: 'Quiet study area with large oak tables.',
       setting: 'Indoors',
       access: 'Public',
       icon: 'book'
     },
-    { 
-      name: 'Main Desk', 
+    {
+      name: 'Main Desk',
       description: 'Central circulation desk near the library entrance.',
       setting: 'Indoors',
       access: 'Public',
@@ -88,31 +88,32 @@ export const puzzle5: Puzzle = {
     }
   ],
   clues: [
-    'Margaret was killed between 7 PM and 8 PM.',
-    'Peter was in the Reading Room studying until 7:45 PM, seen by multiple people.',
+    'Peter Walsh was in the Reading Room studying, seen by multiple students.',
     'The Bookend was found at the Main Desk.',
-    'Catherine had the vault access code and opened it at 6:55 PM.',
-    'Frank was doing his rounds of the parking lot from 7 PM to 7:30 PM.',
-    'The murder took place in the Vault.'
+    'Catherine Lee admitted to being at the Main Desk during the evening.',
+    'Frank Miller was doing his rounds of the parking lot outside.',
+    'The murder took place in the Vault.',
+    'The person with the letter opener was not in the Vault.'
   ],
   statements: [
     {
       suspect: 'Peter Walsh',
-      claim: 'I was in the Reading Room all evening working on my thesis. Several other students can confirm I was there the whole time.'
+      claim: 'I was in the Reading Room all evening working on my thesis. Several other students can confirm I never left my seat.'
     },
     {
       suspect: 'Catherine Lee',
-      claim: 'Margaret asked me to open the vault so she could retrieve some documents. I let her in around 7 PM and went back to the main desk.'
+      claim: 'Margaret asked me to open the vault for her. I did, and then I went straight to the main desk to handle some returns.'
     },
     {
       suspect: 'Frank Miller',
-      claim: 'I was outside checking the parking lot during my rounds. I do the same route every night - takes about 30 minutes.'
+      claim: 'I was outside checking the parking lot. It\'s a big area, so I was away from the main building for quite a while.'
     }
   ],
   hints: [
-    'Who had access to the Vault and opportunity during the murder time?',
-    'Where the weapon ended up tells you the killer\'s path.',
-    'Frank was outside - could he have gotten to the Vault in time?'
+    'Peter Walsh has a solid alibi for being in the Reading Room.',
+    'Frank Miller was outside the building, making it difficult for him to reach the Vault unnoticed.',
+    'Catherine Lee admits to opening the Vault - check where she went afterward.',
+    'The murder weapon\'s location (Main Desk) is near Catherine Lee\'s reported position. What does that suggest?'
   ],
   solution: { suspect: 'Catherine Lee', weapon: 'Bookend', location: 'Vault' }
 };

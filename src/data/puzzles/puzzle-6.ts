@@ -7,8 +7,8 @@ export const puzzle6: Puzzle = {
   releaseDate: '2025-12-06T12:00:00Z',
   backstory: 'Personal trainer Brad Morrison was found dead in the gym\'s sauna room after closing. Three clients had keys to the facility for after-hours access.',
   suspects: [
-    { 
-      name: 'Jessica Hunt', 
+    {
+      name: 'Jessica Hunt',
       bio: 'Competitive bodybuilder training for a championship.',
       height: '5\'9"',
       build: 'Muscular',
@@ -18,8 +18,8 @@ export const puzzle6: Puzzle = {
       age: 'Late 20s',
       icon: 'user'
     },
-    { 
-      name: 'Tom Bradley', 
+    {
+      name: 'Tom Bradley',
       bio: 'Business executive who trains early mornings.',
       height: '6\'0"',
       build: 'Average',
@@ -29,8 +29,8 @@ export const puzzle6: Puzzle = {
       age: 'Mid-50s',
       icon: 'user-tie'
     },
-    { 
-      name: 'Rachel Kim', 
+    {
+      name: 'Rachel Kim',
       bio: 'Yoga instructor who rents studio space in the gym.',
       height: '5\'4"',
       build: 'Slim',
@@ -42,22 +42,22 @@ export const puzzle6: Puzzle = {
     }
   ],
   weapons: [
-    { 
-      name: 'Dumbbell', 
+    {
+      name: 'Dumbbell',
       description: '45-pound hexagonal dumbbell from the weight rack.',
       weight: 'Heavy-weight',
       type: 'Blunt',
       icon: 'dumbbell'
     },
-    { 
-      name: 'Towel', 
+    {
+      name: 'Towel',
       description: 'Thick cotton towel from the laundry bin.',
       weight: 'Light-weight',
       type: 'Other',
       icon: 'user'
     },
-    { 
-      name: 'Jump Rope', 
+    {
+      name: 'Jump Rope',
       description: 'Heavy-duty leather jump rope, 9 feet long.',
       weight: 'Light-weight',
       type: 'Other',
@@ -65,22 +65,22 @@ export const puzzle6: Puzzle = {
     }
   ],
   locations: [
-    { 
-      name: 'Sauna', 
+    {
+      name: 'Sauna',
       description: 'Traditional Finnish sauna, temperature set to 180°F.',
       setting: 'Indoors',
       access: 'Public',
       icon: 'hospital'
     },
-    { 
-      name: 'Weight Room', 
+    {
+      name: 'Weight Room',
       description: 'Main training floor with free weights and machines.',
       setting: 'Indoors',
       access: 'Public',
       icon: 'dumbbell'
     },
-    { 
-      name: 'Yoga Studio', 
+    {
+      name: 'Yoga Studio',
       description: 'Mirrored studio with mats and peaceful atmosphere.',
       setting: 'Indoors',
       access: 'Restricted',
@@ -88,31 +88,32 @@ export const puzzle6: Puzzle = {
     }
   ],
   clues: [
-    'Brad was killed between 9 PM and 10 PM after the gym closed.',
-    'Jessica was spotted on security cameras entering at 9:15 PM.',
+    'Jessica Hunt was seen by multiple witnesses on the training floor.',
     'The Dumbbell was found in the Yoga Studio.',
-    'Tom\'s key card shows he entered at 6 AM, not in the evening.',
-    'Rachel was teaching a private class until 8:45 PM.',
-    'The murder occurred in the Sauna.'
+    'Tom Bradley was at home, as verified by his smart lock logs.',
+    'Rachel Kim was teaching a class in the main studio earlier, then left.',
+    'The murder occurred in the Sauna.',
+    'The person in the Yoga Studio was the killer.'
   ],
   statements: [
     {
       suspect: 'Jessica Hunt',
-      claim: 'I came in for a late workout after my regular training session. The gym was empty when I arrived around 9:15.'
+      claim: 'I was on the weight floor for a late session. The gym was quiet, but a few other members saw me training.'
     },
     {
       suspect: 'Tom Bradley',
-      claim: 'I only train in the mornings before work. I wasn\'t at the gym that evening - you can check the key card logs.'
+      claim: 'I only train in the mornings. I was at home with my family all evening - you can check my home security logs.'
     },
     {
       suspect: 'Rachel Kim',
-      claim: 'I was teaching a private yoga session that ended at 8:45. After that I went straight home, I was exhausted.'
+      claim: 'I was teaching until late, but I left immediately after my class. I was exhausted and went straight to bed.'
     }
   ],
   hints: [
-    'Check the security timestamps carefully.',
-    'Who was actually at the gym during the murder window?',
-    'The weapon location reveals the killer\'s movements after the crime.'
+    'Tom Bradley has a solid alibi for being at home.',
+    'Jessica Hunt was seen on the training floor, but was she there the whole time?',
+    'The murder weapon (Dumbbell) was found in the Yoga Studio - who had access to that area?',
+    'Rachel Kim says she left early - does anyone verify her departure?'
   ],
   solution: { suspect: 'Jessica Hunt', weapon: 'Dumbbell', location: 'Sauna' }
 };
