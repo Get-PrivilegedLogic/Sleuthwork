@@ -88,17 +88,17 @@ export const puzzle3: Puzzle = {
     }
   ],
   clues: [
-    'Emma was on stage performing during the entire intermission.',
-    'The Stage Weight was found in the Prop Room after the murder.',
-    'David was operating lights from the Lighting Booth and never left his post.',
-    'Lisa was seen in the Backstage area by several stagehands.',
-    'The murder did not take place in the Lighting Booth.',
-    'The person in the Prop Room was not the killer.'
+    'David Chen was in the Lighting Booth.',
+    'Emma Stone was waiting in the Prop Room.',
+    'The murder occurred Backstage.',
+    'The person in the Lighting Booth had the Cable.',
+    'The Stage Weight was not in the Prop Room or Lighting Booth.',
+    'Lisa Brown has no alibi.'
   ],
   statements: [
     {
       suspect: 'Emma Stone',
-      claim: 'I was center stage. I barely had time for a costume change, let alone a trip backstage.'
+      claim: 'I was in the Prop Room waiting for my cue. I had my Prop Sword with me and was practicing my lines.'
     },
     {
       suspect: 'David Chen',
@@ -110,10 +110,10 @@ export const puzzle3: Puzzle = {
     }
   ],
   hints: [
-    'Emma Stone and David Chen both have verified locations during the murder.',
-    'Lisa Brown admits to being in the Backstage area - check if anyone else was there.',
-    'The murder weapon was found in the Prop Room - what does that tell you about the killer\'s path?',
-    'The murder occurred in the Backstage area - who was seen there?'
+    'Emma Stone was in the Prop Room with the Prop Sword.',
+    'David Chen was in the Lighting Booth with the Cable.',
+    'The murder occurred Backstage - who has no alibi?',
+    'The Stage Weight was not in the Lighting Booth or Prop Room.'
   ],
   solution: { suspect: 'Lisa Brown', weapon: 'Stage Weight', location: 'Backstage' }
 };

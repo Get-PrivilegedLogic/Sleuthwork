@@ -142,47 +142,44 @@ export const puzzle14: Puzzle = {
   ],
 
   clues: [
-    'Natasha Ivanova was playing poker in the Dining Car, seen by three other players.',
-    'Ambassador Chen was locked in his cabin three cars away from the Private Car.',
-    'Dr. Mueller was on a video conference call on the Observation Deck with timestamp verification.',
-    'Captain Santos was conducting a security sweep of the Baggage Car.',
-    'Dmitri Federov was seen entering the Private Car by a passenger.',
-    'The murder weapon was the Poison Dart, found in the Staff Quarters.',
-    'The killer was in the Private Car.',
-    'Dmitri had a staff key card that allowed him access to the Staff Quarters.',
-    'The Dining Car poker game never paused.',
-    'The person in the Baggage Car was not the killer.',
-    'The killer stashed the weapon in a location restricted to train employees.',
-    'Dmitri was the only guest with access to the Staff Quarters.'
+    'Natasha Ivanova was in the Dining Car.',
+    'Ambassador Chen Li was on the Observation Deck.',
+    'Dr. Heinrich Mueller was in the Baggage Car.',
+    'Captain Maria Santos was in the Staff Quarters.',
+    'The murder occurred in the Private Car.',
+    'The person in the Dining Car had the Crystal Ashtray.',
+    'The person on the Observation Deck had the Train Cable.',
+    'The person in the Baggage Car had the Ice Pick.',
+    'The Poison Dart was not in the Staff Quarters.',
+    'Dmitri Federov has no alibi.'
   ],
   statements: [
     {
       suspect: 'Natasha Ivanova',
-      claim: 'I was playing poker in the Dining Car the whole night. We had a four-handed game going and none of us even took a bathroom break.'
+      claim: 'I was in the Dining Car. I had the Crystal Ashtray with me while I played cards.'
     },
     {
       suspect: 'Ambassador Chen Li',
-      claim: 'I retired to my cabin early and locked the door. I didn\'t leave until the train arrived at the next station for breakfast.'
+      claim: 'I was on the Observation Deck. I had the Train Cable with me - I found it loose and was going to report it.'
     },
     {
       suspect: 'Dr. Heinrich Mueller',
-      claim: 'I was on the Observation Deck for a video call with my clients in Tokyo. The connection logs prove I was there for the duration.'
+      claim: 'I was in the Baggage Car checking on my luggage. I had the Ice Pick with me to open a stubborn crate.'
     },
     {
       suspect: 'Captain Maria Santos',
-      claim: 'I was performing my security sweep of the Baggage Car. It\'s a required protocol and I have the logs to show I was occupied there.'
+      claim: 'I was in the Staff Quarters. I had the Syringe with me for my evening vitamins.'
     },
     {
       suspect: 'Dmitri Federov',
-      claim: 'I went to my uncle\'s car for a drink, but he seemed tired so I left. I spent the rest of the night in the Observation Deck watching the mountains.'
+      claim: 'I was just wandering around. I didn\'t see anything unusual!'
     }
   ],
   hints: [
-    'Natasha Ivanova, Ambassador Chen, and Dr. Mueller all have solid alibis with witnesses or electronic logs.',
-    'Captain Maria Santos was in the Baggage Car - check if anyone else was unaccounted for in the Private Car.',
-    'Dmitri Federov admits to being in the Private Car - does he have a witness for his later location?',
-    'The murder weapon (Poison Dart) was found in the Staff Quarters - who had a way to access that restricted area?',
-    'Dmitri had his uncle\'s staff key card.'
+    'Natasha, Ambassador Chen, and Dr. Mueller all have verified locations.',
+    'Captain Maria Santos was in the Staff Quarters with the Syringe.',
+    'The murder occurred in the Private Car - who was seen there?',
+    'The Poison Dart was not in the Staff Quarters.'
   ],
 
   solution: {

@@ -113,40 +113,38 @@ export const puzzle10: Puzzle = {
     }
   ],
   clues: [
-    'Lady Charlotte was playing piano in the Drawing Room, overheard by all the house staff.',
-    'Arthur Ashford arrived at the manor soaked from the storm, seen by the butler.',
-    'The Candlestick was found in the Conservatory.',
-    'Dr. Philip Hayes was in the Kitchen treating an ill staff member.',
-    'Margaret Price was serving tea in the Drawing Room and then went to the Kitchen.',
-    'The murder weapon was the Letter Opener.',
-    'The killer was in the Study.',
-    'Lady Charlotte was not in the Study.',
-    'Arthur Ashford did not use the Candlestick.',
-    'The person in the Kitchen was not the killer.'
+    'Lady Charlotte was in the Drawing Room.',
+    'Margaret Price was in the Kitchen.',
+    'Arthur Ashford was in the Conservatory.',
+    'The murder occurred in the Study.',
+    'The person in the Drawing Room had the Rope.',
+    'The person in the Kitchen had the Fireplace Poker.',
+    'The Letter Opener was not in the Conservatory.',
+    'Dr. Philip Hayes has no witness for his presence.'
   ],
   statements: [
     {
       suspect: 'Lady Charlotte',
-      claim: 'I was in the Drawing Room playing piano all evening. Ask any of the servants, they couldn\'t miss the noise.'
+      claim: 'I was in the Drawing Room playing piano. I had my silk Rope tie with me as part of my gown.'
     },
     {
       suspect: 'Arthur Ashford',
-      claim: 'I just arrived from the train station! I was drenched and went straight to my room to change. I never even saw Edmund.'
+      claim: 'I was in the Conservatory enjoying the storm. I had the Candlestick with me to light my way.'
     },
     {
       suspect: 'Dr. Philip Hayes',
-      claim: 'I was in the Kitchen tending to one of the maids who had a sudden fever. Margaret was there with me for part of the time.'
+      claim: 'I was just trying to help. I didn\'t see Edmund!'
     },
     {
       suspect: 'Margaret Price',
-      claim: 'I served tea to Lady Charlotte and then went downstairs to help the doctor with the sick staff member.'
+      claim: 'I was in the Kitchen preparing tea. I had the Fireplace Poker with me to tend to the secondary stove.'
     }
   ],
   hints: [
-    'Lady Charlotte has multiple witnesses for her location in the Drawing Room.',
-    'Arthur Ashford claims he went straight to his room, but where was he really seen first?',
-    'Dr. Hayes and Margaret alibi each other for being in the Kitchen.',
-    'The murder weapon (Letter Opener) was taken from the Study - who had no witness for their whereabouts during that time?'
+    'Lady Charlotte was in the Drawing Room with the Rope.',
+    'Margaret Price was in the Kitchen with the Fireplace Poker.',
+    'Arthur Ashford was in the Conservatory with the Candlestick.',
+    'The murder occurred in the Study - who was unaccounted for?'
   ],
   solution: { suspect: 'Dr. Philip Hayes', weapon: 'Letter Opener', location: 'Study' }
 };

@@ -88,25 +88,25 @@ export const puzzle6: Puzzle = {
     }
   ],
   clues: [
-    'Jessica Hunt was seen by multiple witnesses on the training floor.',
-    'The Dumbbell was found in the Yoga Studio.',
-    'Tom Bradley was at home, as verified by his smart lock logs.',
-    'Rachel Kim was teaching a class in the main studio earlier, then left.',
+    'Tom Bradley was at the Training Floor.',
+    'Rachel Kim was in the Yoga Studio.',
     'The murder occurred in the Sauna.',
-    'The person in the Yoga Studio was the killer.'
+    'The person in the Yoga Studio had the Yoga Mat.',
+    'The person on the Training Floor did not have the Dumbbell.',
+    'Jessica Hunt has no alibi.'
   ],
   statements: [
     {
       suspect: 'Jessica Hunt',
-      claim: 'I was on the weight floor for a late session. The gym was quiet, but a few other members saw me training.'
+      claim: 'I was just looking for a quiet place to relax. I didn\'t see anyone in the Sauna!'
     },
     {
       suspect: 'Tom Bradley',
-      claim: 'I only train in the mornings. I was at home with my family all evening - you can check my home security logs.'
+      claim: 'I was at the Training Floor. I had the Jump Rope with me for my cardio session.'
     },
     {
       suspect: 'Rachel Kim',
-      claim: 'I was teaching until late, but I left immediately after my class. I was exhausted and went straight to bed.'
+      claim: 'I was in the Yoga Studio preparing for my class. I had my Yoga Mat with me as always.'
     }
   ],
   hints: [

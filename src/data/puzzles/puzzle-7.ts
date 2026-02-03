@@ -113,38 +113,38 @@ export const puzzle7: Puzzle = {
     }
   ],
   clues: [
-    'Amanda Cole left the hotel entirely and was seen at a local restaurant.',
-    'Richard Torres was at the Rooftop Bar, as confirmed by several patrons.',
-    'The Ice Pick was found in the Gym.',
-    'Jennifer Wu was seen in the Spa by hotel guests.',
-    'Michael Santos was in the Lobby, as seen on security cameras.',
-    'The murder did not occur in the Spa or Rooftop Bar.',
-    'The killer was in the Penthouse.',
-    'The person with the Paperweight was not Jennifer Wu.'
+    'Richard Torres was at the Rooftop Bar.',
+    'Michael Santos was at the Spa.',
+    'Amanda Cole was at the Gym.',
+    'The murder occurred in the Penthouse.',
+    'The person at the Rooftop Bar had the Champagne Bottle.',
+    'The person at the Gym had the Paperweight.',
+    'The Ice Pick was not at the Spa.',
+    'Jennifer Wu was seen near the Penthouse.'
   ],
   statements: [
     {
       suspect: 'Amanda Cole',
-      claim: 'I finished my work and left. I went to the diner across the street - several waiters saw me there.'
+      claim: 'I was in the Gym trying to get a workout in. I had the heavy Paperweight with me as a makeshift weight.'
     },
     {
       suspect: 'Richard Torres',
-      claim: 'I was at the Rooftop Bar all evening. I\'m a well-known regular, the bartender and other guests can verify.'
+      claim: 'I was at the Rooftop Bar all evening. I had a Champagne Bottle and was enjoying the view.'
     },
     {
       suspect: 'Jennifer Wu',
-      claim: 'I was assigned to the Spa area. I was helping multiple guests with their requests throughout the evening.'
+      claim: 'I was busy attending to the Penthouse guest. I don\'t know what happened!'
     },
     {
       suspect: 'Michael Santos',
-      claim: 'I was on my break in the Lobby. I explicitly checked the lobby cameras to make sure I was in view the whole time.'
+      claim: 'I was in the Spa relaxing. I had my Laptop Cord with me to charge my phone.'
     }
   ],
   hints: [
-    'Amanda Cole has an alibi for being outside the hotel.',
-    'Richard Torres and Jennifer Wu were both in public areas with witnesses.',
-    'Michael Santos says he was in the Lobby - check if anyone else had access to the Penthouse.',
-    'The murder occurred in the Penthouse - who was seen there or had the most opportunity to be there?'
+    'Richard Torres was at the Rooftop Bar with the Champagne Bottle.',
+    'Michael Santos was at the Spa with the Laptop Cord.',
+    'Amanda Cole was at the Gym with the Paperweight.',
+    'The murder occurred in the Penthouse - who was seen near there?'
   ],
   solution: { suspect: 'Jennifer Wu', weapon: 'Ice Pick', location: 'Penthouse' }
 };

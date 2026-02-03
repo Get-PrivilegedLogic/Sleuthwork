@@ -88,17 +88,17 @@ export const puzzle4: Puzzle = {
     }
   ],
   clues: [
-    'The person cleaning the Kitchen was Maria Santos.',
-    'The Cleaver was found in the Office, hidden under a towel.',
-    'Kevin was in the Office for the entire evening shift.',
-    'Nina Patel left the restaurant and was seen getting into a taxi.',
-    'The murder weapon was not the Pan.',
-    'The killer was in the Freezer with Antoine.'
+    'Kevin Wright was in the Office.',
+    'Nina Patel was working in the Kitchen.',
+    'The murder occurred in the Freezer.',
+    'The person in the Kitchen had the Pan.',
+    'The Cleaver was not in the Office.',
+    'Maria Santos has no alibi.'
   ],
   statements: [
     {
       suspect: 'Maria Santos',
-      claim: 'I was cleaning the kitchen after the dinner rush. I never even went near the freezer.'
+      claim: 'I was just trying to finish my shift. I don\'t know anything about a murder!'
     },
     {
       suspect: 'Kevin Wright',
@@ -106,14 +106,14 @@ export const puzzle4: Puzzle = {
     },
     {
       suspect: 'Nina Patel',
-      claim: 'I left early because I wasn\'t feeling well. I caught a taxi right outside - the driver can confirm.'
+      claim: 'I was in the Kitchen cleaning up. I had the heavy cast iron pan with me to scour.'
     }
   ],
   hints: [
-    'Nina Patel has an outside witness for her alibi.',
-    'Kevin was in the Office - check who else had access to the Kitchen and Freezer.',
-    'Where was the Cleaver found, and who was in that room?',
-    'The killer must have been in the Freezer - who doesn\'t have a solid alibi for their location?'
+    'Kevin Wright was in the Office.',
+    'Nina Patel was in the Kitchen with the Pan.',
+    'The murder occurred in the Freezer - who doesn\'t have an alibi?',
+    'The Cleaver was not in the Office - who must have had it?'
   ],
   solution: { suspect: 'Maria Santos', weapon: 'Cleaver', location: 'Freezer' }
 };

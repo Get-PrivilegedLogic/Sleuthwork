@@ -113,38 +113,38 @@ export const puzzle8: Puzzle = {
     }
   ],
   clues: [
-    'Victoria Winters and Gregory Marsh were together on the Main Deck.',
-    'The Fishing Gaff was found on the Bridge.',
-    'Captain Reed was piloting the yacht from the Bridge and never left the helm.',
-    'Victoria was not in the Cabin.',
-    'The person in the Cabin had the Fishing Gaff.',
-    'Sophie Laurent was seen entering the Cabin alone.',
-    'Gregory went to the Stern to smoke after leaving Victoria on the Main Deck.',
-    'The murder occurred in the Cabin.'
+    'Victoria Winters was on the Main Deck.',
+    'Gregory Marsh was at the Stern.',
+    'Captain James Reed was on the Bridge.',
+    'The murder occurred in the Cabin.',
+    'The person on the Main Deck had the Champagne Flute.',
+    'The person at the Stern had the Rope.',
+    'The Fishing Gaff was not on the Bridge.',
+    'Sophie Laurent has no alibi.'
   ],
   statements: [
     {
       suspect: 'Victoria Winters',
-      claim: 'Gregory and I were on the Main Deck enjoying the sunset. We were together the whole time until the alarm was raised.'
+      claim: 'I was on the Main Deck enjoying the sunset. I had a Champagne Flute of cider.'
     },
     {
       suspect: 'Gregory Marsh',
-      claim: 'I was with Victoria on the deck until I stepped away to the Stern for a cigarette. I was only gone for a minute.'
+      claim: 'I was at the Stern for a cigarette. I had the Rope with me to secure some gear.'
     },
     {
       suspect: 'Sophie Laurent',
-      claim: 'Charles asked me to review his will in the cabin. I was down there working, but I left when I finished to get some air.'
+      claim: 'I was just trying to do my job. I didn\'t kill anyone!'
     },
     {
       suspect: 'Captain James Reed',
-      claim: 'I was at the helm the entire time. You can\'t leave the Bridge when the yacht is in motion - it\'s dangerous.'
+      claim: 'I was at the helm on the Bridge the entire time. I had the Anchor ready for when we reached the bay.'
     }
   ],
   hints: [
-    'Victoria and Gregory alibi each other for being on the Main Deck.',
-    'Captain Reed has a professional alibi for being on the Bridge.',
-    'Sophie Laurent admits to being in the Cabin - check if anyone else was there.',
-    'The murder weapon (Fishing Gaff) was found on the Bridge - where did the killer go after the crime?'
+    'Victoria Winters was on the Main Deck with the Champagne Flute.',
+    'Gregory Marsh was at the Stern with the Rope.',
+    'Captain James Reed was on the Bridge with the Anchor.',
+    'The murder occurred in the Cabin - who has no witness?'
   ],
   solution: { suspect: 'Sophie Laurent', weapon: 'Fishing Gaff', location: 'Cabin' }
 };

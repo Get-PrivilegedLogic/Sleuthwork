@@ -73,11 +73,11 @@ export const puzzle1: Puzzle = {
       icon: 'book'
     },
     {
-      name: 'Library',
+      name: 'Ballroom',
       description: 'Large room adjacent to the study, connected by side door.',
       setting: 'Indoors',
       access: 'Restricted',
-      icon: 'book'
+      icon: 'music'
     },
     {
       name: 'Conservatory',
@@ -88,12 +88,12 @@ export const puzzle1: Puzzle = {
     }
   ],
   clues: [
-    'The person who brought the Letter Opener was not Alice Chen.',
-    'The murder weapon was found in the Library.',
-    'Marcus Webb was seen in the Conservatory with a witness.',
-    'Diana Cross had access to the storage room where the poison was kept.',
-    'The person in the Study was not Marcus Webb.',
-    'Alice Chen was seen in the Ballroom with many witnesses.'
+    'Marcus Webb was seen in the Conservatory.',
+    'Alice Chen was in the Ballroom with many witnesses.',
+    'The murder occurred in the Study.',
+    'The person in the Conservatory had the Candlestick.',
+    'Alice Chen did not have the Poison.',
+    'The Letter Opener was not in the Study.'
   ],
   statements: [
     {
@@ -102,18 +102,18 @@ export const puzzle1: Puzzle = {
     },
     {
       suspect: 'Marcus Webb',
-      claim: 'I was in the Conservatory trying to calm down. Someone saw me there, so I couldn\'t have been in the Study.'
+      claim: 'I was in the Conservatory with my heavy Candlestick. I didn\'t want any trouble.'
     },
     {
       suspect: 'Diana Cross',
-      claim: 'I went to the storage room to clear my head. Victor was alive when I left him, I swear!'
+      claim: 'I was just trying to talk to Victor. I don\'t know how he ended up dead!'
     }
   ],
   hints: [
-    'Alice has a solid alibi for being in the Ballroom.',
-    'Marcus was in the Conservatory - check who that leaves for the Study.',
-    'The murder weapon\'s location tells you where the killer went after the crime.',
-    'Diana mentions Victor was in his Study - what weapon did she have access to?'
+    'Alice Chen was in the Ballroom and didn\'t have the Poison.',
+    'Marcus Webb was in the Conservatory with the Candlestick.',
+    'The murder occurred in the Study - who was seen there?',
+    'The Letter Opener was not in the Study, so who had it?'
   ],
   solution: { suspect: 'Diana Cross', weapon: 'Poison', location: 'Study' }
 };

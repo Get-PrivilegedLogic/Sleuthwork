@@ -142,48 +142,45 @@ export const puzzle12: Puzzle = {
   ],
 
   clues: [
-    'Inspector Chen was examining evidence in the Library and never left the room.',
-    'The murder weapon was the Antique Syringe, but it was found in the Trophy Room.',
-    'Detective Voss was seen in the Wine Cellar by Professor Hyde, but left before the billiards game ended.',
-    'Agent Romano and Captain Frost played billiards together in the Billiard Room.',
-    'Professor Hyde gave a toast in the Trophy Room, attended by Frost and Romano.',
-    'The killer was in the Conservatory.',
-    'Captain Frost was practicing shots in the Billiard Room after her game.',
-    'The person in the Wine Cellar after Voss left was the killer.',
-    'Neither Inspector Chen nor Agent Romano could have been in the Conservatory.',
-    'Professor Hyde was in the Trophy Room and then went to the Wine Cellar.',
-    'The murder did not take place in the Library, Wine Cellar, or Billiard Room.',
-    'The person who gave the toast was not in the Conservatory.',
-    'Inspector Chen has a verified location for the entire evening.'
+    'Inspector Aria Chen was in the Library.',
+    'Agent Sophia Romano was in the Billiard Room.',
+    'Professor Marcus Hyde was in the Trophy Room.',
+    'Captain Elena Frost was in the Wine Cellar.',
+    'The murder occurred in the Conservatory.',
+    'The person in the Library had the Silk Garrote.',
+    'The person in the Billiard Room had the Fencing Foil.',
+    'The person in the Trophy Room had the Crystal Decanter.',
+    'The Antique Syringe was not in the Wine Cellar.',
+    'Detective Nikolas Voss has no alibi.',
+    'The person with the Marble Bust was not the killer.'
   ],
   statements: [
     {
       suspect: 'Inspector Aria Chen',
-      claim: 'I was in the Library examining the case files. I never left, and I have the evidence logs to prove I was there when the crime was discovered.'
+      claim: 'I was in the Library examining the case files. I had my Silk Garrote with me to secure the evidence boxes.'
     },
     {
       suspect: 'Detective Nikolas Voss',
-      claim: 'I went to the Wine Cellar to select a vintage, but I left and went to the Conservatory to enjoy some quiet time.'
+      claim: 'I was just wandering around. I didn\'t see anything unusual!'
     },
     {
       suspect: 'Agent Sophia Romano',
-      claim: 'Captain Frost and I were in the Billiard Room practically the whole night. We were locked in a very competitive game.'
+      claim: 'I was in the Billiard Room. I had the Fencing Foil with me to show Elena my technique.'
     },
     {
       suspect: 'Professor Marcus Hyde',
-      claim: 'I was in the Trophy Room giving my annual toast. Frost and Romano were there, as were most of the other guests.'
+      claim: 'I was in the Trophy Room giving my annual toast. I had the Crystal Decanter with me to serve the guests.'
     },
     {
       suspect: 'Captain Elena Frost',
-      claim: 'After Romano and I finished our game, I stayed in the Billiard Room alone to practice. I was there until the alarm was raised.'
+      claim: 'I was in the Wine Cellar selecting a vintage. I had the Marble Bust with me - I was moving it to the basement for storage.'
     }
   ],
   hints: [
-    'Inspector Chen, Agent Romano, and Captain Frost all have verified locations or alibis from each other.',
-    'Professor Hyde was in the Trophy Room - check where he went after his toast.',
-    'The murder occurred in the Conservatory - who has no witness for that location?',
-    'The murder weapon (Antique Syringe) was found in the Trophy Room - what does that tell you about the killer\'s path?',
-    'Nikolas Voss admits to being in the Conservatory.'
+    'Inspector Chen, Agent Romano, and Captain Frost all have verified locations.',
+    'Professor Hyde was in the Trophy Room with the Crystal Decanter.',
+    'The murder occurred in the Conservatory - who has no alibi?',
+    'The Antique Syringe was not in the Wine Cellar where Elena was.'
   ],
 
   solution: {

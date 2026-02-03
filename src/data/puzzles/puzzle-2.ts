@@ -88,32 +88,32 @@ export const puzzle2: Puzzle = {
     }
   ],
   clues: [
-    'The person in the Egyptian Wing was not James Porter.',
-    'James was in the basement level mopping floors while the museum was closed.',
-    'The Knife was missing from its display case in the Egyptian Wing.',
-    'Sarah were seen leaving the Storage Room by security.',
-    'Robert Greene left the building completely before the museum closed.',
-    'The murder weapon was not the Rope barrier.'
+    'James Porter was seen in the Storage Room.',
+    'Robert Greene was in the Office.',
+    'The murder occurred in the Egyptian Wing.',
+    'The person in the Office had the Rope.',
+    'The Statue was not in the Egyptian Wing.',
+    'The Knife was missing from its display case in the Egyptian Wing.'
   ],
   statements: [
     {
       suspect: 'James Porter',
-      claim: 'I was cleaning the basement all evening. I only came upstairs to find Dr. Moore in the Egyptian Wing.'
+      claim: 'I was cleaning the Storage Room. I spent the whole night organizing the statues and heavy equipment.'
     },
     {
       suspect: 'Sarah Kim',
-      claim: 'I was in the Storage Room doing inventory. I saw Helen in her office earlier, but I didn\'t go in there.'
+      claim: 'I was in the Egyptian Wing doing inventory. I saw Helen in her office earlier, but I didn\'t go in there.'
     },
     {
       suspect: 'Robert Greene',
-      claim: 'I had a meeting with Helen, but I left the museum right after. The security guards saw me exit.'
+      claim: 'I was in the Office for our scheduled meeting. I waited there for Phoebe but she never showed up.'
     }
   ],
   hints: [
-    'Robert Greene has an alibi for being outside the building.',
-    'James Porter was in the basement during the crime.',
-    'Who does that leave in the Egyptian Wing?',
-    'The missing weapon was a Knife - where was it taken from?'
+    'James Porter was in the Storage Room with the Statue.',
+    'Robert Greene was in the Office with the Rope.',
+    'The murder occurred in the Egyptian Wing - who was there?',
+    'The Knife was missing from the Egyptian Wing exhibit.'
   ],
   solution: { suspect: 'Sarah Kim', weapon: 'Knife', location: 'Egyptian Wing' }
 };

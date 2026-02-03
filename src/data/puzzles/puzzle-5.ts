@@ -88,25 +88,25 @@ export const puzzle5: Puzzle = {
     }
   ],
   clues: [
-    'Peter Walsh was in the Reading Room studying, seen by multiple students.',
-    'The Bookend was found at the Main Desk.',
-    'Catherine Lee admitted to being at the Main Desk during the evening.',
-    'Frank Miller was doing his rounds of the parking lot outside.',
-    'The murder took place in the Vault.',
-    'The person with the letter opener was not in the Vault.'
+    'Peter Walsh was in the Reading Room.',
+    'Frank Miller was at the Main Desk.',
+    'The murder occurred in the Vault.',
+    'The person in the Reading Room had the Scarf.',
+    'The Bookend was not at the Main Desk.',
+    'Catherine Lee has no witness for her whereabouts.'
   ],
   statements: [
     {
       suspect: 'Peter Walsh',
-      claim: 'I was in the Reading Room all evening working on my thesis. Several other students can confirm I never left my seat.'
+      claim: 'I was in the Reading Room all evening working on my thesis. I had my silk scarf with me as the room was quite drafty.'
     },
     {
       suspect: 'Catherine Lee',
-      claim: 'Margaret asked me to open the vault for her. I did, and then I went straight to the main desk to handle some returns.'
+      claim: 'I was busy with library business. I don\'t have to explain myself to you.'
     },
     {
       suspect: 'Frank Miller',
-      claim: 'I was outside checking the parking lot. It\'s a big area, so I was away from the main building for quite a while.'
+      claim: 'I was at the Main Desk keep an eye on things. I had the letter opener with me to open the night mail.'
     }
   ],
   hints: [

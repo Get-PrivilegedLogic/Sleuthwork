@@ -113,38 +113,38 @@ export const puzzle9: Puzzle = {
     }
   ],
   clues: [
-    'David Park was giving a speech in the Conference Room, seen by everyone.',
-    'The Scissors were found in the Break Room.',
-    'Rachel Green was networking at the party but left for a private meeting.',
-    'Kevin Tran was in the Server Room dealing with a system crash.',
-    'Lisa Chen was constant moving between the Break Room and Conference Room.',
-    'The murder took place in the Executive Suite.',
-    'The person with the Stapler was in the Conference Room.',
-    'David was not in the Executive Suite.'
+    'David Park was in the Conference Room.',
+    'Kevin Tran was in the Server Room.',
+    'Lisa Chen was in the Break Room.',
+    'The murder occurred in the Executive Suite.',
+    'The person in the Conference Room had the Stapler.',
+    'The person in the Server Room had the USB Cable.',
+    'The Scissors were not in the Break Room.',
+    'Rachel Green was seen entering the Executive Suite.'
   ],
   statements: [
     {
       suspect: 'David Park',
-      claim: 'I was center stage in the Conference Room. I gave the year-end financial update and then spoke with investors.'
+      claim: 'I was in the Conference Room. I had the Stapler with me to attach some last-minute reports.'
     },
     {
       suspect: 'Rachel Green',
-      claim: 'I was at the party for a while, but I eventually went to the executive suite to prepare some notes for tomorrow.'
+      claim: 'I was just trying to prepare for our meeting. I didn\'t see Jennifer!'
     },
     {
       suspect: 'Kevin Tran',
-      claim: 'I spent the entire party level in the Server Room. We had a major system failure that required my full attention.'
+      claim: 'I was in the Server Room all night. I had the USB Cable with me for my work.'
     },
     {
       suspect: 'Lisa Chen',
-      claim: 'I was everywhere but the executive suite! I was managing the catering in the Break Room and the setup in the Conference Room.'
+      claim: 'I was in the Break Room managing the catering. I had the Trophy with me to polish it for the awards part of the party.'
     }
   ],
   hints: [
-    'David Park and Kevin Tran both have solid alibis for their locations.',
-    'Lisa Chen was seen in specific public areas throughout the evening.',
-    'Rachel Green admits to being in the Executive Suite - check who else had access.',
-    'The murder weapon (Scissors) was found in the Break Room - what does that tell you about the killer\'s path?'
+    'David Park was in the Conference Room with the Stapler.',
+    'Kevin Tran was in the Server Room with the USB Cable.',
+    'Lisa Chen was in the Break Room with the Trophy.',
+    'The murder occurred in the Executive Suite - who entered it?'
   ],
   solution: { suspect: 'Rachel Green', weapon: 'Scissors', location: 'Executive Suite' }
 };

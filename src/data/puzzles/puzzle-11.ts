@@ -113,40 +113,38 @@ export const puzzle11: Puzzle = {
     }
   ],
   clues: [
-    'Nicholas Carver was at the poker table in the High-Roller Suite, seen by the dealer.',
-    'Elena Petrova was in the Security Office monitoring the casino floor.',
-    'The Crystal Decanter was found in the Vault.',
-    'Marcus DeVille was at the VIP Bar having drinks with several patrons.',
-    'Sophia Romano was seen entering the Vault by a security guard.',
-    'The murder took place in the Vault.',
-    'The person with the Dice was in the Bar.',
-    'Elena was in the Security Office and never left her post.',
-    'Marcus was not in the High-Roller Suite.',
-    'The killer did not use the Poker Chip Rack.'
+    'Nicholas Carver was in the High-Roller Suite.',
+    'Elena Petrova was in the Security Office.',
+    'Marcus DeVille was at the Bar.',
+    'The murder occurred in the Vault.',
+    'The person in the High-Roller Suite had the Poker Chip Rack.',
+    'The person at the Bar had the Dice.',
+    'The Crystal Decanter was not in the Security Office.',
+    'Sophia Romano was seen near the Vault.'
   ],
   statements: [
     {
       suspect: 'Nicholas Carver',
-      claim: 'I was at the poker table all night. I didn\'t leave until the game broke up - the dealer can confirm I never even stood up.'
+      claim: 'I was at the poker table in the High-Roller Suite. I had the Poker Chip Rack with me to store my winnings.'
     },
     {
       suspect: 'Elena Petrova',
-      claim: 'I was assigned to the Security Office. I was watching the cards on the floor for counters and didn\'t leave for any reason.'
+      claim: 'I was in the Security Office. I had my Tie loosened after a long shift.'
     },
     {
       suspect: 'Marcus DeVille',
-      claim: 'I was at the VIP Bar. I\'m a rival, sure, but I was there for business and many people saw me enjoying a drink.'
+      claim: 'I was at the Bar. I had the Dice with me for a private game.'
     },
     {
       suspect: 'Sophia Romano',
-      claim: 'I went to the Vault to get some cash for the morning shift. I was only there for a few minutes while searching for the ledger.'
+      claim: 'I was just checking the books in the Vault. I don\'t know what happened to Vincent!'
     }
   ],
   hints: [
-    'Elena Petrova has a professional alibi for being in the Security Office.',
-    'Nicholas Carver and Marcus DeVille were both in public areas with witnesses.',
-    'Sophia Romano admits to being in the Vault - check if anyone else was there or if her alibi holds up.',
-    'The murder weapon (Crystal Decanter) was found in the Vault - who was the only one admitted to being there?'
+    'Nicholas Carver was in the High-Roller Suite with the Poker Chip Rack.',
+    'Marcus DeVille was at the Bar with the Dice.',
+    'Elena Petrova was in the Security Office with the Tie.',
+    'The murder occurred in the Vault - who was seen near it?'
   ],
   solution: { suspect: 'Sophia Romano', weapon: 'Crystal Decanter', location: 'Vault' }
 };
