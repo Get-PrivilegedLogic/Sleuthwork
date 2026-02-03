@@ -72,14 +72,14 @@ export const puzzle9: Puzzle = {
       description: 'Reinforced charging cable, 6 feet long.',
       weight: 'Light-weight',
       type: 'Other',
-      icon: 'lightbulb'
+      icon: 'zap'
     },
     {
       name: 'Stapler',
       description: 'Heavy-duty metal stapler, industrial size.',
       weight: 'Medium-weight',
       type: 'Blunt',
-      icon: 'briefcase'
+      icon: 'hammer'
     }
   ],
   locations: [

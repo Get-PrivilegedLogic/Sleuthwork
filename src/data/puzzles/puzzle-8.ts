@@ -79,7 +79,7 @@ export const puzzle8: Puzzle = {
       description: 'Nautical rope used for mooring, 30 feet coiled.',
       weight: 'Light-weight',
       type: 'Other',
-      icon: 'anchor'
+      icon: 'zap'
     }
   ],
   locations: [
@@ -95,7 +95,7 @@ export const puzzle8: Puzzle = {
       description: 'Control room where captain operates the yacht.',
       setting: 'Indoors',
       access: 'Restricted',
-      icon: 'briefcase'
+      icon: 'anchor'
     },
     {
       name: 'Cabin',

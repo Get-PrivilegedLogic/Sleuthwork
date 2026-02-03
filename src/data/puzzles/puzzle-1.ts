@@ -54,7 +54,7 @@ export const puzzle1: Puzzle = {
       description: 'Heavy brass candlestick from the mantle, 12 inches tall.',
       weight: 'Heavy-weight',
       type: 'Blunt',
-      icon: 'lightbulb'
+      icon: 'flame'
     },
     {
       name: 'Poison',

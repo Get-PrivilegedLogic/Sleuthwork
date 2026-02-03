@@ -58,7 +58,7 @@ export const puzzle11: Puzzle = {
       description: 'Heavy acrylic chip carrier, 10 pounds when full.',
       weight: 'Heavy-weight',
       type: 'Blunt',
-      icon: 'chess'
+      icon: 'grid'
     },
     {
       name: 'Crystal Decanter',
@@ -72,7 +72,7 @@ export const puzzle11: Puzzle = {
       description: 'Designer silk necktie, 58 inches long.',
       weight: 'Light-weight',
       type: 'Other',
-      icon: 'user'
+      icon: 'user-tie'
     },
     {
       name: 'Dice',

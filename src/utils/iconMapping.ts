@@ -38,6 +38,18 @@ import {
   Bed,
   Utensils,
   Coffee,
+  Music,
+  Bath,
+  Search,
+  Sword,
+  Sword as Knife,
+  Flame,
+  Droplets,
+  PenTool,
+  Zap,
+  MapPin,
+  Pyramid,
+  Ghost,
   Sofa,
   Armchair,
   type LucideIcon
@@ -53,7 +65,8 @@ const iconMap: Record<string, LucideIcon> = {
   'user-graduate': GraduationCap,
 
   // Weapon icons
-  'knife': Crosshair,  // Using crosshairs as generic weapon icon
+  'knife': Knife,
+  'sword': Sword,
   'bomb': Bomb,
   'skull': Skull,
   'syringe': Syringe,
@@ -65,6 +78,13 @@ const iconMap: Record<string, LucideIcon> = {
   'scissors': Scissors,
   'anchor': Anchor,
   'fish': Fish,
+  'flame': Flame,
+  'candlestick': Flame,
+  'poison': Skull,
+  'droplets': Droplets,
+  'pen': PenTool,
+  'zap': Zap,
+  'crosshair': Crosshair,
 
   // Location icons
   'building': Building,
@@ -90,7 +110,14 @@ const iconMap: Record<string, LucideIcon> = {
   'utensils': Utensils,
   'coffee': Coffee,
   'couch': Sofa,
-  'chair': Armchair
+  'chair': Armchair,
+  'map-pin': MapPin,
+  'pyramid': Pyramid,
+  'ghost': Ghost,
+  'music': Music,
+  'bath': Bath,
+  'search': Search,
+  'grid': Grid
 };
 
 export function getIcon(iconName: string): LucideIcon {

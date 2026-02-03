@@ -65,7 +65,7 @@ export const puzzle7: Puzzle = {
       description: 'Power cable, 6 feet long, heavy-duty connector.',
       weight: 'Light-weight',
       type: 'Other',
-      icon: 'lightbulb'
+      icon: 'zap'
     },
     {
       name: 'Ice Pick',
@@ -79,7 +79,7 @@ export const puzzle7: Puzzle = {
       description: 'Crystal paperweight, 5 pounds, sharp edges.',
       weight: 'Medium-weight',
       type: 'Blunt',
-      icon: 'dice'
+      icon: 'landmark'
     }
   ],
   locations: [
@@ -88,14 +88,14 @@ export const puzzle7: Puzzle = {
       description: 'Luxury suite on the 40th floor with private elevator.',
       setting: 'Indoors',
       access: 'Private',
-      icon: 'hotel'
+      icon: 'building'
     },
     {
       name: 'Spa',
       description: 'Executive spa with sauna and massage rooms.',
       setting: 'Indoors',
       access: 'Restricted',
-      icon: 'hospital'
+      icon: 'bath'
     },
     {
       name: 'Rooftop Bar',

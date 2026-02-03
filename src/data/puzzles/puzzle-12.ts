@@ -99,7 +99,7 @@ export const puzzle12: Puzzle = {
       description: 'Custom-made strangling wire disguised as decorative cord.',
       weight: 'Light-weight',
       type: 'Other',
-      icon: 'anchor'
+      icon: 'zap'
     }
   ],
 

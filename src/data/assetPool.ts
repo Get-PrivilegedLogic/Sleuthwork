@@ -106,7 +106,7 @@ export const suspects: Suspect[] = [
 
 export const weapons: Weapon[] = [
     { name: 'Letter Opener', description: 'A sharp, silver desk accessory.', weight: 'Light-weight', type: 'Sharp', icon: 'knife' },
-    { name: 'Candlestick', description: 'A heavy brass candle holder.', weight: 'Heavy-weight', type: 'Blunt', icon: 'lightbulb' },
+    { name: 'Candlestick', description: 'A heavy brass candle holder.', weight: 'Heavy-weight', type: 'Blunt', icon: 'flame' },
     { name: 'Statue', description: 'A solid marble bust of a historical figure.', weight: 'Heavy-weight', type: 'Blunt', icon: 'landmark' },
     { name: 'Ice Pick', description: 'A pointed tool from a bar cart.', weight: 'Light-weight', type: 'Sharp', icon: 'knife' },
     { name: 'Dumbbell', description: 'A standard piece of gym equipment.', weight: 'Heavy-weight', type: 'Blunt', icon: 'dumbbell' },
@@ -117,10 +117,10 @@ export const weapons: Weapon[] = [
     { name: 'Paperweight', description: 'A solid glass sphere filled with swirls.', weight: 'Medium-weight', type: 'Blunt', icon: 'building' },
     { name: 'Poker Chip Rack', description: 'A heavy metal rack for carrying casino chips.', weight: 'Heavy-weight', type: 'Blunt', icon: 'dice' },
     { name: 'Syringe', description: 'A medical tool with a lethal dose of sedative.', weight: 'Light-weight', type: 'Poison', icon: 'syringe' },
-    { name: 'Fireplace Poker', description: 'A long iron rod used for stoking fires.', weight: 'Heavy-weight', type: 'Blunt', icon: 'flask' },
-    { name: 'Fountain Pen', description: 'A gold-nibbed pen with a sharp point.', weight: 'Light-weight', type: 'Sharp', icon: 'book' },
+    { name: 'Fireplace Poker', description: 'A long iron rod used for stoking fires.', weight: 'Heavy-weight', type: 'Blunt', icon: 'hammer' },
+    { name: 'Fountain Pen', description: 'A gold-nibbed pen with a sharp point.', weight: 'Light-weight', type: 'Sharp', icon: 'pen' },
     { name: 'Trophy', description: 'A large, golden sports trophy.', weight: 'Medium-weight', type: 'Blunt', icon: 'trophy' },
-    { name: 'Poison Dart', description: 'A small feather-tipped projectile.', weight: 'Light-weight', type: 'Poison', icon: 'knife' }
+    { name: 'Poison Dart', description: 'A small feather-tipped projectile.', weight: 'Light-weight', type: 'Poison', icon: 'crosshair' }
 ];
 
 export const locations: Location[] = [

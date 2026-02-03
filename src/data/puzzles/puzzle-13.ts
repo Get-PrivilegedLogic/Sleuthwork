@@ -85,7 +85,7 @@ export const puzzle13: Puzzle = {
       description: 'Ultra-thin research equipment cable, incredibly strong.',
       weight: 'Light-weight',
       type: 'Other',
-      icon: 'lightbulb'
+      icon: 'zap'
     },
     {
       name: 'Microscope Base',

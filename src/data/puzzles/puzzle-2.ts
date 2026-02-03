@@ -61,7 +61,7 @@ export const puzzle2: Puzzle = {
       description: 'Velvet rope barrier from the hallway entrance.',
       weight: 'Light-weight',
       type: 'Other',
-      icon: 'anchor'
+      icon: 'zap'
     }
   ],
   locations: [

@@ -61,7 +61,7 @@ export const puzzle3: Puzzle = {
       description: 'Electrical cable from lighting equipment, 6 feet long.',
       weight: 'Light-weight',
       type: 'Other',
-      icon: 'lightbulb'
+      icon: 'zap'
     }
   ],
   locations: [

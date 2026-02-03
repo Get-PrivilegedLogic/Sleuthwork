@@ -78,7 +78,7 @@ export const puzzle14: Puzzle = {
       description: 'Emergency brake cable, 8 feet long, steel-reinforced.',
       weight: 'Medium-weight',
       type: 'Other',
-      icon: 'anchor'
+      icon: 'zap'
     },
     {
       name: 'Ice Pick',

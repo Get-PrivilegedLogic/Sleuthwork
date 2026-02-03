@@ -61,7 +61,7 @@ export const puzzle6: Puzzle = {
       description: 'Heavy-duty leather jump rope, 9 feet long.',
       weight: 'Light-weight',
       type: 'Other',
-      icon: 'anchor'
+      icon: 'zap'
     }
   ],
   locations: [
@@ -70,7 +70,7 @@ export const puzzle6: Puzzle = {
       description: 'Traditional Finnish sauna, temperature set to 180°F.',
       setting: 'Indoors',
       access: 'Public',
-      icon: 'hospital'
+      icon: 'bath'
     },
     {
       name: 'Weight Room',

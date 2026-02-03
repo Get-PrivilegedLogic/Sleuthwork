@@ -72,14 +72,14 @@ export const puzzle10: Puzzle = {
       description: 'Solid brass candlestick, 14 inches tall, ornate.',
       weight: 'Medium-weight',
       type: 'Blunt',
-      icon: 'lightbulb'
+      icon: 'flame'
     },
     {
       name: 'Rope',
       description: 'Silk curtain tie from the drawing room, 8 feet long.',
       weight: 'Light-weight',
       type: 'Other',
-      icon: 'anchor'
+      icon: 'zap'
     }
   ],
   locations: [
