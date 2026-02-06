@@ -90,7 +90,7 @@ export function generatePuzzle(dateString: string, puzzleId: string): Puzzle {
     // --- Section: Suspect × Weapon ---
 
     // Positive: link one innocent suspect to their weapon (different from S×L clues)
-    const swPosIdx = nonSolIdx(slPositiveCount);
+    const swPosIdx = nonSolIdx(slPositiveCount + 1);
     clues.push(`${mapping[swPosIdx].suspect} was found with the ${mapping[swPosIdx].weapon}.`);
 
     // Negative: the killer did NOT have a specific wrong weapon
@@ -128,7 +128,43 @@ export function generatePuzzle(dateString: string, puzzleId: string): Puzzle {
 
     // 5. Build Final Object
     const template = rng.pick(backstoryTemplates);
-    const backstory = template.template;
+
+    // Generate a breadcrumb hint from one of three categories
+    const killerSuspect = selectedSuspects.find(s => s.name === solution.suspect)!;
+    const killerWeapon = selectedWeapons.find(w => w.name === solution.weapon)!;
+    const killerLocation = selectedLocations.find(l => l.name === solution.location)!;
+
+    const article = (word: string) => /^[aeiou]/i.test(word) ? 'an' : 'a';
+    const build = killerSuspect.build.toLowerCase();
+    const handedness = killerSuspect.handedness.toLowerCase();
+
+    const traitHints = [
+        `A witness recalled ${article(build)} ${build} figure hurrying from the scene.`,
+        `Someone ${killerSuspect.height} was seen near the scene shortly before the body was discovered.`,
+        `${article(handedness).replace(/^./, c => c.toUpperCase())} ${handedness} individual was spotted acting suspiciously.`,
+    ];
+
+    const weaponHints = killerWeapon.type === 'Blunt'
+        ? [
+            'The injuries suggest a heavy, blunt impact.',
+            'Whatever struck the victim, it was something solid and heavy.',
+        ]
+        : [
+            'The wound appeared to be from something sharp.',
+            'A clean, deliberate cut — the weapon was clearly edged.',
+        ];
+
+    const locationHints = killerLocation.access === 'Restricted'
+        ? ['The crime scene was in a restricted area — not everyone had access.']
+        : killerLocation.access === 'Private'
+        ? ['It occurred in a private space, away from the crowd.']
+        : ['The crime scene was in a common area anyone could reach.'];
+
+    const allHintCategories = [traitHints, weaponHints, locationHints];
+    const chosenCategory = rng.pick(allHintCategories);
+    const breadcrumb = rng.pick(chosenCategory);
+
+    const backstory = `${template.template} ${breadcrumb}`;
 
     // Randomized statement templates so the killer doesn't stand out
     const statementTemplates = [
