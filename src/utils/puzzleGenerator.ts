@@ -133,7 +133,7 @@ export function generatePuzzle(dateString: string, puzzleId: string): Puzzle {
     // Randomized statement templates so the killer doesn't stand out
     const statementTemplates = [
         (loc: string) => `I was in the ${loc} the entire time. I didn't see a thing.`,
-        (loc: string) => `I was in the ${loc} at the time, but I didn't do it!`,
+        (loc: string) => `I was in the ${loc} at the time. I heard a commotion, but didn't investigate.`,
         (loc: string) => `You can check the ${loc} — that's where I was, and I saw nothing suspicious.`,
         (loc: string) => `I never left the ${loc}. I swear on my life.`,
         (loc: string) => `I was in the ${loc}, minding my own business. Don't look at me!`,

@@ -271,19 +271,19 @@ export const locations: Location[] = [
 export const backstoryTemplates: BackstoryTemplate[] = [
     {
         id: 'charity-gala',
-        template: 'Billionaire Victor Blackwood was found dead during the annual charity gala at Ravencrest Manor. Several guests had the means and opportunity to commit the crime.'
+        template: 'Billionaire Victor Blackwood was found dead during an annual charity gala. Several guests had the means and opportunity to commit the crime.'
     },
     {
         id: 'museum-theft',
-        template: 'A priceless artifact was stolen, and the curator was found dead after closing time. Security logs show several people were present that evening.'
+        template: 'A priceless artifact was stolen, and its owner was found dead after the evening concluded. Several people were present and had opportunity.'
     },
     {
         id: 'opening-night',
-        template: 'The director was discovered dead during intermission of opening night. Several people had access to the area where the body was found.'
+        template: 'A prominent director was discovered dead late in the evening. Several people had access to the area where the body was found.'
     },
     {
         id: 'kitchen-nightmare',
-        template: 'A celebrity chef was found dead in his own restaurant after the last guests had left. Several staff members were working the closing shift.'
+        template: 'A celebrity chef was found dead after a private dinner party. Several guests and staff were still on the premises.'
     },
     {
         id: 'high-society',
@@ -291,43 +291,43 @@ export const backstoryTemplates: BackstoryTemplate[] = [
     },
     {
         id: 'after-hours',
-        template: 'A body was discovered after hours at a private members\' club. Several people had keys and were seen in the building that night.'
+        template: 'A body was discovered after hours in a locked building. Several people had keys and were seen nearby that night.'
     },
     {
         id: 'estate-weekend',
-        template: 'A wealthy host was found dead during a weekend retreat at a countryside estate. Each of the invited guests had a secret motive.'
+        template: 'A wealthy host was found dead during a weekend retreat. Each of the invited guests had a secret motive.'
     },
     {
-        id: 'train-journey',
-        template: 'A passenger was found dead aboard the overnight express just before dawn. The train had not stopped since departure, and only a few travelers were in the same car.'
+        id: 'inheritance-dispute',
+        template: 'A wealthy patriarch was found dead just days before changing his will. Every member of the household stood to gain — or lose — a fortune.'
     },
     {
         id: 'auction-house',
-        template: 'A renowned art dealer collapsed during a high-profile auction. Foul play is suspected, and several bidders had grudges against the deceased.'
+        template: 'A renowned art dealer collapsed during a private viewing. Foul play is suspected, and several attendees had grudges against the deceased.'
     },
     {
         id: 'book-launch',
-        template: 'A controversial author was found dead at her own book launch party. Several attendees had been named — and not kindly — in her latest memoir.'
+        template: 'A controversial author was found dead at her own launch party. Several attendees had been named — and not kindly — in her latest memoir.'
     },
     {
         id: 'wedding-reception',
-        template: 'The best man was found dead during the wedding reception. Tensions had been running high all evening, and several guests had been seen arguing with him.'
+        template: 'The best man was found dead during a wedding celebration. Tensions had been running high all evening, and several guests had been seen arguing with him.'
     },
     {
         id: 'film-set',
-        template: 'A famous producer was found dead on set between takes. Cast and crew all had access, and more than a few had reason to hold a grudge.'
+        template: 'A famous producer was found dead between takes on a closed set. Cast and crew all had access, and more than a few had reason to hold a grudge.'
     },
     {
         id: 'poker-night',
         template: 'A high-stakes poker game ended in murder when the host was found dead after the final hand. Every player at the table had lost a fortune to him.'
     },
     {
-        id: 'opera-intermission',
-        template: 'A patron of the arts was found dead during intermission at the opera. Several acquaintances were seated nearby, each hiding a dark secret.'
+        id: 'blackmail-gone-wrong',
+        template: 'A known blackmailer was found dead, clutching a torn envelope. Several of the people present had been receiving threatening letters for weeks.'
     },
     {
-        id: 'cruise-ship',
-        template: 'A passenger was found dead aboard a luxury cruise on its maiden voyage. With no way off the ship, the killer is still on board.'
+        id: 'business-deal',
+        template: 'A ruthless CEO was found dead on the eve of a major merger. Several associates stood to lose everything if the deal went through.'
     },
     {
         id: 'wine-tasting',
@@ -339,10 +339,10 @@ export const backstoryTemplates: BackstoryTemplate[] = [
     },
     {
         id: 'faculty-meeting',
-        template: 'A university dean was found dead in the hours after a heated faculty meeting. Several colleagues had publicly clashed with him over funding cuts.'
+        template: 'A university dean was found dead in the hours after a heated meeting. Several colleagues had publicly clashed with him over funding cuts.'
     },
     {
         id: 'masquerade-ball',
-        template: 'A guest was found dead at a masquerade ball, their mask still in place. Behind every other mask in the room lurks a possible killer.'
+        template: 'A guest was found dead at a masquerade ball, their mask still in place. Behind every other mask lurks a possible killer.'
     }
 ];
