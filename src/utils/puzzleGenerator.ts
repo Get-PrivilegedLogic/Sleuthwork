@@ -65,68 +65,96 @@ export function generatePuzzle(dateString: string, puzzleId: string): Puzzle {
     const solution = mapping[solutionIndex];
 
     // 4. Generate Clues
-    // We need different types of clues to satisfy the grid
+    // Ensure coverage across all 3 grid sections (S×L, S×W, W×L)
+    // and that every suspect, weapon, and location is referenced at least once
     const clues: string[] = [];
 
-    // Type A: Direct Location (Suspect X was in Location Y)
-    // We'll give a few of these, but not for the killer typically
-    const usedIndices = new Set<number>();
+    // Helper to get a non-solution index offset
+    const nonSolIdx = (offset: number) => (solutionIndex + offset) % size;
 
-    // Give 1-2 direct location clues (not for the solution)
-    const directCount = difficulty === 'easy' ? 1 : 2;
-    for (let i = 0; i < directCount; i++) {
-        const idx = (solutionIndex + i + 1) % size;
+    // --- Section: Suspect × Location ---
+
+    // Positive: place (size - 2) innocent suspects in their locations
+    // This leaves enough ambiguity while guaranteeing S×L is solvable
+    const slPositiveCount = Math.max(1, size - 2);
+    for (let i = 0; i < slPositiveCount; i++) {
+        const idx = nonSolIdx(i + 1);
         clues.push(`${mapping[idx].suspect} was seen in the ${mapping[idx].location}.`);
-        usedIndices.add(idx);
     }
 
-    // Type B: Weapon Location (The Weapon X was in Location Y)
-    // One of these is very helpful
-    const weaponLocIdx = (solutionIndex + rng.pick([0, 1])) % size;
-    clues.push(`The ${mapping[weaponLocIdx].weapon} was found in the ${mapping[weaponLocIdx].location}.`);
+    // Negative: one suspect was NOT in a wrong location
+    const slNegIdx = nonSolIdx(slPositiveCount + 1);
+    const slWrongLoc = (slNegIdx + 1) % size;
+    clues.push(`${mapping[slNegIdx].suspect} was definitely not in the ${mapping[slWrongLoc].location}.`);
 
-    // Type C: Negative Alibi (Suspect X was not in Location Y)
-    const negAlibiIdx = (solutionIndex + directCount + 1) % size;
-    const wrongLocIdx = (negAlibiIdx + 1) % size;
-    clues.push(`${mapping[negAlibiIdx].suspect} was definitely not in the ${mapping[wrongLocIdx].location}.`);
+    // --- Section: Suspect × Weapon ---
 
-    // Type D: Negative Weapon (Suspect X does not have Weapon Y)
-    clues.push(`${solution.suspect} was not found with the ${weaponOrder[(solutionIndex + 1) % size].name}.`);
+    // Positive: link one innocent suspect to their weapon (different from S×L clues)
+    const swPosIdx = nonSolIdx(slPositiveCount);
+    clues.push(`${mapping[swPosIdx].suspect} was found with the ${mapping[swPosIdx].weapon}.`);
 
-    // Type E: Cross-Category (The person in X had the Y)
+    // Negative: the killer did NOT have a specific wrong weapon
+    clues.push(`${solution.suspect} was not found with the ${weaponOrder[nonSolIdx(1)].name}.`);
+
+    // For medium+, add another S×W negative for a different suspect
     if (size >= 4) {
-        const crossIdx = (solutionIndex + 2) % size;
+        const swNegIdx = nonSolIdx(2);
+        clues.push(`${mapping[swNegIdx].suspect} did not have the ${mapping[nonSolIdx(3)].weapon}.`);
+    }
+
+    // --- Section: Weapon × Location ---
+
+    // Positive: link one weapon to its location (not the solution)
+    const wlPosIdx = nonSolIdx(1 + Math.floor(rng.next() * (size - 1)));
+    clues.push(`The ${mapping[wlPosIdx].weapon} was found in the ${mapping[wlPosIdx].location}.`);
+
+    // Negative: a weapon was NOT in a wrong location
+    const wlNegWeaponIdx = nonSolIdx(2);
+    const wlNegLocIdx = nonSolIdx(1);
+    clues.push(`The ${mapping[wlNegWeaponIdx].weapon} was not found in the ${mapping[wlNegLocIdx].location}.`);
+
+    // --- Cross-category clues for medium+ ---
+    if (size >= 4) {
+        const crossIdx = nonSolIdx(3);
         clues.push(`The person in the ${mapping[crossIdx].location} was found with the ${mapping[crossIdx].weapon}.`);
     }
 
-    // Type F: Expert Clues for Hard
+    // --- Extra clues for hard to add depth without making it easy ---
     if (difficulty === 'hard') {
-        const expertIdx = (solutionIndex + 3) % size;
-        clues.push(`${mapping[expertIdx].suspect} was seen near the ${mapping[(expertIdx + 1) % size].location}, but didn't enter.`);
+        // Negative S×L for another suspect
+        const hardNegIdx = nonSolIdx(4);
+        clues.push(`${mapping[hardNegIdx].suspect} was seen near the ${mapping[nonSolIdx(1)].location}, but didn't enter.`);
     }
 
     // 5. Build Final Object
     const template = rng.pick(backstoryTemplates);
     const backstory = template.template;
 
-    // Simple statements
-    const statements: Statement[] = selectedSuspects.map((s) => {
+    // Randomized statement templates so the killer doesn't stand out
+    const statementTemplates = [
+        (loc: string) => `I was in the ${loc} the entire time. I didn't see a thing.`,
+        (loc: string) => `I was in the ${loc} at the time, but I didn't do it!`,
+        (loc: string) => `You can check the ${loc} — that's where I was, and I saw nothing suspicious.`,
+        (loc: string) => `I never left the ${loc}. I swear on my life.`,
+        (loc: string) => `I was in the ${loc}, minding my own business. Don't look at me!`,
+        (loc: string) => `I've been in the ${loc} all evening. Ask anyone.`,
+    ];
+    const shuffledTemplates = rng.shuffle(statementTemplates);
+    const statements: Statement[] = selectedSuspects.map((s, i) => {
         const personMapping = mapping.find(m => m.suspect === s.name)!;
-        if (s.name === solution.suspect) {
-            return { suspect: s.name, claim: `I was in the ${personMapping.location} at the time, but I didn't do it!` };
-        }
-        return { suspect: s.name, claim: `I was in the ${personMapping.location} and I saw nothing suspicious.` };
+        const template = shuffledTemplates[i % shuffledTemplates.length];
+        return { suspect: s.name, claim: template(personMapping.location) };
     });
 
     return {
         id: puzzleId,
         title: `The Case of the ${rng.pick([
             'Missing Diamond', 'Broken Clock', 'Empty Safe', 'Midnight Scream',
-            'Shattered monocle', 'Poisoned Tea', 'Gilded Dagger', 'Bloody Quill',
+            'Shattered Monocle', 'Poisoned Tea', 'Gilded Dagger', 'Bloody Quill',
             'Vanished Violin', 'Silent Witness', 'Stolen Secret', 'Final Curtain'
         ])}`,
         difficulty,
-        releaseDate: `${dateString}T00:00:00Z`,
+        releaseDate: `${dateString}T00:00:00`,
         backstory,
         suspects: selectedSuspects,
         weapons: selectedWeapons,
@@ -134,9 +162,9 @@ export function generatePuzzle(dateString: string, puzzleId: string): Puzzle {
         clues: rng.shuffle(clues),
         statements,
         hints: [
-            'Each suspect was in a unique location with a unique weapon.',
-            'Look for connections between weapons and locations first.',
-            `The killer committed the crime in the ${solution.location}.`
+            `It wasn't ${mapping[nonSolIdx(1)].suspect}.`,
+            `The crime did not take place in the ${mapping[nonSolIdx(2)].location}.`,
+            `The murder weapon was not the ${mapping[nonSolIdx(Math.min(3, size - 1))].weapon}.`,
         ],
         solution: {
             suspect: solution.suspect,

@@ -1,5 +1,4 @@
 import { useState, useEffect, useMemo, useCallback } from 'react';
-import { puzzles } from '../data/puzzles';
 import type { Puzzle, GridCell } from '../types/puzzle';
 import { STORAGE_KEYS, LAUNCH_EPOCH } from '../constants';
 import { getTodayDateString, getDaysDifference, getDaysSinceLaunch } from '../utils/dateUtils';
@@ -44,13 +43,6 @@ export function useDailyPuzzle(targetDate?: string) {
     // Get today's puzzle based on date
     const dailyPuzzle = useMemo((): Puzzle => {
         const dayNumber = getDaysSinceLaunch(LAUNCH_EPOCH, currentDate);
-
-        if (dayNumber <= 2) {
-            // Feb 1 and Feb 2 use hand-crafted puzzles
-            return puzzles[dayNumber - 1];
-        }
-
-        // Day 15+ use infinite generator
         return generatePuzzle(currentDate, `daily-${dayNumber}`);
     }, [currentDate]);
 
