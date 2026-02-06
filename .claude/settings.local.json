@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nfix: resolve multiple bugs in daily puzzle generator\n\n- Remove hand-crafted puzzle routing from daily hook \\(archive-only\\)\n- Randomize suspect statement templates so killer doesn''t stand out\n- Prevent weapon-location clue from targeting the solution index\n- Replace rule-restating hints with escalating elimination hints\n- Fix clue coverage across all 3 grid sections \\(S×L, S×W, W×L\\)\n- Spread S×W clue to different suspect than S×L clues\n- Spread hints across different non-solution indices\n- Make backstory templates location-agnostic\n- Fix releaseDate UTC/local time inconsistency\n- Fix double-nested nonSolIdx call and remove dead tracking code\n- Expand asset pools from 16 to 32 \\(suspects, weapons, locations\\)\n- Add 13 new backstory templates \\(20 total\\)\n- Fix ''Shattered monocle'' capitalization\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n\\)\")"
+    ]
+  }
+}
