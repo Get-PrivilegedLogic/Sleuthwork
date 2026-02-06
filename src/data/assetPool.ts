@@ -283,7 +283,7 @@ export const backstoryTemplates: BackstoryTemplate[] = [
     },
     {
         id: 'kitchen-nightmare',
-        template: 'A celebrity chef was found dead after a private dinner party. Several guests and staff were still on the premises.'
+        template: 'A celebrity chef was found dead after an evening event he was hosting. Several guests and staff were still on the premises.'
     },
     {
         id: 'high-society',
@@ -319,11 +319,11 @@ export const backstoryTemplates: BackstoryTemplate[] = [
     },
     {
         id: 'poker-night',
-        template: 'A high-stakes poker game ended in murder when the host was found dead after the final hand. Every player at the table had lost a fortune to him.'
+        template: 'A high-stakes game night ended in murder when the host was found dead. Every guest in attendance had lost a fortune to him over the years.'
     },
     {
         id: 'blackmail-gone-wrong',
-        template: 'A known blackmailer was found dead, clutching a torn envelope. Several of the people present had been receiving threatening letters for weeks.'
+        template: 'A known blackmailer was found dead. Several of the people present had been under his thumb for months, each with a secret worth killing for.'
     },
     {
         id: 'business-deal',
@@ -331,7 +331,7 @@ export const backstoryTemplates: BackstoryTemplate[] = [
     },
     {
         id: 'wine-tasting',
-        template: 'A distinguished sommelier was found dead at an exclusive tasting event. The small guest list means the killer was almost certainly among the attendees.'
+        template: 'A distinguished host was found dead at an exclusive private event. The small guest list means the killer was almost certainly among the attendees.'
     },
     {
         id: 'charity-auction',
