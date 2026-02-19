@@ -82,6 +82,13 @@ export default function PuzzleArchive() {
           </Link>
           <h1 className="text-4xl md:text-5xl font-bold mb-2">Puzzle Archive</h1>
           <p className="text-gray-600 dark:text-gray-300">All available mysteries for Detective Marlowe Finch</p>
+          <p className="text-gray-500 dark:text-gray-400 text-sm mt-2">
+            Prefer one continuous story? Try{' '}
+            <Link to="/story" className="text-amber-500 dark:text-amber-400 hover:text-amber-600 dark:hover:text-amber-300 font-semibold underline underline-offset-2">
+              Story Mode: Murder on the Utopia
+            </Link>
+            {' '}— starring Detective Rook Pemberton.
+          </p>
         </div>
 
         {/* Puzzle Grid */}

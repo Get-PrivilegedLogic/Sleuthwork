@@ -1,6 +1,6 @@
 import { useState, useMemo, useCallback } from 'react';
 import type { GridCell } from '../types/puzzle';
-import type { Suspect, Weapon, Location } from '../types/puzzle';
+import type { Suspect, Weapon, Location, Motive } from '../types/puzzle';
 import { getIcon } from '../utils/iconMapping';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -8,13 +8,16 @@ interface LogicGridProps {
   suspects: Suspect[];
   weapons: Weapon[];
   locations: Location[];
+  motives?: Motive[];
   grid: Record<string, GridCell>;
   onCellClick: (key: string) => void;
   onClearGrid?: () => void;
 }
 
-export default function LogicGrid({ suspects, weapons, locations, grid, onCellClick, onClearGrid }: LogicGridProps) {
-  const [activeGrid, setActiveGrid] = useState<'suspect-weapon' | 'suspect-location' | 'weapon-location'>('suspect-weapon');
+export default function LogicGrid({ suspects, weapons, locations, motives, grid, onCellClick, onClearGrid }: LogicGridProps) {
+  type GridTab = 'suspect-weapon' | 'suspect-location' | 'weapon-location' | 'suspect-motive' | 'weapon-motive' | 'location-motive';
+  const hasMotives = !!(motives && motives.length > 0);
+  const [activeGrid, setActiveGrid] = useState<GridTab>('suspect-weapon');
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
 
   const hasMarks = useMemo(() => Object.keys(grid).length > 0, [grid]);
@@ -57,8 +60,8 @@ export default function LogicGrid({ suspects, weapons, locations, grid, onCellCl
   }, []);
 
   const gridContent = useMemo(() => {
-    let rows: (Suspect | Weapon)[] = [];
-    let cols: (Suspect | Weapon | Location)[] = [];
+    let rows: (Suspect | Weapon | Location | Motive)[] = [];
+    let cols: (Suspect | Weapon | Location | Motive)[] = [];
     let rowColor = '';
     let colColor = '';
 
@@ -72,11 +75,26 @@ export default function LogicGrid({ suspects, weapons, locations, grid, onCellCl
       cols = locations;
       rowColor = 'text-purple-400';
       colColor = 'text-blue-400';
-    } else {
+    } else if (activeGrid === 'weapon-location') {
       rows = weapons;
       cols = locations;
       rowColor = 'text-orange-400';
       colColor = 'text-blue-400';
+    } else if (activeGrid === 'suspect-motive') {
+      rows = suspects;
+      cols = motives!;
+      rowColor = 'text-purple-400';
+      colColor = 'text-pink-400';
+    } else if (activeGrid === 'weapon-motive') {
+      rows = weapons;
+      cols = motives!;
+      rowColor = 'text-orange-400';
+      colColor = 'text-pink-400';
+    } else {
+      rows = locations;
+      cols = motives!;
+      rowColor = 'text-blue-400';
+      colColor = 'text-pink-400';
     }
 
     return (
@@ -217,6 +235,49 @@ export default function LogicGrid({ suspects, weapons, locations, grid, onCellCl
           <span className="text-blue-600 dark:text-blue-400">📍</span>
           <span className="hidden sm:inline">Weapon × Location</span>
         </button>
+
+        {hasMotives && (
+          <>
+            <button
+              onClick={() => setActiveGrid('suspect-motive')}
+              className={`px-3 py-2 rounded-lg text-sm font-semibold transition-all flex items-center gap-2 ${activeGrid === 'suspect-motive'
+                ? 'bg-pink-600 text-white'
+                : 'bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'
+                }`}
+            >
+              <span className="text-purple-600 dark:text-purple-400">👤</span>
+              <span className="dark:text-white">×</span>
+              <span className="text-pink-600 dark:text-pink-400">💭</span>
+              <span className="hidden sm:inline">Suspect × Motive</span>
+            </button>
+
+            <button
+              onClick={() => setActiveGrid('weapon-motive')}
+              className={`px-3 py-2 rounded-lg text-sm font-semibold transition-all flex items-center gap-2 ${activeGrid === 'weapon-motive'
+                ? 'bg-pink-600 text-white'
+                : 'bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'
+                }`}
+            >
+              <span className="text-orange-600 dark:text-orange-400">🔪</span>
+              <span className="dark:text-white">×</span>
+              <span className="text-pink-600 dark:text-pink-400">💭</span>
+              <span className="hidden sm:inline">Weapon × Motive</span>
+            </button>
+
+            <button
+              onClick={() => setActiveGrid('location-motive')}
+              className={`px-3 py-2 rounded-lg text-sm font-semibold transition-all flex items-center gap-2 ${activeGrid === 'location-motive'
+                ? 'bg-pink-600 text-white'
+                : 'bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'
+                }`}
+            >
+              <span className="text-blue-600 dark:text-blue-400">📍</span>
+              <span className="dark:text-white">×</span>
+              <span className="text-pink-600 dark:text-pink-400">💭</span>
+              <span className="hidden sm:inline">Location × Motive</span>
+            </button>
+          </>
+        )}
       </div>
 
       {/* Instructions */}

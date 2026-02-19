@@ -2,6 +2,12 @@ export type GridCell = 'empty' | 'check' | 'cross';
 
 export type Difficulty = 'easy' | 'medium' | 'hard' | 'ludicrous';
 
+export interface Motive {
+  name: string;
+  description: string;
+  icon: string;
+}
+
 export interface Suspect {
   name: string;
   bio: string;
@@ -44,6 +50,7 @@ export interface Puzzle {
   suspects: Suspect[];
   weapons: Weapon[];
   locations: Location[];
+  motives?: Motive[];
   clues: string[];
   hints: string[];
   statements: Statement[];
@@ -51,5 +58,6 @@ export interface Puzzle {
     suspect: string;
     weapon: string;
     location: string;
+    motive?: string;
   };
 }

@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { puzzles as classicPuzzles } from '../data/puzzles';
 import { STORAGE_KEYS, LAUNCH_EPOCH } from '../constants';
 import { Layout } from '../components/Layout';
+import { useChapterProgress } from '../hooks/useChapterProgress';
 import { motion } from 'framer-motion';
 import { Trophy, Star, Zap, BookOpen, Search } from 'lucide-react';
 import { getTodayDateString, getDaysSinceLaunch } from '../utils/dateUtils';
@@ -45,6 +46,7 @@ export default function HomePage() {
   ) || classicPuzzles[0];
 
   const rank = getDetectiveRank(completedCount);
+  const { storySummary, storyNextLabel } = useChapterProgress();
 
   return (
     <Layout maxWidth="4xl">
@@ -72,6 +74,34 @@ export default function HomePage() {
           <span className="bg-gradient-to-r from-yellow-500 to-orange-500 text-yellow-950 px-4 py-2 rounded-full text-sm font-bold shadow-lg animate-pulse">
             ⚡ New puzzle daily
           </span>
+        </div>
+
+        {/* Story Mode Card */}
+        <div className="mb-6 animate-slideUp" style={{ animationDelay: '0.33s' }}>
+          <Link to="/story">
+            <div className="card-glow bg-gradient-to-r from-amber-700/80 to-amber-800/80 rounded-2xl p-6 border-2 border-amber-500/50 hover:border-amber-400 transition-all shadow-2xl relative overflow-hidden group">
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
+              <div className="relative z-10 flex items-center justify-between">
+                <div className="flex items-center gap-4">
+                  <div className="text-5xl">🚢</div>
+                  <div>
+                    <div className="text-2xl font-bold text-white mb-1">Story Mode</div>
+                    <div className="text-amber-100">
+                      Murder on the Utopia
+                      <span className="block text-sm mt-0.5 opacity-90">Starring Detective Rook Pemberton</span>
+                      <span className="block text-sm mt-1 font-semibold opacity-95">{storyNextLabel}</span>
+                      {storySummary.puzzlesSolved > 0 && (
+                        <span className="block text-xs mt-0.5 opacity-80">
+                          Chapter {storySummary.chapterNum} / 5 — {storySummary.puzzlesSolved} puzzles solved
+                        </span>
+                      )}
+                    </div>
+                  </div>
+                </div>
+                <div className="text-3xl group-hover:translate-x-1 transition-transform">→</div>
+              </div>
+            </div>
+          </Link>
         </div>
 
         {/* Daily Puzzle Button */}
