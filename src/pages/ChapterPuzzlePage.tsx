@@ -71,7 +71,22 @@ export default function ChapterPuzzlePage() {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
     resetTimer();
-  }, [chapterId, puzzleIndex, resetTimer]);
+    // Reset all solution/UI state when navigating to a different puzzle so we don't show the previous puzzle's result or the new puzzle's answer
+    setShowSolution(false);
+    setCheckResult(null);
+    setSelectedSuspect('');
+    setSelectedWeapon('');
+    setSelectedLocation('');
+    setSelectedMotive('');
+    setHintsUnlocked(false);
+    setCurrentHint(0);
+    if (gridKey) {
+      const saved = localStorage.getItem(gridKey);
+      setGrid(saved ? JSON.parse(saved) : {});
+    } else {
+      setGrid({});
+    }
+  }, [chapterId, puzzleIndex, resetTimer, gridKey]);
 
   useEffect(() => {
     if (gridKey) {
